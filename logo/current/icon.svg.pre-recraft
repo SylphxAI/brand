@@ -1,0 +1,6 @@
+<!-- VISION-REVERSE v1 via google/gemini-2.5-pro from icon-512.png -->
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="85" ry="85" fill="#211B18"/>
+  <circle cx="256" cy="256" r="64" fill="#D87000"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#D87000" stroke-width="48"/>
+</svg>

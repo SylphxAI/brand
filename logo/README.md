@@ -20,3 +20,13 @@ icon.svg wordmark.svg mono variants
 
 See `reverse/README.md` for method and accuracy disclaimer.
 Primary shipping vectors live in `current/*.svg` with PNG previews `*-from-svg.png` / `*-512.png`.
+
+## Recraft vectorize (FAL)
+
+Primary clean SVG from raster via `fal-ai/recraft/vectorize`:
+
+- `*-recraft.svg` — Recraft output (preferred reverse vector)
+- `*-recraft-512.png` / preview PNGs
+- Previous drafts kept as `*.pre-recraft` / potrace / vision where present
+
+Epiow: `icon-recraft.svg` is an alternate; **canonical master remains `logo.svg`**.
