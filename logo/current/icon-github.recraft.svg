@@ -1,0 +1,6 @@
+<!-- RECRAFT VECTORIZE from logo/current/icon-github.jpg -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: block;" viewBox="0 0 1840 1840" width="460" height="460" preserveAspectRatio="none">
+<path transform="translate(0,0)" fill="rgb(20,20,19)" d="M 0 0 L 1840 0 L 1840 1840 L 0 1840 L 0 0 z"/>
+<path transform="translate(0,0)" fill="rgb(231,168,56)" d="M 1150.02 920.023 L 1380 920.092 L 1379.99 1380.1 L 689.5 1380.02 L 459.976 1379.99 C 458.917 1304.26 459.862 1225.86 459.887 1150.01 L 1150.11 1149.99 L 1150.02 920.023 z"/>
+<path transform="translate(0,0)" fill="rgb(231,168,56)" d="M 459.863 460.067 L 1379.92 460.094 C 1381.01 536.368 1379.45 613.449 1380.33 689.904 L 1150.5 689.937 L 689.984 689.984 L 690.123 920.14 C 614.035 919.199 536.239 919.995 460.026 919.984 C 459.154 867.73 459.861 813.437 459.86 761.07 L 459.863 460.067 z"/>
+</svg>

@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "ok": 147,
+    "skip_or_reuse": 0,
+    "fail": 0,
+    "recraft_svg_count_approx": 168
+  },
+  "repo_results": [
+    {
+      "src": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon-512.png",
+      "out": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon-512.recraft.svg",
+      "status": "ok",
+      "bytes": 2048,
+      "n": 1,
+      "hash": "05a94cc974d0"
+    },
+    {
+      "src": "/home/codex/src/github.com/SylphxAI/brand/logo/construction/sylphx-construction.png",
+      "out": "/home/codex/src/github.com/SylphxAI/brand/logo/construction/sylphx-construction.recraft.svg",
+      "status": "ok",
+      "bytes": 280212,
+      "n": 1,
+      "hash": "0e4c93a60beb"
+    },
+    {
+      "src": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon-from-svg-512.png",
+      "out": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon-from-svg-512.recraft.svg",
+      "status": "ok",
+      "bytes": 2180,
+      "n": 1,
+      "hash": "aba4b11242f7"
+    },
+    {
+      "src": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon-github.jpg",
+      "out": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon-github.recraft.svg",
+      "status": "ok",
+      "bytes": 877,
+      "n": 1,
+      "hash": "a5aa3d1bfff0"
+    },
+    {
+      "src": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon.png",
+      "out": "/home/codex/src/github.com/SylphxAI/brand/logo/current/icon.recraft.svg",
+      "status": "ok",
+      "bytes": 1751,
+      "n": 1,
+      "hash": "4166cc8b7778"
+    },
+    {
+      "src": "/home/codex/src/github.com/SylphxAI/brand/logo/current/wordmark-from-svg.png",
+      "out": "/home/codex/src/github.com/SylphxAI/brand/logo/current/wordmark-from-svg.recraft.svg",
+      "status": "ok",
+      "bytes": 5854,
+      "n": 1,
+      "hash": "59eb261161ed"
+    }
+  ],
+  "note": "Full batch used content-hash dedupe across all brand repos."
+}
