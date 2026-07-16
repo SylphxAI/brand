@@ -41,7 +41,8 @@
 | **Live product frame** | Stop stitching tools together. Ship with one platform. | sylphx.com hero |
 | **Alt** | Building AI agent infrastructure | Guidelines / founder narrative |
 
-**Decision needed:** pick **one primary tagline** for decks (legacy vs product hero). Until then: use product hero for PaaS marketing; legacy for broad OSS intros.
+**Primary tagline (locked v1):** Stop stitching tools together. Ship with one platform.  
+**Secondary:** Empowering developers to build the future with AI · Building AI agent infrastructure (OSS/decks).
 
 ## 6. Visual identity
 
