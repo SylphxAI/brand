@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 540" font-family="ui-sans-serif,system-ui,sans-serif">
+  <rect width="420" height="540" fill="#0B1020"/>
+  <text x="24" y="32" fill="#E2E8F0" font-size="16" font-weight="700">Sylphx — Icon construction (normalized 512×512 master)</text>
+  <text x="24" y="52" fill="#94A3B8" font-size="11">Measured from shipping PNG; rebuild vectors with these ratios.</text>
+
+  <g transform="translate(84,90)">
+    <!-- rounded square field -->
+    <rect width="256" height="256" rx="56" fill="#1A1414"/>
+    <!-- grid -->
+    <g stroke="#334155" stroke-width="0.5" opacity="0.5">
+      <line x1="128" y1="0" x2="128" y2="256"/><line x1="0" y1="128" x2="256" y2="128"/>
+    </g>
+    <!-- ring: outer r=70 (of 128 half= scale 256/512) = 0.273 of side
+         In 512: outer~141 → 141/256 of half-box... use fractions of side S=256:
+         center r = 45/512 * 256 ≈ 22.5
+         ring outer = 141/512 * 256 ≈ 70.5
+         ring stroke ~ (141-132? continuous orange was messy) visual: ring thickness ~12-14 on 512
+    -->
+    <circle cx="128" cy="128" r="70.5" fill="none" stroke="#D87000" stroke-width="12"/>
+    <circle cx="128" cy="128" r="22.5" fill="#D87000"/>
+    <!-- annotations -->
+    <g stroke="#FBBF24" fill="#FBBF24" stroke-width="1" font-size="10">
+      <line x1="128" y1="128" x2="198.5" y2="128"/><text x="150" y="122">r_outer 70.5</text>
+      <line x1="128" y1="128" x2="150.5" y2="128" stroke="#34D399"/><text x="130" y="148" fill="#34D399">r_core 22.5</text>
+      <line x1="128" y1="58" x2="128" y2="70" stroke="#38BDF8"/><text x="132" y="66" fill="#38BDF8">stroke≈12</text>
+    </g>
+    <rect x="-24" y="-24" width="304" height="304" fill="none" stroke="#38BDF8" stroke-dasharray="4 3" stroke-width="1.5"/>
+    <text x="-24" y="-30" fill="#38BDF8" font-size="10">clear space = 24 (≈ 3/32 of 256 / ~icon radius unit)</text>
+  </g>
+
+  <g fill="#CBD5E1" font-size="11" transform="translate(24,390)">
+    <text x="0" y="0" fill="#F8FAFC" font-weight="700" font-size="13">Ratio table (side = S)</text>
+    <text x="0" y="20">App icon corner radius ≈ 0.22·S (iOS-like continuous corner)</text>
+    <text x="0" y="36">Core disc diameter ≈ 0.176·S (r = 0.088·S)</text>
+    <text x="0" y="52">Ring outer diameter ≈ 0.55·S (r = 0.275·S)</text>
+    <text x="0" y="68">Ring stroke weight ≈ 0.047·S</text>
+    <text x="0" y="84">Field #1A1414 / #201818 · Mark #D87000 (primary orange)</text>
+    <text x="0" y="100">Guidelines also list Brand Blue #4A90E2 for UI — icon mark is orange-on-dark</text>
+    <text x="0" y="116">Min size: 24×24 CSS px · Favicon 16×16 · Clear space ≥ 0.1·S</text>
+  </g>
+</svg>

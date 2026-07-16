@@ -1,0 +1,76 @@
+{
+  "name": "Sylphx",
+  "colors": {
+    "mark_orange": {
+      "hex": "#D87000",
+      "rgb": [
+        216,
+        112,
+        0
+      ],
+      "role": "icon mark"
+    },
+    "icon_field": {
+      "hex": "#1A1414",
+      "rgb": [
+        26,
+        20,
+        20
+      ],
+      "role": "icon background"
+    },
+    "brand_blue": {
+      "hex": "#4A90E2",
+      "rgb": [
+        74,
+        144,
+        226
+      ],
+      "role": "UI primary (guidelines)"
+    },
+    "brand_dark": {
+      "hex": "#1A1A2E",
+      "rgb": [
+        26,
+        26,
+        46
+      ],
+      "role": "UI dark (guidelines)"
+    },
+    "text_primary": {
+      "hex": "#2C3E50",
+      "rgb": [
+        44,
+        62,
+        80
+      ],
+      "role": "body text"
+    },
+    "success": {
+      "hex": "#27AE60",
+      "rgb": [
+        39,
+        174,
+        96
+      ],
+      "role": "success"
+    },
+    "error": {
+      "hex": "#E74C3C",
+      "rgb": [
+        231,
+        76,
+        60
+      ],
+      "role": "error"
+    }
+  },
+  "logo": {
+    "master_px": 512,
+    "core_radius_ratio": 0.088,
+    "ring_outer_radius_ratio": 0.275,
+    "ring_stroke_ratio": 0.047,
+    "clear_space_ratio": 0.1,
+    "min_size_css_px": 24
+  }
+}

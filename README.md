@@ -24,3 +24,8 @@
 | GitHub avatar | `logo/current/icon-github.jpg` | github.com/SylphxAI.png |
 
 **Gap:** full SVG primary + mono lockups listed in legacy `logo/sources/legacy-logos-readme.md` were “to be added” — still need design export into `logo/current/`.
+
+## Brand manual
+
+[Brand Manual](./docs/brand-manual/BRAND-MANUAL.md) · [Construction](./logo/construction/) · [tokens](./tokens/brand.tokens.json)
+
