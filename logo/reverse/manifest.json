@@ -1,0 +1,9 @@
+{
+  "status": "reverse-engineered-v0",
+  "note": "Approximate vectors derived from raster masters / SVG. Replace with design-tool exports when available.",
+  "method": [
+    "potrace bitmap trace",
+    "measured geometric reconstruction",
+    "font outline wordmarks"
+  ]
+}
