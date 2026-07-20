@@ -13,19 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate JSON files
-        run: |
-          set -euo pipefail
-          python3 -c '
-import json, pathlib, sys
-errs = 0
-for p in pathlib.Path(".").rglob("*.json"):
-    if any(part.startswith(".") for part in p.parts):
-        continue
-    try:
-        json.loads(p.read_text())
-        print("ok", p)
-    except Exception as e:
-        print("BAD", p, e)
-        errs += 1
-sys.exit(errs)
-'
+        run: python3 scripts/validate_json.py
