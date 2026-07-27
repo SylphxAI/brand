@@ -9,8 +9,29 @@ permissions:
   contents: read
 jobs:
   assets:
-    runs-on: ubuntu-latest
+    runs-on: sylphx-linux-standard
     steps:
       - uses: actions/checkout@v4
+      - name: Enforce managed runner profiles
+        run: |
+          set -euo pipefail
+          workflow=".github/workflows/ci.yml"
+          if ! grep -Eq '^[[:space:]]*runs-on:[[:space:]]*sylphx-linux-standard([[:space:]]*(#.*)?)?$' "$workflow"; then
+            echo "::error::$workflow must use sylphx-linux-standard"
+            exit 1
+          fi
+          find .github/workflows -type f \( -name '*.yml' -o -name '*.yaml' \) -print0 |
+            xargs -0 awk '
+              /^[[:space:]]*runs-on:[[:space:]]*/ {
+                runner = $0
+                sub(/^[[:space:]]*runs-on:[[:space:]]*/, "", runner)
+                if (runner !~ /^sylphx-[[:alnum:]-]+([[:space:]]*(#.*)?)$/ &&
+                    runner !~ /^\[self-hosted,[[:space:]]*sylphx-[[:alnum:]-]+\]([[:space:]]*(#.*)?)$/) {
+                  print FILENAME ":" FNR ": ::error::unmanaged runner declaration: " $0
+                  invalid = 1
+                }
+              }
+              END { exit invalid }
+            '
       - name: Validate JSON files
         run: python3 scripts/validate_json.py
