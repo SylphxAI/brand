@@ -21,7 +21,7 @@ Builders lost months gluing **Vercel + Supabase + Clerk + AI APIs + a dozen dash
 1. **Fragmented stack tax** — time and money before first user.  
 2. **One platform** — 22 services, one SDK, one key.  
 3. **Real isolation** — dedicated Postgres + cache per project.  
-4. **AI first-class** — gateway built-in, agents as customers (Customer Zero).  
+4. **AI first-class** — models built-in, agents as customers (Customer Zero).  
 5. **Open craft** — public tools that prove engineering quality.
 
 ### Mission

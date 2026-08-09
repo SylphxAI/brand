@@ -36,3 +36,5 @@ Brand story, About us, website blocks, and voice samples:
 
 - [`docs/copy/`](./docs/copy/)
 - Architecture: [`docs/REPO-ARCHITECTURE.md`](./docs/REPO-ARCHITECTURE.md) (what belongs in this repo)
+
+| **Naming policy** | [docs/copy/naming.md](./docs/copy/naming.md) |

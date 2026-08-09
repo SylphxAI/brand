@@ -6,11 +6,11 @@
 
 ## Short — EN
 
-Sylphx is an AI-native platform company. We replace the usual patchwork of deploy, database, auth, AI gateway, and a dozen dashboards with one type-safe SDK and one operational story: per-project isolation, hibernate-to-zero when idle, and AI as a first-class service. We also ship open tools — MCP servers and high-performance libraries — because the platform should earn trust in public.
+Sylphx is an AI-native platform company. We replace the usual patchwork of deploy, database, auth, models, and a dozen dashboards with one type-safe SDK and one operational story: per-project isolation, hibernate-to-zero when idle, and AI as a first-class service. We also ship open tools — MCP servers and high-performance libraries — because the platform should earn trust in public.
 
 ## Short — 繁中（optional product ZH）
 
-Sylphx 是 AI-native 平台公司。我們用一個 type-safe SDK 取代部署、資料庫、認證、AI gateway 與十多個控制台的拼接；每個專案真實隔離，閒置可休眠至接近零成本，AI 是一等服務。我們同時開源 MCP 與高效能函式庫——平台的信任，也在公開工程裡累積。
+Sylphx 是 AI-native 平台公司。我們用一個 type-safe SDK 取代部署、資料庫、認證、模型 API 與十多個控制台的拼接；每個專案真實隔離，閒置可休眠至接近零成本，AI 是一等服務。我們同時開源 MCP 與高效能函式庫——平台的信任，也在公開工程裡累積。
 
 ---
 
@@ -31,7 +31,7 @@ Sylphx exists so builders **stop stitching tools together** and ship on a cohere
 1. **One platform beats twelve partial truths.**  
 2. **Isolation should be real.** Per-project data boundaries you can reason about.  
 3. **Idle should be cheap.** Hibernate when nothing runs; wake fast when it does.  
-4. **AI is infrastructure.** A gateway is a service, not a blog post.  
+4. **AI is infrastructure.** A model API is a service, not a blog post.  
 5. **Open proof matters.** Libraries and MCP tools show how we engineer.
 
 ### Customer Zero

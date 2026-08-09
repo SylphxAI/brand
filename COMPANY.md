@@ -22,7 +22,7 @@
 
 ### Product promise (site)
 
-- 22 production services (auth, DB, AI gateway, deploy, …)  
+- 22 production services (auth, DB, models, deploy, …)  
 - Per-project PostgreSQL + managed cache isolation  
 - Hibernate idle projects → $0 when unused  
 - One SDK instead of multi-vendor stack  
