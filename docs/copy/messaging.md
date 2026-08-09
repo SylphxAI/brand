@@ -2,7 +2,7 @@
 
 ## Elevator — EN
 
-Sylphx is the AI-native platform that replaces your frankenstack. One SDK for services and deploy, real per-project isolation, hibernate when idle, AI gateway included — plus open tools that prove the engineering.
+Sylphx is the AI-native platform that replaces your frankenstack. One SDK for services and deploy, real per-project isolation, hibernate when idle, Sylphx AI included — 200+ models — plus open tools that prove the engineering.
 
 ## Primary tagline (locked v1)
 
@@ -21,7 +21,7 @@ Sylphx is the AI-native platform that replaces your frankenstack. One SDK for se
 1. **Unify the stack** — one SDK, one key, one dashboard story  
 2. **Real isolation** — dedicated Postgres + cache per project  
 3. **Economic idle** — hibernate to near-zero; wake in seconds  
-4. **AI first-class** — gateway as a service  
+4. **AI first-class** — models as a service  
 5. **Open craft** — MCP, libraries, public engineering  
 
 ## Objection frames

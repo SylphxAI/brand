@@ -5,7 +5,7 @@
 
 ## 1. Who we are
 
-**Sylphx** is an AI-native developer platform company: ship apps with **one SDK** covering backend services, data isolation, AI gateway, and deploy — plus a public OSS footprint (MCP tools, TS libraries).
+**Sylphx** is an AI-native developer platform company: ship apps with **one SDK** covering backend services, data isolation, models, and deploy — plus a public OSS footprint (MCP tools, TS libraries).
 
 ## 2. Audience
 

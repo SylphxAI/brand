@@ -5,7 +5,7 @@
 | Field | Copy |
 |-------|------|
 | Title | Sylphx — AI-Native Platform · Services + Deployment |
-| Description | Stop stitching tools together. One type-safe SDK for backend services, AI gateway, and deploy — with per-project isolation and hibernate-to-zero idle cost. |
+| Description | Stop stitching tools together. One type-safe SDK for backend services, models, and deploy — with per-project isolation and hibernate-to-zero idle cost. |
 
 ## Hero
 
@@ -39,7 +39,7 @@ Ship with one platform.
 | Dedicated data isolation | Your own Postgres and cache per project |
 | Hibernate to zero | Idle scales down; wake on demand |
 | One SDK | One import, one key |
-| AI built-in | 200+ models through a first-class gateway |
+| AI built-in | 200+ models through one model API |
 
 ## Final CTA
 

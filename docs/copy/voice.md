@@ -6,7 +6,7 @@
 
 ## Principles
 
-1. Prefer concrete nouns: SDK, Postgres, hibernate, gateway, deploy.  
+1. Prefer concrete nouns: SDK, Postgres, hibernate, models, deploy.  
 2. Show the trade: time and vendors saved, not vibes.  
 3. Open-source voice can be warmer; platform voice stays sharp.  
 4. Never invent compliance certifications.  
