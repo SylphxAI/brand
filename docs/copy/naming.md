@@ -3,6 +3,10 @@
 **Status:** Binding. This policy is the company-level naming SSOT for products and
 services. Repo-level naming conventions must not contradict it.
 
+This file projects current product names for brand copy. Company lifecycle and
+former-name mapping remain the Owner register (`PORTFOLIO.md`). Brand does not
+outrank that map.
+
 ## Locked product names
 
 | Layer | Name | Notes |
@@ -11,9 +15,17 @@ services. Repo-level naming conventions must not contradict it.
 | Platform | **Sylphx Platform** | The PaaS / capability platform. |
 | AI product | **Sylphx AI** | Model catalog, routing, metering. Domain `api.sylphx.ai`. |
 | AI service (Platform catalog tile) | **Models** | Short display name next to Database / Auth. Full: Sylphx AI. |
-| Assistants | **Spiron** | Business-grade AI assistants. |
+| Agents | **Sylphx Bots** | Agent objective and graph. Public site `bots.sylphx.com`. |
 | Agent-native runtime (client) | **Keel** | |
 | Managed DB/Redis/Typesense TLS edge | **Data Edge** | Infra descriptor; not a customer product brand. Repo `SylphxAI/data-edge`. |
+
+## Former names
+
+These names must not be used as current product names. Historical map is allowed.
+
+| Former name | Current name |
+|-------------|--------------|
+| Spiron | Sylphx Bots |
 
 ## Rules
 
@@ -28,3 +40,6 @@ services. Repo-level naming conventions must not contradict it.
 5. New identifiers, files, and docs must not introduce `*-gateway` names for Sylphx
    components. Existing non-conforming identifiers are being renamed in a clean cut;
    do not re-introduce them.
+6. **"Spiron" is retired as a product name.** It must never name a current Sylphx
+   product, service, repo display name, or marketing noun. Historical references
+   may map Spiron to Sylphx Bots.
