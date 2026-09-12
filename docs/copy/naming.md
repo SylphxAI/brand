@@ -15,7 +15,7 @@ not, and a rename is not complete until the owning repository's cut is.
 |-------|------|-------|
 | Company | **Sylphx** | Never "SylphX"/"Sylph X". "SylphxAI" is the GitHub org identifier only, not a product name. |
 | AI brand family | **Sylphx AI** | Umbrella over the company's AI products; hub `https://sylphx.ai/`. Not a product: no contract, credentials, or API of its own. Members today: Sylphx Models and Sylphx Agents. |
-| AI family member — models | **Sylphx Models** | Model catalog and official Responses service. Site `https://models.sylphx.ai`; API `https://api.models.sylphx.ai/v1`; keys `sk-sx-…`. Short display in service tiles: **Models** (next to Database / Auth). Former name: Sylphx AI (as a single product). |
+| AI family member — models | **Sylphx Models** | Model catalog and official Responses service. Site `https://models.sylphx.ai`; API `https://api.models.sylphx.ai/v1`; Models-issued keys. Short display in service tiles: **Models** (next to Database / Auth). Former name: Sylphx AI (as a single product). |
 | AI family member — agents | **Sylphx Agents** | Agent objective and graph. Site `https://agents.sylphx.ai`; API `https://api.agents.sylphx.ai/v1`. Former names: Sylphx Bots, Spiron. |
 | Cloud platform | **Sylphx Cloud** | The PaaS / capability platform. Apex `https://sylphx.com/`; CLI `sylphx`. Former names: Sylphx Apps, Sylphx Platform. |
 | Agent-native runtime (client) | **Keel** | |
@@ -24,8 +24,8 @@ not, and a rename is not complete until the owning repository's cut is.
 ## Host grammar
 
 Every public product has a purchased root where owned, otherwise
-`{product}.sylphx.com`, with an API at `api.{site-host}`; product APIs include
-`/v1`. AI family members use the family root `sylphx.ai`:
+`{product}.sylphx.com`, and an API at `api.{site-host}`. AI family members use
+the family root `sylphx.ai`:
 `{product}.sylphx.ai` for the site and `api.{product}.sylphx.ai` for the API.
 The hub `https://sylphx.ai/` is a brand surface, not a product, and owns no API.
 
