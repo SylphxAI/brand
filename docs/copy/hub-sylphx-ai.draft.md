@@ -46,3 +46,16 @@ Sylphx AI is a brand family of Sylphx Limited.
 3. **Member list** — today Models and Agents; how future family members join.
 4. **Depth** — whether the hub repeats member pricing/console content or only
    ever points at the members.
+
+**Recommendation on items 1–2 (proposal — owner decision, not implemented
+here).** Keep hub *content* in this brand repo: the hub is a brand/marketing
+surface with no contract, credentials, or API (owner
+`standards/authority.md` §11/§13), so its copy belongs with the brand SSOT and
+should graduate from this draft to a copy home only when the owner adopts it,
+with member names and doors mirrored from owner law rather than authored here.
+Deploy it as a static site through Cloud's already-required product edge —
+`sylphx.ai`/`www.sylphx.ai` are inside Cloud's desired hostname set per §13 —
+so the path is brand-owned content, platform-owned hosting/DNS, no new origin
+and no product-shaped runtime. The alternative is a fully platform-owned site
+that authors its own copy; the open decision is which side owns the build, and
+it should be recorded before the hub is published.

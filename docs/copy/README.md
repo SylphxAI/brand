@@ -1,7 +1,7 @@
 # Sylphx — copy kit (verbal SSOT)
 
-**Status:** v1 working SSOT  
-**Primary tagline (locked for v1):** *Stop stitching tools together. Ship with one platform.*  
+**Status:** v1 working SSOT — positioning revision in review (Draft PR; owner review pending)  
+**Primary tagline:** open decision — candidates and recommendation in [messaging.md](./messaging.md#primary-tagline-options-proposal--owner-decision); the current line is candidate A, not locked  
 **Secondary (OSS/decks):** *Empowering developers to build the future with AI* / *Building AI agent infrastructure*
 
 | File | Contents |
@@ -11,4 +11,4 @@
 | [website.md](./website.md) | Hero, sections, CTAs, meta |
 | [voice.md](./voice.md) | Voice + samples |
 
-**Draft (not adopted):** [hub-sylphx-ai.draft.md](./hub-sylphx-ai.draft.md) — proposed `https://sylphx.ai/` hub copy; content and deployment ownership are open items.
+**Draft (not adopted):** [hub-sylphx-ai.draft.md](./hub-sylphx-ai.draft.md) — proposed `https://sylphx.ai/` hub copy; content and deployment ownership are open items, with a recommendation recorded in the draft.

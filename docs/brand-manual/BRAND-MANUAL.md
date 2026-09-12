@@ -2,6 +2,10 @@
 
 **Version:** 1.0 · **Legal:** Sylphx Limited · **Product:** sylphx.com · **GitHub / npm:** SylphxAI · `@sylphx`  
 
+> **Positioning revision — PROPOSAL in review** (owner decision pending). Story
+> follows owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs
+> `d3bbe6deb` / `fd5a1d89c`; tagline options in `../copy/messaging.md`.
+
 Tokens: [`tokens/brand.tokens.json`](../../tokens/brand.tokens.json)  
 Construction: [`logo/construction/sylphx-construction.svg`](../../logo/construction/sylphx-construction.svg)  
 Legacy guidelines: [`guidelines/`](../../guidelines/)
@@ -12,29 +16,30 @@ Legacy guidelines: [`guidelines/`](../../guidelines/)
 
 ### Origin
 
-Builders lost months gluing **Vercel + Supabase + Clerk + AI APIs + a dozen dashboards**. Agent systems made the glue worse: every tool had a different auth story, isolation model, and bill.
+Builders lose months to vendor glue: **Vercel + Supabase + Clerk + AI APIs + a dozen dashboards**, each with a different auth story, isolation model, and bill. Agent systems make the glue worse.
 
-**Sylphx** exists so you **stop stitching tools together** — one AI-native platform: services, per-project data isolation, hibernate-to-zero economics, and deploy — plus open infrastructure (MCP, libraries) the ecosystem can trust.
+**Sylphx** exists so you can buy the pieces you need from one company that builds them to compose — independent services sold à la carte, Sylphx Cloud hosting and provisioning the assembly, per-project data isolation and hibernate-to-zero economics — plus open infrastructure (MCP, libraries) the ecosystem can trust.
 
 ### Narrative
 
-1. **Fragmented stack tax** — time and money before first user.  
-2. **One platform** — 22 services, one SDK, one key.  
-3. **Real isolation** — dedicated Postgres + cache per project.  
-4. **AI first-class** — models built-in, agents as customers (Customer Zero).  
-5. **Open craft** — public tools that prove engineering quality.
+1. **Glue tax** — time and money lost in the seams before the first user.  
+2. **Independent services, à la carte** — every product stands alone with its own site, contract, credentials, and SDK.  
+3. **Cloud composes** — hosting and provisioning from one front door; peers stay independently purchasable and callable.  
+4. **Real isolation** — dedicated Postgres + cache per project.  
+5. **AI as a family** — Sylphx Models and Sylphx Agents under the `sylphx.ai` hub; Customer Zero runs on the same contracts.  
+6. **Open craft** — public tools that prove engineering quality.
 
 ### Mission
 
-Give builders an **AI-native platform** that replaces vendor sprawl without dumbing down infrastructure.
+Give builders independent cloud services that stand alone, compose on demand, and never dumb down infrastructure.
 
 ### Vision
 
-The default substrate for AI-era applications and agent systems.
+The default cloud for AI-era applications and agent systems — where every service is bought on its own terms and assembles cleanly.
 
 ### Promise
 
-*Your entire stack, one platform.*
+*Independent services, built to compose.* **(proposal — tagline decision in `../copy/messaging.md`)**
 
 ### Personality
 
@@ -50,10 +55,10 @@ The default substrate for AI-era applications and agent systems.
 
 | Item | Definition |
 |------|------------|
-| **Category** | AI-native PaaS / developer platform + OSS |
+| **Category** | Cloud platform of independent services + OSS |
 | **Audience** | Builders, AI product engineers, MCP users |
-| **Attributes** | Unified · AI-native · Precise |
-| **Competitive frame** | Multi-vendor starter stack vs one SDK |
+| **Attributes** | Independent · Composed · AI-native · Precise |
+| **Competitive frame** | Multi-vendor glue vs one company's independent, compose-ready services |
 | **Proof** | Live platform, OSS stars/downloads, status page |
 
 ---
@@ -67,7 +72,7 @@ The default substrate for AI-era applications and agent systems.
 | GitHub org | SylphxAI (org only — not product title) |
 | npm | `@sylphx/*` lowercase |
 | **Avoid** | SylphX, Sylph X, styling product as “SylphxAI” |
-| Tagline (product) | Stop stitching tools together. Ship with one platform. |
+| Tagline (product) | **PROPOSAL** — candidates in `../copy/messaging.md`; candidate A (current): Stop stitching tools together. Ship with one platform. |
 | Tagline (legacy guidelines) | Empowering developers to build the future with AI |
 | Contact | hi@sylphx.com |
 
@@ -80,10 +85,11 @@ Technical clarity, restrained confidence, short demos over adjectives.
 
 ### Pillars
 
-1. Unified platform  
-2. Isolation & hibernate economics  
-3. AI built-in  
-4. Open engineering proof  
+1. Independent services, à la carte  
+2. Composed by Cloud  
+3. Isolation & hibernate economics  
+4. AI family (Models + Agents)  
+5. Open engineering proof  
 
 ---
 
@@ -185,4 +191,6 @@ Normalized to side **S** (e.g. S=512):
 
 ## 8. Governance
 
-Product + brand owner. Align npm, GitHub, and site naming with §3.  
+Product + brand owner. Align npm, GitHub, and site naming with §3. Positioning
+changes require the owner's acceptance; the tagline is an open decision
+(`../copy/messaging.md`).
