@@ -22,7 +22,7 @@ independent product with its own site, API, and credentials.
 | Product | What it is | Doors |
 |---------|------------|-------|
 | Sylphx Models | Model catalog and official Responses service | site `https://models.sylphx.ai` · API `https://api.models.sylphx.ai/v1` |
-| Sylphx Agents | Autonomous agent OS and graph | site `https://agents.sylphx.ai` · API `https://api.agents.sylphx.ai/v1` |
+| Sylphx Agents | Autonomous agent OS and graph | site `https://agents.sylphx.ai` · API `https://api.agents.sylphx.ai` |
 
 ## What this hub is not
 
