@@ -10,3 +10,5 @@
 | [messaging.md](./messaging.md) | Elevator, pillars, one-liners |
 | [website.md](./website.md) | Hero, sections, CTAs, meta |
 | [voice.md](./voice.md) | Voice + samples |
+
+**Draft (not adopted):** [hub-sylphx-ai.draft.md](./hub-sylphx-ai.draft.md) — proposed `https://sylphx.ai/` hub copy; content and deployment ownership are open items.
