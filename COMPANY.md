@@ -1,10 +1,15 @@
 # Sylphx — company facts
 
+> **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
+> owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb` /
+> `fd5a1d89c`; tagline home in `docs/copy/messaging.md`.
+
 ## Identity
 
 | Field | Value | Evidence |
 |-------|--------|----------|
 | **Name** | Sylphx | Site, marketing |
+| **Tagline** | Independent services. One company. Built to compose. (short form: Take what you need. It all fits.) | Adopted 2026-09-13 (owner decision) |
 | **Legal** | Sylphx Limited | Brand guidelines + portfolio |
 | **GitHub org** | SylphxAI | github.com/SylphxAI |
 | **npm scope** | `@sylphx` | npm packages |
@@ -12,20 +17,45 @@
 | **Contact** | hi@sylphx.com | Legacy brand guidelines |
 | **Location** | United Kingdom (remote) | Portfolio |
 | **Founded** | 2025-05 | Portfolio |
-| **Industry** | AI-native developer platform + OSS tools | Site + GitHub |
-| **Status** | Active · Early access product | sylphx.com |
+| **Industry** | Cloud services (independent products) + OSS tools | Site + GitHub |
+| **Status** | Active · Early access products | sylphx.com |
 
 ## Positioning
 
-**Working (product site):** AI-native platform — backend services + deployment in one type-safe SDK.  
+**Model:** one company, independent services. Every product is bought and used
+à la carte — its own site, API, credentials, SDK, and first success — and
+[**Sylphx Cloud**](https://sylphx.com) is the hosting composer and marketplace
+front door that hosts and provisions the services a customer chooses without
+implementing or proxying their jobs.  
+**AI family:** [**Sylphx AI**](https://sylphx.ai/) is the brand family over the
+company's AI products — Sylphx Models and Sylphx Agents — each still an
+independent product.  
 **OSS face:** MCP servers, high-performance TypeScript libraries, agent infrastructure.
 
-### Product promise (site)
+### Product promise
 
-- 22 production services (auth, DB, models, deploy, …)  
-- Per-project PostgreSQL + managed cache isolation  
-- Hibernate idle projects → $0 when unused  
-- One SDK instead of multi-vendor stack  
+- Independent services: buy one or compose several; nothing requires the rest  
+- Cloud composes: hosting and provisioning through one front door  
+- Per-product trust: each product owns its contract, credentials, docs, first success, and pricing  
+- Per-project PostgreSQL + managed cache isolation; idle projects hibernate  
+- AI products live in the Sylphx AI family (Models and Agents)  
+
+### Products (destination map)
+
+| Product | Site | Owns |
+|---------|------|------|
+| Sylphx Cloud | [sylphx.com](https://sylphx.com) | Hosting composer + marketplace provision; `sylphx` CLI |
+| Sylphx Identity | [identity.sylphx.com](https://identity.sylphx.com) | Organization, principals, sessions, credentials |
+| Sylphx Data | [data.sylphx.com](https://data.sylphx.com) | Database, KV, object, search |
+| Sylphx Compute | [compute.sylphx.com](https://compute.sylphx.com) | Jobs, sessions, runs, schedules |
+| Sylphx Events | [events.sylphx.com](https://events.sylphx.com) | Events and webhook/realtime/email/push delivery |
+| Sylphx Observability | [observability.sylphx.com](https://observability.sylphx.com) | Logs, metrics, traces, errors, audit |
+| Sylphx Commerce | [commerce.sylphx.com](https://commerce.sylphx.com) | Usage, invoices, journal, entitlements |
+| Sylphx AI (family hub) | [sylphx.ai](https://sylphx.ai/) | Brand surface only — no contract, credentials, or API |
+| Sylphx Models | [models.sylphx.ai](https://models.sylphx.ai) | Model catalog + official Responses service (`api.models.sylphx.ai/v1`) |
+| Sylphx Agents | [agents.sylphx.ai](https://agents.sylphx.ai) | Autonomous agent OS and graph (`api.agents.sylphx.ai`) |
+
+This is a destination map, not a launch-status board (owner `PORTFOLIO.md`).
 
 ### Open-source / community
 
@@ -40,6 +70,7 @@
 |---------|------|
 | Legal | Sylphx Limited |
 | Marketing | Sylphx |
+| AI brand family | Sylphx AI (hub sylphx.ai) — never a single product name |
 | GitHub / social handle | SylphxAI / @SylphxAI |
 | Code / npm | `@sylphx` (lowercase) |
 
@@ -52,5 +83,5 @@ Founder role (portfolio): infrastructure AI agents run on — MCP, RAG/CodeRAG, 
 ## Open questions
 
 - [ ] Export official SVG wordmark + mono variants into `logo/current/`  
-- [ ] Align tagline: legacy guidelines vs live product hero  
+- [x] Primary tagline adopted 2026-09-13: C — *Independent services. One company. Built to compose.* (short form B: *Take what you need. It all fits.*); A/D retired to history in `docs/copy/messaging.md`  
 - [ ] Trademark filings (if any) documented like Cubeage pack  

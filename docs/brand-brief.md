@@ -1,11 +1,13 @@
 # Sylphx brand brief (constructed + product-aligned)
 
-> Status: **Working SSOT**. Merges live sylphx.com positioning with existing `guidelines/*`.  
+> Status: **Working SSOT — positioning revision adopted 2026-09-13** (owner
+> decision; per-product story follows owner `standards/authority.md` §11/§13,
+> §3.1, §4 at cut SHAs `d3bbe6deb` / `fd5a1d89c`).  
 > Logos: use **existing** assets only; fill SVG gaps later without inventing a new mark.
 
 ## 1. Who we are
 
-**Sylphx** is an AI-native developer platform company: ship apps with **one SDK** covering backend services, data isolation, models, and deploy — plus a public OSS footprint (MCP tools, TS libraries).
+**Sylphx** is a cloud company of independent services — Cloud (hosting + composer), Identity, Data, Compute, Events, Observability, Commerce, and the Sylphx AI family (Models, Agents) — bought à la carte, each with its own site, API, credentials, and SDK; plus a public OSS footprint (MCP tools, TS libraries).
 
 ## 2. Audience
 
@@ -19,8 +21,9 @@
 
 | Attribute | Means |
 |-----------|--------|
-| **Unified** | One platform / one SDK / one dashboard |
-| **AI-native** | Models & agents first-class, not bolt-on |
+| **Independent** | Products stand alone and are bought à la carte |
+| **Composed** | One company; Cloud hosts and provisions the pieces you choose |
+| **AI-native** | Models & Agents are first-class products in the Sylphx AI family |
 | **Precise** | Type-safe, isolation, engineering seriousness |
 
 ## 4. Personality
@@ -36,12 +39,14 @@
 | Element | Line | Source |
 |---------|------|--------|
 | **Legal name** | Sylphx Limited | Guidelines |
-| **Product name** | Sylphx | Site |
+| **Brand name** | Sylphx | Site |
+| **AI family** | Sylphx AI (hub sylphx.ai) over Sylphx Models and Sylphx Agents | Owner §11/§13 |
 | **Legacy tagline** | Empowering developers to build the future with AI | `.github/brand/guidelines` |
-| **Live product frame** | Stop stitching tools together. Ship with one platform. | sylphx.com hero |
+| **Retired tagline (history)** | Stop stitching tools together. Ship with one platform. | Sylphx.com product hero until the product updates it; retired from brand copy 2026-09-13 (reads as the bundle model) |
 | **Alt** | Building AI agent infrastructure | Guidelines / founder narrative |
 
-**Primary tagline (locked v1):** Stop stitching tools together. Ship with one platform.  
+**Primary tagline (adopted 2026-09-13):** *Independent services. One company. Built to compose.* — home and retired alternatives in [docs/copy/messaging.md](./copy/messaging.md#primary-tagline-adopted).  
+**Short form (compact surfaces):** *Take what you need. It all fits.*  
 **Secondary:** Empowering developers to build the future with AI · Building AI agent infrastructure (OSS/decks).
 
 ## 6. Visual identity
@@ -56,9 +61,10 @@
 
 ## 7. Competitive frame
 
-Vercel + Supabase + Clerk + AI API glue — Sylphx positions as **replacement consolidation**, not a single-point tool.
+Vercel + Supabase + Clerk + AI API glue — the alternative is a multi-vendor stack whose seams are nobody's job. Sylphx positions as **one company building independent services that compose**: à la carte, with Cloud as the front door.
 
 ## 8. Non-goals
 
 - Replacing the existing icon with AI-generated marks  
 - Renaming to “SylphxAI” in customer-facing product chrome  
+- Bundle framing: “one SDK”, “one key”, “replaces the frankenstack”, or any mega-client promise  
