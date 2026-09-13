@@ -1,8 +1,9 @@
-# Trademark clearance brief — template (draft, ready to send)
+# Trademark clearance brief — template (ready to send)
 
-**Status:** DRAFT template. Fill the `<placeholders>`, review, then send to the
-firm. This file is not legal advice and does not state legal conclusions. Its
-desk-research inputs are in
+**Status:** Adopted reference material (2026-09-13). **Research, not legal
+advice.** Fill the `<placeholders>`, review, then send to the firm.
+**Outstanding: attorney clearance — this brief has not been sent or answered.**
+Its desk-research inputs are in
 [`name-clearance-desk-research.md`](./name-clearance-desk-research.md); treat
 that material as unverified leads for your own searches, not as findings.
 

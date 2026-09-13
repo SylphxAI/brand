@@ -1,9 +1,10 @@
-# Name clearance — desk research (draft)
+# Name clearance — desk research
 
-**Status:** DRAFT research note for discussion. This is not legal advice and
-states no legal conclusions. It does not change naming law or brand copy: the
-binding naming policy remains [`docs/copy/naming.md`](../copy/naming.md), and
-[SylphxAI/owner](https://github.com/SylphxAI/owner) remains the naming and
+**Status:** Adopted reference material (2026-09-13). **Research, not legal
+advice**; it states no legal conclusions. **Outstanding: the human test-kit run
+and attorney clearance (see §8).** It does not change naming law or brand copy:
+the binding naming policy remains [`docs/copy/naming.md`](../copy/naming.md),
+and [SylphxAI/owner](https://github.com/SylphxAI/owner) remains the naming and
 lifecycle authority.
 
 **Prepared:** 2026-09-13 (UTC), pre-launch. **Companion files:**
@@ -202,9 +203,11 @@ gets revisited rather than defended by default:
 ## 8. Next actions
 
 1. Run the [test kit](./name-test-kit.md) — ~15 minutes with 5 people; it is
-   designed to be run by a human without legal input.
+   designed to be run by a human without legal input. **Outstanding — not yet
+   run.**
 2. Send the [attorney brief](./trademark-clearance-brief-template.md) as-is
    (fill placeholders) for UK/EU/US clearance searches in classes 9 and 42.
+   **Outstanding — not yet sent.**
 3. Keep a watch list: SylphAI, Inc. (US), Sylphix Technologies, Sylph
    Industries Ltd (IN), SYLPH/SYLPHIX US filings, `@sylphx` handles.
 4. Re-run this note after counsel feedback; only then amend

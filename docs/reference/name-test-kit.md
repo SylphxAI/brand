@@ -1,7 +1,10 @@
-# Name test kit — `Sylphx` umbrella + AI family (draft)
+# Name test kit — `Sylphx` umbrella + AI family
 
-**Status:** DRAFT proposal. Not adopted naming law and not legal advice. This
-kit measures human responses; it does not clear a trademark.
+**Status:** Adopted reference material (2026-09-13). **Research, not legal
+advice**; not naming law. The kit has not been run yet — **human tests are
+outstanding** (that is the kit's purpose), and attorney clearance is a separate
+outstanding step. This kit measures human responses; it does not clear a
+trademark.
 
 **Companion:** [`name-clearance-desk-research.md`](./name-clearance-desk-research.md)
 defines why these tests exist and which results would change the naming
@@ -106,7 +109,7 @@ Compute and report raw counts *and* percentages:
 For a quantitative read, use n = 20–30 and report the 95% confidence interval
 (a simple Wilson interval is enough). Do not treat differences below n = 10 as
 conclusive. These thresholds are deliberately conservative; they are a
-research proposal, not company law.
+research instrument, not company law.
 
 ## How to interpret the result
 
