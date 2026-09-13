@@ -1,14 +1,15 @@
 # Sylphx — company facts
 
-> **Positioning revision — PROPOSAL in review** (owner decision pending). Story
-> follows owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs
-> `d3bbe6deb` / `fd5a1d89c`; tagline options in `docs/copy/messaging.md`.
+> **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
+> owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb` /
+> `fd5a1d89c`; tagline home in `docs/copy/messaging.md`.
 
 ## Identity
 
 | Field | Value | Evidence |
 |-------|--------|----------|
 | **Name** | Sylphx | Site, marketing |
+| **Tagline** | Independent services. One company. Built to compose. (short form: Take what you need. It all fits.) | Adopted 2026-09-13 (owner decision) |
 | **Legal** | Sylphx Limited | Brand guidelines + portfolio |
 | **GitHub org** | SylphxAI | github.com/SylphxAI |
 | **npm scope** | `@sylphx` | npm packages |
@@ -82,5 +83,5 @@ Founder role (portfolio): infrastructure AI agents run on — MCP, RAG/CodeRAG, 
 ## Open questions
 
 - [ ] Export official SVG wordmark + mono variants into `logo/current/`  
-- [ ] Choose the primary tagline from the proposal candidates (`docs/copy/messaging.md`); the current line is candidate A, not locked  
+- [x] Primary tagline adopted 2026-09-13: C — *Independent services. One company. Built to compose.* (short form B: *Take what you need. It all fits.*); A/D retired to history in `docs/copy/messaging.md`  
 - [ ] Trademark filings (if any) documented like Cubeage pack  

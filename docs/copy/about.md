@@ -1,11 +1,11 @@
 # About Sylphx
 
 > **Use on:** sylphx.com/about, GitHub org profile long form, hiring, partner intros.
-> **Positioning revision — PROPOSAL (owner review pending).** Follows
+> **Positioning revision — adopted 2026-09-13** (owner decision). Follows
 > [SylphxAI/owner](https://github.com/SylphxAI/owner) `standards/authority.md`
 > §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb7155ca8186aae3df029b5471ac5b242`
-> (#435) and `fd5a1d89c7db78cff9ef6d33d620eabf6fe90eae` (#436). Tagline
-> decision: [messaging.md](./messaging.md#primary-tagline-options-proposal--owner-decision).
+> (#435) and `fd5a1d89c7db78cff9ef6d33d620eabf6fe90eae` (#436). Tagline:
+> [messaging.md](./messaging.md#primary-tagline-adopted).
 
 ---
 

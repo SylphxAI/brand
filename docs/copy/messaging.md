@@ -1,8 +1,7 @@
 # Sylphx — messaging kit
 
-> **Positioning revision — PROPOSAL, not adopted.** Prepared 2026-09-12 for the
-> owner's brand decision; nothing here ships until the owner accepts it. Story
-> follows current owner law: [SylphxAI/owner](https://github.com/SylphxAI/owner)
+> **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
+> current owner law: [SylphxAI/owner](https://github.com/SylphxAI/owner)
 > `standards/authority.md` §11 (Naming), §13 (Public locators), §3.1
 > (Composition), §4 (Credentials); register
 > [PORTFOLIO.md](https://github.com/SylphxAI/owner/blob/main/PORTFOLIO.md).
@@ -19,22 +18,28 @@ Sylphx Cloud is the front door when you want the pieces assembled: it hosts and
 provisions the services you choose, and never implements or proxies a peer's
 API.
 
-## Primary tagline options (PROPOSAL — owner decision)
+## Primary tagline (adopted)
 
-**Not locked.** The current line stays one candidate; alternatives fit the
-composer story. The owner picks one (or none) before any public surface uses a
-tagline. This table is the tagline home — other files point here.
+**Adopted 2026-09-13** (owner decision). Primary v1 and product hero line:
 
-| # | Line | Why it fits | Risk / tradeoff |
-|---|------|-------------|-----------------|
-| **A (current)** | *Stop stitching tools together. Ship with one platform.* | Keeps the live frame and the real pain — vendor glue; "one platform" reads as Cloud the front door. | "One platform" can be heard as one product / one SDK, which is the model we retired; "stitching" frames integration as the enemy while we sell independent services built to compose. |
-| **B** | *Take what you need. It all fits.* | À-la-carte plus composition in six words; buyer-first, no jargon. | Needs the product list or a sub-line beside it to say what "it" is. |
-| **C** | *Independent services. One company. Built to compose.* | States the post-cut model literally; echoes the composition law. | Longer; less catchy; no motion verb. |
-| **D** | *Start with one service. Compose the rest.* | Buyer journey (start small) plus the Cloud front door; no bundle claim. | "Compose" needs a supporting line for non-platform readers. |
+> **Independent services. One company. Built to compose.** — **C**
 
-**Recommendation for review:** C as the accurate platform line, or B if the
-owner prefers the shortest hero. A remains viable only if the owner wants to
-keep the live frame and accept its bundle reading.
+Short form for compact surfaces (badges, tight slots): **B — *Take what you
+need. It all fits.*** Use B only where C does not fit; it needs the product
+list or a sub-line nearby to say what "it" is. This table is the tagline home —
+other files point here.
+
+Adopted rationale: C states the post-cut model literally — independent products
+under one company, built to compose via Cloud — and keeps the "less vendor
+glue" promise without the bundle reading. B was kept as the short form; A and D
+were not adopted as primary.
+
+### Alternatives (history — retired 2026-09-13)
+
+| # | Line | Why it is not the v1 tagline |
+|---|------|------------------------------|
+| **A** | *Stop stitching tools together. Ship with one platform.* | Reads as the retired one-platform/one-SDK bundle. C states the post-cut model (independent products under one company, built to compose via Cloud) and keeps the "less vendor glue" promise. |
+| **D** | *Start with one service. Compose the rest.* | Accurate buyer journey but narrower than the model; the same move lives in supporting copy (the website final CTA). Kept for optional supporting use. |
 
 ## Secondary lines
 

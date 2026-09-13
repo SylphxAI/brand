@@ -1,10 +1,13 @@
 # Sylphx AI hub — draft copy for `https://sylphx.ai/`
 
-> **Status: DRAFT — not adopted, not published.** This is a proposal for the
-> family hub copy. The hub is a brand surface, not a product (owner decision
-> 2026-09-12; `SylphxAI/owner` `standards/authority.md` §11/§13). Open items
-> before anything ships: who owns hub content and who owns its hosting and
-> deployment. Do not reuse this as current copy until the owner decides.
+> **Status: draft copy, not published.** The hub is a brand surface, not a
+> product (`SylphxAI/owner` `standards/authority.md` §11/§13). **Owner decision
+> 2026-09-13:** brand owns the hub content (this repo); hosting is a
+> platform-owned site delivered through Cloud's site/edge pattern (the
+> `sylphx.ai`/`www.sylphx.ai` zone is already in Cloud's desired hostname set).
+> **Interim:** the Models project's bindings keep the host served until a hub
+> service exists. Implementation is a separate follow-up; this copy is not
+> published yet.
 
 ## Hero
 
@@ -36,26 +39,11 @@ Sylphx AI is a brand family of Sylphx Limited.
 
 ---
 
-## Open items (before publishing)
+## Decisions and open items (before publishing)
 
-1. **Content ownership** — who writes and owns hub copy (Brand? Owner register?
-   a marketing surface?). This draft is not carrying that decision.
-2. **Deployment ownership** — who ships the hub. The `sylphx.ai` /
-   `www.sylphx.ai` names are inside Cloud's desired hostname set; the content
-   source and deploy path are unassigned.
-3. **Member list** — today Models and Agents; how future family members join.
-4. **Depth** — whether the hub repeats member pricing/console content or only
-   ever points at the members.
-
-**Recommendation on items 1–2 (proposal — owner decision, not implemented
-here).** Keep hub *content* in this brand repo: the hub is a brand/marketing
-surface with no contract, credentials, or API (owner
-`standards/authority.md` §11/§13), so its copy belongs with the brand SSOT and
-should graduate from this draft to a copy home only when the owner adopts it,
-with member names and doors mirrored from owner law rather than authored here.
-Deploy it as a static site through Cloud's already-required product edge —
-`sylphx.ai`/`www.sylphx.ai` are inside Cloud's desired hostname set per §13 —
-so the path is brand-owned content, platform-owned hosting/DNS, no new origin
-and no product-shaped runtime. The alternative is a fully platform-owned site
-that authors its own copy; the open decision is which side owns the build, and
-it should be recorded before the hub is published.
+| Item | Status |
+|------|--------|
+| **Content ownership** | **Decided 2026-09-13:** brand owns hub content in this repo. The hub is a brand/marketing surface with no contract, credentials, or API (§11/§13), so its copy belongs with the brand SSOT. Member names and doors mirror owner law rather than being authored here. |
+| **Hosting / deployment** | **Decided 2026-09-13:** hosting is a platform-owned site delivered through Cloud's site/edge pattern — brand-owned content, platform-owned hosting/DNS, no new origin, no product-shaped runtime. **Interim:** the Models project's bindings keep the host served until a hub service exists. Implementation is a separate follow-up. |
+| **Member list** | Open — today Models and Agents; how future family members join. |
+| **Depth** | Open — whether the hub repeats member pricing/console content or only ever points at the members. |

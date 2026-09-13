@@ -3,7 +3,7 @@
 | Surface | Asset / note |
 |---------|----------------|
 | sylphx.com | Product UI + marketing |
-| sylphx.ai | Sylphx AI family hub — draft copy only (`docs/copy/hub-sylphx-ai.draft.md`); not published |
+| sylphx.ai | Sylphx AI family hub — brand-owned copy (`docs/copy/hub-sylphx-ai.draft.md`; adopted 2026-09-13); hosting is a platform-owned site delivered through Cloud's site/edge pattern (interim: Models project bindings keep the host served until a hub service exists); copy not published yet |
 | GitHub org profile | `SylphxAI/.github` `profile/README.md` — story sourced from this repo's copy kit |
 | GitHub org avatar | `logo/current/icon-github.jpg` |
 | npm / README badges | flat-square; brand blue where applicable |

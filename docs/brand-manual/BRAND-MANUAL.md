@@ -2,9 +2,9 @@
 
 **Version:** 1.0 · **Legal:** Sylphx Limited · **Product:** sylphx.com · **GitHub / npm:** SylphxAI · `@sylphx`  
 
-> **Positioning revision — PROPOSAL in review** (owner decision pending). Story
-> follows owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs
-> `d3bbe6deb` / `fd5a1d89c`; tagline options in `../copy/messaging.md`.
+> **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
+> owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb` /
+> `fd5a1d89c`; tagline home in `../copy/messaging.md`.
 
 Tokens: [`tokens/brand.tokens.json`](../../tokens/brand.tokens.json)  
 Construction: [`logo/construction/sylphx-construction.svg`](../../logo/construction/sylphx-construction.svg)  
@@ -39,7 +39,7 @@ The default cloud for AI-era applications and agent systems — where every serv
 
 ### Promise
 
-*Independent services, built to compose.* **(proposal — tagline decision in `../copy/messaging.md`)**
+*Independent services. One company. Built to compose.* **(adopted tagline C, 2026-09-13 — `../copy/messaging.md`)**
 
 ### Personality
 
@@ -72,11 +72,11 @@ The default cloud for AI-era applications and agent systems — where every serv
 | GitHub org | SylphxAI (org only — not product title) |
 | npm | `@sylphx/*` lowercase |
 | **Avoid** | SylphX, Sylph X, styling product as “SylphxAI” |
-| Tagline (product) | **PROPOSAL** — candidates in `../copy/messaging.md`; candidate A (current): Stop stitching tools together. Ship with one platform. |
+| Tagline (product) | ***Independent services. One company. Built to compose.*** (adopted 2026-09-13); short form: *Take what you need. It all fits.* |
 | Tagline (legacy guidelines) | Empowering developers to build the future with AI |
 | Contact | hi@sylphx.com |
 
-**Primary tagline for PaaS:** product hero line.  
+**Primary tagline (v1):** adopted C — product hero line; B is the short form for compact surfaces. A/D are history in `../copy/messaging.md`.  
 **Legacy line:** OK for broad OSS intros until unified.
 
 ### Voice
@@ -192,5 +192,5 @@ Normalized to side **S** (e.g. S=512):
 ## 8. Governance
 
 Product + brand owner. Align npm, GitHub, and site naming with §3. Positioning
-changes require the owner's acceptance; the tagline is an open decision
-(`../copy/messaging.md`).
+changes require the owner's acceptance; the tagline was adopted 2026-09-13
+(C; history in `../copy/messaging.md`).

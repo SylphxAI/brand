@@ -1,8 +1,8 @@
 # Sylphx brand brief (constructed + product-aligned)
 
-> Status: **Working SSOT — positioning revision PROPOSAL in review** (owner review
-> pending; per-product story follows owner `standards/authority.md` §11/§13, §3.1,
-> §4 at cut SHAs `d3bbe6deb` / `fd5a1d89c`).  
+> Status: **Working SSOT — positioning revision adopted 2026-09-13** (owner
+> decision; per-product story follows owner `standards/authority.md` §11/§13,
+> §3.1, §4 at cut SHAs `d3bbe6deb` / `fd5a1d89c`).  
 > Logos: use **existing** assets only; fill SVG gaps later without inventing a new mark.
 
 ## 1. Who we are
@@ -42,10 +42,11 @@
 | **Brand name** | Sylphx | Site |
 | **AI family** | Sylphx AI (hub sylphx.ai) over Sylphx Models and Sylphx Agents | Owner §11/§13 |
 | **Legacy tagline** | Empowering developers to build the future with AI | `.github/brand/guidelines` |
-| **Live product frame** | Stop stitching tools together. Ship with one platform. | sylphx.com hero (candidate A, not locked) |
+| **Retired tagline (history)** | Stop stitching tools together. Ship with one platform. | Sylphx.com product hero until the product updates it; retired from brand copy 2026-09-13 (reads as the bundle model) |
 | **Alt** | Building AI agent infrastructure | Guidelines / founder narrative |
 
-**Primary tagline (PROPOSAL — owner decision):** candidates and recommendation in [docs/copy/messaging.md](./copy/messaging.md#primary-tagline-options-proposal--owner-decision); candidate A is the current line, not locked.  
+**Primary tagline (adopted 2026-09-13):** *Independent services. One company. Built to compose.* — home and retired alternatives in [docs/copy/messaging.md](./copy/messaging.md#primary-tagline-adopted).  
+**Short form (compact surfaces):** *Take what you need. It all fits.*  
 **Secondary:** Empowering developers to build the future with AI · Building AI agent infrastructure (OSS/decks).
 
 ## 6. Visual identity

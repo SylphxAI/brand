@@ -1,9 +1,8 @@
 # Sylphx — website copy blocks
 
-> **Positioning revision — PROPOSAL (owner review pending).** Headline slots use
-> candidate A so the draft renders; the tagline is **not locked** — options and
-> recommendation in
-> [messaging.md](./messaging.md#primary-tagline-options-proposal--owner-decision).
+> **Positioning revision — adopted 2026-09-13** (owner decision). Headline slots
+> use the adopted tagline C; short form B is for compact surfaces. Tagline home:
+> [messaging.md](./messaging.md#primary-tagline-adopted).
 
 ## Meta
 
@@ -16,8 +15,8 @@
 
 **Eyebrow:** Independent services · One company · Composed by Cloud  
 
-**H1 (candidate A; owner decision pending):** Stop stitching tools together.  
-Ship with one platform.  
+**H1:** Independent services. One company. Built to compose.  
+**H1 (compact variant):** Take what you need. It all fits.  
 
 **Sub:** Sylphx sells independent cloud services you compose: Cloud (hosting + provisioning), Identity, Data, Compute, Events, Observability, Commerce — plus the Sylphx AI family. Buy one or several; every product has its own site, API, credentials, and SDK.  
 
