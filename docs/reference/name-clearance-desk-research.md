@@ -71,7 +71,7 @@ thin outside the code estate.
 | `sylphx.com` | 2025-04-17 | Ours (estate domain) | RDAP |
 | `sylphx.ai` | 2026-03-02 | Ours (family hub) | WHOIS |
 | `sylph.ai` | 2023-06-12 | US startup; redirects to `https://adalagent.ai/` | WHOIS + HTTP redirect |
-| `sylphai.com` | 2022-04-14 | Registered (SylphAI's earlier company domain) | RDAP |
+| `sylphai.com` | 2022-04-14 | Registered; historically labelled "SylphAI" (current owner to verify) | RDAP |
 | `sylphix.com` | 2023-03-02 | Sylphix Technologies (AI products) | RDAP + site |
 | `sylph.com` | 1996-03-29 | Parked; page says "This domain may be for sale" | RDAP + site |
 | `sphyx.in` | resolves (43.254.28.133) | Sphyx Digital Private Limited (India; brand/marketing/CRM/ERP) | DNS + site |
