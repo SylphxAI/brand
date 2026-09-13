@@ -85,7 +85,7 @@ fourth (`sylphai.com`) by one insertion of `x`. `sylph.com` is a parked
 
 | Name | What it is | Evidence |
 |---|---|---|
-| **SylphAI, Inc.** (US; `sylph.ai` → `adalagent.ai`) | AI agent harness company: AdaL ("automation-first agent harness"), CLI, worker agents (coding, deep research, browser), agent infra, AdalFlow SDK, `atskills.one` skills catalogue; GitHub org `SylphAI-Inc` | [adalagent.ai](https://adalagent.ai/); [github.com/SylphAI-Inc](https://github.com/SylphAI-Inc) |
+| **SylphAI, Inc.** (US; per public listings; `sylph.ai` → `adalagent.ai`) | AI agent harness company: AdaL ("automation-first agent harness"), CLI, worker agents (coding, deep research, browser), agent infra, AdalFlow SDK, `atskills.one` skills catalogue; GitHub org `SylphAI-Inc` | [adalagent.ai](https://adalagent.ai/); [github.com/SylphAI-Inc](https://github.com/SylphAI-Inc) |
 | **Sylphix Technologies** (`sylphix.com`) | "AI products that do the work"; site describes products incl. SylphHire, SylphAvatar, SylphTalk | [sylphix.com](https://sylphix.com/) |
 | **SYLPHIX** (US trademark 99400274) | Filed 2025-09-18, owner Yang Wang, class 21 (crockery, cookware; housewares), status per aggregator: new application | [Justia record](https://trademarks.justia.com/994/00/sylphix-99400274.html) |
 | **Sylph Industries Ltd** (India; BSE 511447) | Formerly Sylph Technologies Ltd; listed IT/technology company; uses `sylphtechnologies.com` | [Screener company page](https://www.screener.in/company/511447/) |
@@ -160,9 +160,10 @@ Notes:
 
 - The `sylphx.ai` registrant is the estate (registrant proxy hides the name;
   GB registrant + the estate's own naming decision).
-- `adalagent.ai` and `sylph.ai` belong to the same company (legal name
-  SylphAI, Inc.) — based on the redirect and the shared product/company
-  pages.
+- `adalagent.ai` and `sylph.ai` belong to the same company, whose legal name
+  public listings give as SylphAI, Inc. — based on the redirect and the
+  shared product/company pages; not independently verified in a company
+  register.
 
 **Unknowns that matter**
 
