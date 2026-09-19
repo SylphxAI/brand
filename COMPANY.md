@@ -1,7 +1,7 @@
 # Sylphx — company facts
 
 > **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
-> owner `standards/authority.md` §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb` /
+> owner `company/ownership.md` §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb` /
 > `fd5a1d89c`; tagline home in `docs/copy/messaging.md`.
 
 ## Identity
