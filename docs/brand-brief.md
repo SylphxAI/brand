@@ -1,7 +1,7 @@
 # Sylphx brand brief (constructed + product-aligned)
 
 > Status: **Working SSOT — positioning revision adopted 2026-09-13** (owner
-> decision; per-product story follows owner `standards/authority.md` §11/§13,
+> decision; per-product story follows owner `company/ownership.md` §11/§13,
 > §3.1, §4 at cut SHAs `d3bbe6deb` / `fd5a1d89c`).  
 > Logos: use **existing** assets only; fill SVG gaps later without inventing a new mark.
 

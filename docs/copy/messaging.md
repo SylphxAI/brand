@@ -2,7 +2,7 @@
 
 > **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
 > current owner law: [SylphxAI/owner](https://github.com/SylphxAI/owner)
-> `standards/authority.md` §11 (Naming), §13 (Public locators), §3.1
+> `company/ownership.md` §11 (Naming), §13 (Public locators), §3.1
 > (Composition), §4 (Credentials); register
 > [PORTFOLIO.md](https://github.com/SylphxAI/owner/blob/main/PORTFOLIO.md).
 > Law at cut SHAs `d3bbe6deb7155ca8186aae3df029b5471ac5b242` (#435) and

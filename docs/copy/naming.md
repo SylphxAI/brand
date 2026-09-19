@@ -4,7 +4,7 @@
 does not create, extend, or retire names on its own.
 
 **Authority:** [SylphxAI/owner](https://github.com/SylphxAI/owner) is the naming
-and lifecycle authority — `standards/authority.md` §11 (Naming) and §13 (Public
+and lifecycle authority — `company/ownership.md` §11 (Naming) and §13 (Public
 locators) — and [`PORTFOLIO.md`](https://github.com/SylphxAI/owner/blob/main/PORTFOLIO.md)
 is the lifecycle register. Brand copy must not carry a name the register does
 not, and a rename is not complete until the owning repository's cut is.

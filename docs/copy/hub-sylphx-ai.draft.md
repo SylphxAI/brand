@@ -1,7 +1,7 @@
 # Sylphx AI hub — draft copy for `https://sylphx.ai/`
 
 > **Status: draft copy, not published.** The hub is a brand surface, not a
-> product (`SylphxAI/owner` `standards/authority.md` §11/§13). **Owner decision
+> product (`SylphxAI/owner` `company/ownership.md` §11/§13). **Owner decision
 > 2026-09-13:** brand owns the hub content (this repo); hosting is a
 > platform-owned site delivered through Cloud's site/edge pattern (the
 > `sylphx.ai`/`www.sylphx.ai` zone is already in Cloud's desired hostname set).
