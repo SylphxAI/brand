@@ -4,8 +4,8 @@
 does not create, extend, or retire names on its own.
 
 **Authority:** [SylphxAI/owner](https://github.com/SylphxAI/owner) is the naming
-and lifecycle authority — `company/ownership.md` §11 (Naming) and §13 (Public
-locators) — and [`PORTFOLIO.md`](https://github.com/SylphxAI/owner/blob/main/PORTFOLIO.md)
+and lifecycle authority — `company/ownership.md` §4 (Naming) and §5 (Public
+locators) — and [`company/portfolio.md`](https://github.com/SylphxAI/owner/blob/main/company/portfolio.md)
 is the lifecycle register. Brand copy must not carry a name the register does
 not, and a rename is not complete until the owning repository's cut is.
 
@@ -14,9 +14,8 @@ not, and a rename is not complete until the owning repository's cut is.
 | Layer | Name | Notes |
 |-------|------|-------|
 | Company | **Sylphx** | Never "SylphX"/"Sylph X". "SylphxAI" is the GitHub org identifier only, not a product name. |
-| AI brand family | **Sylphx AI** | Umbrella over the company's AI products; hub `https://sylphx.ai/`. Not a product: no contract, credentials, or API of its own. Members today: Sylphx Models and Sylphx Agents. |
-| AI family member — models | **Sylphx Models** | Model catalog and official Responses service. Site `https://models.sylphx.ai`; API `https://api.models.sylphx.ai/v1`; Models-issued keys. Short display in service tiles: **Models** (next to Database / Auth). Former name: Sylphx AI (as a single product). |
-| AI family member — agents | **Sylphx Agents** | Agent objective and graph. Site `https://agents.sylphx.ai`; API `https://api.agents.sylphx.ai`. Former names: Sylphx Bots, Spiron. |
+| Models product | **Sylphx Models** | Model catalog and official Responses service. Site `https://sylphx.ai/`; API `https://api.sylphx.ai/v1`; Models-issued keys. Category noun: models. Former names: Sylphx AI (as a single product and as the later hub). |
+| Agent product | **Sylphx Bot** | Agent objective and graph. Site `https://sylphx.bot/`; API `https://api.sylphx.bot`; Bot-issued credentials. Category noun: agent. Former names: Sylphx Agents, Sylphx Bots, Spiron. |
 | Cloud platform | **Sylphx Cloud** | The PaaS / capability platform. Apex `https://sylphx.com/`; CLI `sylphx`. Former names: Sylphx Apps, Sylphx Platform. |
 | Agent-native runtime (client) | **Keel** | |
 | Managed DB/Redis/Typesense TLS edge | **Data Edge** | Infra descriptor; not a customer product brand. Repo `SylphxAI/data-edge`. |
@@ -24,23 +23,22 @@ not, and a rename is not complete until the owning repository's cut is.
 ## Host grammar
 
 Every public product has a purchased root where owned, otherwise
-`{product}.sylphx.com`, and an API at `api.{site-host}`. AI family members use
-the family root `sylphx.ai`:
-`{product}.sylphx.ai` for the site and `api.{product}.sylphx.ai` for the API.
-The hub `https://sylphx.ai/` is a brand surface, not a product, and owns no API.
+`{product}.sylphx.com`, and an API at `api.{site-host}`. A purchased root
+belongs to one product: no product takes a second-level `{product}.<root>`
+name.
 
 | Surface | Site | API |
 |---------|------|-----|
 | Sylphx Cloud | `https://sylphx.com/` | `https://api.sylphx.com` |
-| Sylphx AI (family hub) | `https://sylphx.ai/` | — none; members issue their own credentials |
-| Sylphx Models | `https://models.sylphx.ai` | `https://api.models.sylphx.ai/v1` |
-| Sylphx Agents | `https://agents.sylphx.ai` | `https://api.agents.sylphx.ai` |
+| Sylphx Models | `https://sylphx.ai/` | `https://api.sylphx.ai/v1` |
+| Sylphx Bot | `https://sylphx.bot/` | `https://api.sylphx.bot` |
 | Other products | `https://{product}.sylphx.com` | `https://api.{product}.sylphx.com` |
 
-Former hosts must not be presented as current homes: `api.sylphx.ai` (the
-former AI product peel), `agents.sylphx.com` and `api.agents.sylphx.com`
-(former Agents hosts), and the non-destination `ai.sylphx.com` and
-`platform.sylphx.com`.
+Former hosts must not be presented as current homes: `api.models.sylphx.ai`
+and `models.sylphx.ai` (the former Models hosts), `agents.sylphx.ai` and
+`api.agents.sylphx.ai` (the former Agents and family-hub hosts),
+`agents.sylphx.com` and `api.agents.sylphx.com` (former Agents hosts), and the
+non-destination `ai.sylphx.com` and `platform.sylphx.com`.
 
 ## Former names
 
@@ -49,20 +47,22 @@ allowed.
 
 | Former name | Current name |
 |-------------|--------------|
-| Sylphx AI (as a single product) | Sylphx AI is the family (hub `https://sylphx.ai/`); the model service is Sylphx Models |
+| Sylphx AI (as a single product, and as the later family/hub name) | Sylphx Models (`https://sylphx.ai/`); the name is retired |
 | Sylphx Platform | Sylphx Cloud |
-| Sylphx Bots (site `bots.sylphx.com`) | Sylphx Agents (site `https://agents.sylphx.ai`) |
-| Spiron | Sylphx Agents |
+| Sylphx Agents (site `https://agents.sylphx.ai`) | Sylphx Bot (site `https://sylphx.bot/`) |
+| Sylphx Bots (site `bots.sylphx.com`) | Sylphx Bot (site `https://sylphx.bot/`) |
+| Spiron | Sylphx Bot |
 | Gateway | Retired; not a current name for any Sylphx product |
 | Decisions; Sylphx Proof (interim 2026-09-18, reversed by owner 2026-09-21) | Sylphx Decision (repo `SylphxAI/decision`) |
 
 ## Rules
 
-1. **"Sylphx AI" names only the family or its hub.** Never use it for a single
-   product, service, runtime, or API.
-2. **Family members are independent products.** Sylphx Models and Sylphx Agents
-   keep their own contracts, credentials, sites, and SDKs. The family is not a
-   second writer, admission path, or credential issuer.
+1. **"Sylphx AI" is retired.** There is no family, hub, or other brand-only
+   surface; Sylphx Models is the product at `https://sylphx.ai/`. Never use the
+   name for a product, service, runtime, or API surface.
+2. **Products are peers.** Sylphx Models and Sylphx Bot keep their own
+   contracts, credentials, roots, and SDKs. No group, family, or hub is a second
+   writer, admission path, or credential issuer.
 3. **"Gateway" is retired as a product name.** It must never name a Sylphx
    product, service, runtime, repo display name, deployment, or API.
 4. "Gateway" may appear only as generic English or a third-party concept (e.g.,
@@ -77,4 +77,7 @@ allowed.
    clean cut; do not re-introduce them.
 8. **"Spiron" is retired as a product name.** It must never name a current
    Sylphx product, service, repo display name, or marketing noun. Historical
-   references may map Spiron to Sylphx Agents.
+   references may map Spiron to Sylphx Bot.
+9. **"Agent" is a category noun, not a name.** Write "Sylphx Bot" (or "Bot") for
+   the product, and "agent" for the category, an instance, or a customer's own
+   agent. Never "Sylphx Agent" as a product name.

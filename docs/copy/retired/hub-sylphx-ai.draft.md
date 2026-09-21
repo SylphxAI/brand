@@ -1,13 +1,10 @@
-# Sylphx AI hub — draft copy for `https://sylphx.ai/`
+# Sylphx AI hub — retired draft copy for `https://sylphx.ai/`
 
-> **Status: draft copy, not published.** The hub is a brand surface, not a
-> product (`SylphxAI/owner` `company/ownership.md` §11/§13). **Owner decision
-> 2026-09-13:** brand owns the hub content (this repo); hosting is a
-> platform-owned site delivered through Cloud's site/edge pattern (the
-> `sylphx.ai`/`www.sylphx.ai` zone is already in Cloud's desired hostname set).
-> **Interim:** the Models project's bindings keep the host served until a hub
-> service exists. Implementation is a separate follow-up; this copy is not
-> published yet.
+> **Status: retired 2026-09-21 — never published, and not to be published.**
+> Owner decision 2026-09-21 (`SylphxAI/owner` `company/ownership.md` §4/§5):
+> there is no Sylphx AI family or hub. `https://sylphx.ai/` belongs to the
+> Sylphx Models product, which owns its own site copy; Sylphx Bot owns
+> `https://sylphx.bot/`. This file is history.
 
 ## Hero
 

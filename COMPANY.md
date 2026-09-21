@@ -1,8 +1,8 @@
 # Sylphx — company facts
 
-> **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
-> owner `company/ownership.md` §11/§13, §3.1, §4 at cut SHAs `d3bbe6deb` /
-> `fd5a1d89c`; tagline home in `docs/copy/messaging.md`.
+> **Positioning revision — adopted 2026-09-13** (owner decision), AI naming
+> amended **2026-09-21**. Story follows owner `company/ownership.md` §3, §4, §5;
+> tagline home in `docs/copy/messaging.md`.
 
 ## Identity
 
@@ -27,9 +27,10 @@
 [**Sylphx Cloud**](https://sylphx.com) is the hosting composer and marketplace
 front door that hosts and provisions the services a customer chooses without
 implementing or proxying their jobs.  
-**AI family:** [**Sylphx AI**](https://sylphx.ai/) is the brand family over the
-company's AI products — Sylphx Models and Sylphx Agents — each still an
-independent product.  
+**AI products:** [**Sylphx Models**](https://sylphx.ai/) sells the model catalog
+and official Responses service; [**Sylphx Bot**](https://sylphx.bot/) is the
+agent OS. Each is an independent product with its own root. The former "Sylphx
+AI" family and hub are retired.  
 **OSS face:** MCP servers, high-performance TypeScript libraries, agent infrastructure.
 
 ### Product promise
@@ -38,7 +39,7 @@ independent product.
 - Cloud composes: hosting and provisioning through one front door  
 - Per-product trust: each product owns its contract, credentials, docs, first success, and pricing  
 - Per-project PostgreSQL + managed cache isolation; idle projects hibernate  
-- AI products live in the Sylphx AI family (Models and Agents)  
+- AI products are first-class: Sylphx Models and Sylphx Bot, each on its own root  
 
 ### Products (destination map)
 
@@ -51,9 +52,8 @@ independent product.
 | Sylphx Events | [events.sylphx.com](https://events.sylphx.com) | Events and webhook/realtime/email/push delivery |
 | Sylphx Observability | [observability.sylphx.com](https://observability.sylphx.com) | Logs, metrics, traces, errors, audit |
 | Sylphx Commerce | [commerce.sylphx.com](https://commerce.sylphx.com) | Usage, invoices, journal, entitlements |
-| Sylphx AI (family hub) | [sylphx.ai](https://sylphx.ai/) | Brand surface only — no contract, credentials, or API |
-| Sylphx Models | [models.sylphx.ai](https://models.sylphx.ai) | Model catalog + official Responses service (`api.models.sylphx.ai/v1`) |
-| Sylphx Agents | [agents.sylphx.ai](https://agents.sylphx.ai) | Autonomous agent OS and graph (`api.agents.sylphx.ai`) |
+| Sylphx Models | [sylphx.ai](https://sylphx.ai/) | Model catalog + official Responses service (`api.sylphx.ai/v1`) |
+| Sylphx Bot | [sylphx.bot](https://sylphx.bot/) | Autonomous agent OS and graph (`api.sylphx.bot`) |
 
 This is a destination map, not a launch-status board (owner `PORTFOLIO.md`).
 
@@ -70,7 +70,7 @@ This is a destination map, not a launch-status board (owner `PORTFOLIO.md`).
 |---------|------|
 | Legal | Sylphx Limited |
 | Marketing | Sylphx |
-| AI brand family | Sylphx AI (hub sylphx.ai) — never a single product name |
+| AI products | Sylphx Models (`sylphx.ai`) and Sylphx Bot (`sylphx.bot`) — peer products; "agent" is the category noun |
 | GitHub / social handle | SylphxAI / @SylphxAI |
 | Code / npm | `@sylphx` (lowercase) |
 

@@ -26,7 +26,7 @@ Builders lose months to vendor glue: **Vercel + Supabase + Clerk + AI APIs + a d
 2. **Independent services, à la carte** — every product stands alone with its own site, contract, credentials, and SDK.  
 3. **Cloud composes** — hosting and provisioning from one front door; peers stay independently purchasable and callable.  
 4. **Real isolation** — dedicated Postgres + cache per project.  
-5. **AI as a family** — Sylphx Models and Sylphx Agents under the `sylphx.ai` hub; Customer Zero runs on the same contracts.  
+5. **AI as products** — Sylphx Models at `sylphx.ai` and Sylphx Bot at `sylphx.bot`; Customer Zero runs on the same contracts.  
 6. **Open craft** — public tools that prove engineering quality.
 
 ### Mission
@@ -88,7 +88,7 @@ Technical clarity, restrained confidence, short demos over adjectives.
 1. Independent services, à la carte  
 2. Composed by Cloud  
 3. Isolation & hibernate economics  
-4. AI family (Models + Agents)  
+4. AI products (Models + Bot)  
 5. Open engineering proof  
 
 ---

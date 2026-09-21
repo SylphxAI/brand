@@ -12,4 +12,4 @@
 | [website.md](./website.md) | Hero, sections, CTAs, meta |
 | [voice.md](./voice.md) | Voice + samples |
 
-**Draft copy:** [hub-sylphx-ai.draft.md](./hub-sylphx-ai.draft.md) — `https://sylphx.ai/` hub copy. **Adopted 2026-09-13:** brand owns the hub content; hosting is a platform-owned site delivered through Cloud's site/edge pattern (interim: the Models project's bindings keep the host served until a hub service exists). Copy is not published yet; implementation is a separate follow-up.
+**Retired draft:** [hub-sylphx-ai.draft.md](./hub-sylphx-ai.draft.md) — the `https://sylphx.ai/` hub copy. **Retired 2026-09-21:** there is no family or hub layer; `sylphx.ai` is Sylphx Models' own root, and its site copy is the Models product site.
