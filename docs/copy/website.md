@@ -9,7 +9,7 @@
 | Field | Copy |
 |-------|------|
 | Title | Sylphx — Independent Cloud Services, Composed |
-| Description | Independent cloud services — hosting, identity, data, compute, events, observability, commerce, and the Sylphx AI family. Buy one or compose several; Sylphx Cloud is the front door. |
+| Description | Independent cloud services — hosting, identity, data, compute, events, observability, commerce, and the AI products Sylphx Models and Sylphx Bot. Buy one or compose several; Sylphx Cloud is the front door. |
 
 ## Hero
 
@@ -18,7 +18,7 @@
 **H1:** Independent services. One company. Built to compose.  
 **H1 (compact variant):** Take what you need. It all fits.  
 
-**Sub:** Sylphx sells independent cloud services you compose: Cloud (hosting + provisioning), Identity, Data, Compute, Events, Observability, Commerce — plus the Sylphx AI family. Buy one or several; every product has its own site, API, credentials, and SDK.  
+**Sub:** Sylphx sells independent cloud services you compose: Cloud (hosting + provisioning), Identity, Data, Compute, Events, Observability, Commerce, and the AI products Models and Bot. Buy one or several; every product has its own site, API, credentials, and SDK.  
 
 **Bullets:**  
 - Cloud composes — hosting, provisioning, and one front door for the services you choose  
@@ -42,9 +42,8 @@
 | Sylphx Events | Events + webhook, realtime, email, push delivery | [events.sylphx.com](https://events.sylphx.com) |
 | Sylphx Observability | Logs, metrics, traces, errors, audit | [observability.sylphx.com](https://observability.sylphx.com) |
 | Sylphx Commerce | Usage, invoices, entitlements | [commerce.sylphx.com](https://commerce.sylphx.com) |
-| Sylphx AI (family) | Hub for Models and Agents — not a product | [sylphx.ai](https://sylphx.ai/) |
-| Sylphx Models | Model catalog + official Responses service | [models.sylphx.ai](https://models.sylphx.ai) · `api.models.sylphx.ai/v1` |
-| Sylphx Agents | Autonomous agent OS and graph | [agents.sylphx.ai](https://agents.sylphx.ai) · `api.agents.sylphx.ai` |
+| Sylphx Models | Model catalog + official Responses service | [sylphx.ai](https://sylphx.ai/) · `api.sylphx.ai/v1` |
+| Sylphx Bot | Autonomous agent OS and graph | [sylphx.bot](https://sylphx.bot/) · `api.sylphx.bot` |
 
 ## Problem
 
@@ -59,7 +58,7 @@
 | Compose with Cloud | Hosting + provisioning for the services you choose |
 | Go à la carte | Start with one product; add the rest when you need them |
 | Real isolation | Per-project PostgreSQL and managed cache |
-| AI family | Models and Agents under the sylphx.ai hub |
+| AI products | Models at sylphx.ai, Bot at sylphx.bot — each its own root |
 
 ## Final CTA
 

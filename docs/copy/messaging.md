@@ -2,17 +2,16 @@
 
 > **Positioning revision — adopted 2026-09-13** (owner decision). Story follows
 > current owner law: [SylphxAI/owner](https://github.com/SylphxAI/owner)
-> `company/ownership.md` §11 (Naming), §13 (Public locators), §3.1
-> (Composition), §4 (Credentials); register
-> [PORTFOLIO.md](https://github.com/SylphxAI/owner/blob/main/PORTFOLIO.md).
-> Law at cut SHAs `d3bbe6deb7155ca8186aae3df029b5471ac5b242` (#435) and
-> `fd5a1d89c7db78cff9ef6d33d620eabf6fe90eae` (#436).
+> `company/ownership.md` §4 (Naming) and §5 (Public locators); register
+> [company/portfolio.md](https://github.com/SylphxAI/owner/blob/main/company/portfolio.md).
+> The AI naming was amended 2026-09-21: Sylphx Models owns `sylphx.ai` and
+> Sylphx Bot owns `sylphx.bot`; there is no family or hub layer.
 
 ## Elevator — EN
 
 Sylphx is a cloud company of independent services: Cloud (hosting and
 composition), Identity, Data, Compute, Events, Observability, Commerce, and the
-Sylphx AI family — Sylphx Models and Sylphx Agents. Every product is bought
+AI products — Sylphx Models and Sylphx Bot. Every product is bought
 à la carte, with its own site, API, credentials, SDK, and first success.
 Sylphx Cloud is the front door when you want the pieces assembled: it hosts and
 provisions the services you choose, and never implements or proxies a peer's
@@ -46,7 +45,7 @@ were not adopted as primary.
 | Use | Line |
 |-----|------|
 | Category | Independent cloud services · composer platform |
-| AI family | The AI brand family: Sylphx Models and Sylphx Agents |
+| AI products | Sylphx Models (model catalog and Responses) · Sylphx Bot (agent OS) |
 | OSS / broad | Empowering developers to build the future with AI |
 | Infra narrative | Building AI agent infrastructure |
 
@@ -60,9 +59,9 @@ were not adopted as primary.
    mesh, no proxied APIs.
 3. **Real isolation, honest economics** — per-project Postgres + managed
    cache; idle scales to zero and wakes on demand.
-4. **AI as a family** — the `sylphx.ai` hub over Sylphx Models (catalog and
-   official Responses service) and Sylphx Agents (autonomous agent OS), each
-   an independent product.
+4. **AI as real products** — Sylphx Models (catalog and official Responses
+   service, at `sylphx.ai`) and Sylphx Bot (autonomous agent OS, at
+   `sylphx.bot`), each an independent product with its own root.
 5. **Open craft** — MCP servers and libraries prove the engineering in public.
 
 ## Objection frames
@@ -72,14 +71,16 @@ were not adopted as primary.
 | “I’ll just use Vercel + Supabase + Clerk.” | Sylphx is à la carte too: start with one product and add the rest when they earn their place. The difference is that one company builds every piece to compose — and Cloud is the front door when you want the assembly done. |
 | “Do I have to buy the whole platform?” | No. Products are sold and used independently — a Models, Identity, Data, or Compute signup needs no Cloud account. Cloud composes only what you choose. |
 | “Is isolation real?” | Per-project Postgres and managed cache — not shared soft tenancy cosplay. |
-| “Another AI wrapper?” | Sylphx AI is a family, not a wrapper: Sylphx Models is the catalog and official Responses service; Sylphx Agents is the agent OS. Independent products, independent contracts. |
+| “Another AI wrapper?” | Not a wrapper: Sylphx Models is the catalog and official Responses service at `sylphx.ai`; Sylphx Bot is the agent OS at `sylphx.bot`. Independent products, independent contracts. |
+| “Bot or agent?” | Sylphx Bot is the product; “agent” is the category noun. Grok and Cline ship bots; so do we, and ours runs an OS, not a chat loop. |
 | “Lock-in?” | Each product owns its contract and issues its own credentials; there is no company mega-SDK. Evaluate each product's export path in its docs. |
 
 ## Prefer / avoid
 
 | Prefer | Avoid |
 |--------|--------|
-| Independent services, à la carte, compose, front door, family hub | Bundle claims: “one SDK”, “one key”, “replaces the frankenstack” |
+| Independent services, à la carte, compose, front door, own root | Bundle claims: “one SDK”, “one key”, “replaces the frankenstack” |
 | Product-owned site, contract, credentials, docs | “Sylphx AI” as a single product name |
+| Sylphx Bot (product) · agent (category) | “Sylphx Agent”, “Sylphx AI” for a product, or a family/hub layer |
 | Hibernate, isolation, credits | Fake SOC2 claims without evidence |
 | Builder, ship, deploy | Enterprise jargon without substance |

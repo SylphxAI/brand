@@ -1,13 +1,13 @@
 # Sylphx brand brief (constructed + product-aligned)
 
 > Status: **Working SSOT — positioning revision adopted 2026-09-13** (owner
-> decision; per-product story follows owner `company/ownership.md` §11/§13,
-> §3.1, §4 at cut SHAs `d3bbe6deb` / `fd5a1d89c`).  
+> decision; AI naming amended 2026-09-21; per-product story follows owner
+> `company/ownership.md` §3, §4, §5).  
 > Logos: use **existing** assets only; fill SVG gaps later without inventing a new mark.
 
 ## 1. Who we are
 
-**Sylphx** is a cloud company of independent services — Cloud (hosting + composer), Identity, Data, Compute, Events, Observability, Commerce, and the Sylphx AI family (Models, Agents) — bought à la carte, each with its own site, API, credentials, and SDK; plus a public OSS footprint (MCP tools, TS libraries).
+**Sylphx** is a cloud company of independent services — Cloud (hosting + composer), Identity, Data, Compute, Events, Observability, Commerce, and the AI products Sylphx Models and Sylphx Bot — bought à la carte, each with its own site, API, credentials, and SDK; plus a public OSS footprint (MCP tools, TS libraries).
 
 ## 2. Audience
 
@@ -23,7 +23,7 @@
 |-----------|--------|
 | **Independent** | Products stand alone and are bought à la carte |
 | **Composed** | One company; Cloud hosts and provisions the pieces you choose |
-| **AI-native** | Models & Agents are first-class products in the Sylphx AI family |
+| **AI-native** | Sylphx Models and Sylphx Bot are first-class products with their own roots |
 | **Precise** | Type-safe, isolation, engineering seriousness |
 
 ## 4. Personality
@@ -40,7 +40,7 @@
 |---------|------|--------|
 | **Legal name** | Sylphx Limited | Guidelines |
 | **Brand name** | Sylphx | Site |
-| **AI family** | Sylphx AI (hub sylphx.ai) over Sylphx Models and Sylphx Agents | Owner §11/§13 |
+| **AI products** | Sylphx Models (`sylphx.ai`) and Sylphx Bot (`sylphx.bot`) | Owner §4/§5 |
 | **Legacy tagline** | Empowering developers to build the future with AI | `.github/brand/guidelines` |
 | **Retired tagline (history)** | Stop stitching tools together. Ship with one platform. | Sylphx.com product hero until the product updates it; retired from brand copy 2026-09-13 (reads as the bundle model) |
 | **Alt** | Building AI agent infrastructure | Guidelines / founder narrative |
