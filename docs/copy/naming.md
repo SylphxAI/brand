@@ -54,6 +54,7 @@ allowed.
 | Sylphx Bots (site `bots.sylphx.com`) | Sylphx Agents (site `https://agents.sylphx.ai`) |
 | Spiron | Sylphx Agents |
 | Gateway | Retired; not a current name for any Sylphx product |
+| Decisions; Sylphx Proof (interim 2026-09-18, reversed by owner 2026-09-21) | Sylphx Decision (repo `SylphxAI/decision`) |
 
 ## Rules
 
