@@ -22,29 +22,17 @@ concurrency:
 
 jobs:
   assets:
-    runs-on: sylphx-linux-standard
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Enforce managed runner profiles
+      - name: Enforce GitHub-hosted runners (public repository)
         run: |
           set -euo pipefail
-          workflow=".github/workflows/ci.yml"
-          if ! grep -Eq '^[[:space:]]*runs-on:[[:space:]]*sylphx-linux-standard([[:space:]]*(#.*)?)?$' "$workflow"; then
-            echo "::error::$workflow must use sylphx-linux-standard"
+          # A public repository never runs on Sylphx self-hosted runners: its
+          # fork pull requests would execute on them (2026-09-24 decision).
+          if grep -rnE '^[[:space:]]*runs-on:.*(self-hosted|sylphx-)' .github/workflows; then
+            echo "::error::public repository workflows must use GitHub-hosted runners"
             exit 1
           fi
-          find .github/workflows -type f \( -name '*.yml' -o -name '*.yaml' \) -print0 |
-            xargs -0 awk '
-              /^[[:space:]]*runs-on:[[:space:]]*/ {
-                runner = $0
-                sub(/^[[:space:]]*runs-on:[[:space:]]*/, "", runner)
-                if (runner !~ /^sylphx-[[:alnum:]-]+([[:space:]]*(#.*)?)$/ &&
-                    runner !~ /^\[self-hosted,[[:space:]]*sylphx-[[:alnum:]-]+\]([[:space:]]*(#.*)?)$/) {
-                  print FILENAME ":" FNR ": ::error::unmanaged runner declaration: " $0
-                  invalid = 1
-                }
-              }
-              END { exit invalid }
-            '
       - name: Validate JSON files
         run: python3 scripts/validate_json.py
