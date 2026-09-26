@@ -1,40 +1,29 @@
 # Sylphx Brand
 
-**Company brand SSOT** for [Sylphx](https://sylphx.com) — facts, guidelines, and current logo assets.
-
-> Product code: [`SylphxAI/*`](https://github.com/SylphxAI). This repo consolidates brand narrative + assets.  
-> Legacy notes also lived under `SylphxAI/.github/brand/` (guidelines copied into `guidelines/`).
-
-## Quick links
+The [Sylphx](https://sylphx.com) brand in one place: company facts, logo
+files, colours, typography and the words we use about ourselves.
 
 | | |
 |--|--|
 | **Company facts** | [COMPANY.md](./COMPANY.md) |
 | **Brand brief** | [docs/brand-brief.md](./docs/brand-brief.md) |
-| **Guidelines** | [guidelines/guidelines.md](./guidelines/guidelines.md) · [colors](./guidelines/colors.md) |
-| **Logo** | [logo/current/](./logo/current/) |
-| **Surfaces** | [docs/surfaces.md](./docs/surfaces.md) |
+| **Brand manual** | [docs/brand-manual/BRAND-MANUAL.md](./docs/brand-manual/BRAND-MANUAL.md) |
+| **Guidelines** | [guidelines/guidelines.md](./guidelines/guidelines.md) · [colours](./guidelines/colors.md) · [design tokens](./tokens/brand.tokens.json) |
+| **Copy** | [docs/copy/](./docs/copy/): brand story, about us, website copy, voice, and [naming](./docs/copy/naming.md) |
+| **Where the brand appears** | [docs/surfaces.md](./docs/surfaces.md) |
 
-## Current assets
+## Logo files
 
-| Asset | File | Source |
-|-------|------|--------|
-| Icon | `logo/current/icon.png` | Portfolio / product use |
-| Icon 512 | `logo/current/icon-512.png` | Portfolio |
-| GitHub avatar | `logo/current/icon-github.jpg` | github.com/SylphxAI.png |
+In [logo/current/](./logo/current/); how the mark is drawn is in
+[logo/construction/](./logo/construction/).
 
-**Gap:** full SVG primary + mono lockups listed in legacy `logo/sources/legacy-logos-readme.md` were “to be added” — still need design export into `logo/current/`.
+| Asset | File |
+|-------|------|
+| Icon | `icon.svg`, `icon.png`, `icon-512.png` |
+| Icon, one colour | `icon-mono-dark.svg`, `icon-mono-light.svg` |
+| Icon on orange | `icon-on-orange.svg` |
+| Wordmark | `wordmark.svg` |
+| GitHub avatar | `icon-github.jpg` |
 
-## Brand manual
-
-[Brand Manual](./docs/brand-manual/BRAND-MANUAL.md) · [Construction](./logo/construction/) · [tokens](./tokens/brand.tokens.json)
-
-
-## Copy kit (verbal SSOT)
-
-Brand story, About us, website blocks, and voice samples:
-
-- [`docs/copy/`](./docs/copy/)
-- Architecture: [`docs/REPO-ARCHITECTURE.md`](./docs/REPO-ARCHITECTURE.md) (what belongs in this repo)
-
-| **Naming policy** | [docs/copy/naming.md](./docs/copy/naming.md) |
+What belongs in this repository and what does not:
+[docs/REPO-ARCHITECTURE.md](./docs/REPO-ARCHITECTURE.md).
