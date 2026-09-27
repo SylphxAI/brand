@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   assets:
-    runs-on: sylphx-linux-standard
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       # owner#750 (zero metered GitHub spend): a public repository may use
