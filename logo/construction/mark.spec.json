@@ -1,0 +1,50 @@
+{
+  "about": "The one construction of the Sylphx mark, wordmark and lockups (direction Engineered, chosen 2026-09-28; directions/README.md). logo/construction/mark.py draws every file in logo/ from this spec; change the spec and rerun, never edit an output by hand.",
+  "mark": {
+    "about": "Two currents that cross and weave into an x. Units are a 512 grid. Each current is a cubic S-curve stroked at stroke_width with flat ends; the rising current passes under the falling one, which is cut from it by a gap of weave_gap on each side.",
+    "grid": 512,
+    "half_span": 150,
+    "control_pull": 40,
+    "stroke_width": 70,
+    "weave_gap": 28,
+    "tile_corner_radius": 112,
+    "tile_symbol_scale": 0.84375
+  },
+  "colours": {
+    "about": "Mark colours. 'accent' draws the under current, 'ink' the over current; on dark grounds they become accent-on-dark and paper.",
+    "accent": "#2448F5",
+    "accent_on_dark": "#6B86FF",
+    "ink": "#15130F",
+    "paper": "#F2EEE6",
+    "field": "#15130F",
+    "black": "#000000",
+    "white": "#FFFFFF"
+  },
+  "wordmark": {
+    "about": "Sylphx in IBM Plex Sans SemiBold with tight tracking.",
+    "text": "Sylphx",
+    "font": "fonts/IBMPlexSans-SemiBold.woff2",
+    "weight": 600,
+    "tracking_em": -0.02
+  },
+  "lockup": {
+    "about": "Symbol beside the wordmark. The symbol's height is a multiple of the wordmark's cap height, centred on it; the gap is a fraction of the symbol height.",
+    "symbol_height_per_cap_height": 1.45,
+    "gap_per_symbol_height": 0.36
+  },
+  "clear_space": {
+    "about": "Keep this much empty space around any version, as a fraction of the symbol height.",
+    "per_symbol_height": 0.25
+  },
+  "minimum_size_px": {
+    "symbol": 16,
+    "lockup_width": 88
+  },
+  "app_icon": {
+    "about": "Store and home-screen icons are full-bleed: the platform applies its own corner mask. The symbol sits inside the iOS and Android safe areas.",
+    "size": 1024,
+    "symbol_ratio": 0.62,
+    "android_adaptive_canvas": 432,
+    "android_safe_diameter_ratio": 0.6111
+  }
+}
