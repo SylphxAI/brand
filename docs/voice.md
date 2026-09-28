@@ -14,7 +14,10 @@ run the system at 3 a.m.
    dry and never in errors or billing.
 5. **Customer words, not ours.** No internal terms (Kernel, Cell, Hands,
    Release internals) on a public surface.
-6. **Never invent a certification, benchmark, customer or quote.**
+6. **Every number and claim is true and sourced.** Counts and statuses come
+   from the product registry, prices from the live price catalog, speed only
+   from a measurement. Never invent a certification, benchmark, customer or
+   quote.
 
 ## Lines
 

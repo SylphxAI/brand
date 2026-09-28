@@ -20,6 +20,7 @@ currents that weave into the x of Sylphx. Why, and the alternatives:
 | How to use the logo, colour, type, icons and motion | [guidelines/guidelines.md](guidelines/guidelines.md) and the usage sheet [logo/sheet/usage.png](logo/sheet/usage.png) |
 | Logo files, construction, small sizes, provenance | [logo/README.md](logo/README.md) |
 | Design tokens | [tokens/brand.tokens.json](tokens/brand.tokens.json) (source) and [tokens/brand.css](tokens/brand.css) (generated) |
+| Fonts to self-host | [fonts/](fonts/) (IBM Plex Sans and Mono, OFL) |
 | Voice | [docs/voice.md](docs/voice.md) |
 | Trademark status | [docs/trademarks.md](docs/trademarks.md) |
 | Where the brand appears | [docs/surfaces.md](docs/surfaces.md) |

@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "logo/MANIFEST.sha256"
-DIRS = ["logo/svg", "logo/png", "logo/favicon", "logo/app-icon", "logo/sheet", "logo/construction", "tokens"]
+DIRS = ["logo/svg", "logo/png", "logo/favicon", "logo/app-icon", "logo/sheet", "logo/construction", "tokens", "fonts"]
 
 
 def render() -> str:
