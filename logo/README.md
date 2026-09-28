@@ -63,4 +63,7 @@ From 48 px up every file uses the vector.
 - **Rendering:** resvg for every PNG; Pillow for the ICO and the sheet.
 - **Hashes:** [`MANIFEST.sha256`](MANIFEST.sha256) lists the SHA-256 of every
   shipped file, the spec, the generator and the fonts. Rebuilding from the
-  spec reproduces the SVGs byte for byte.
+  spec with the pinned versions in
+  [`construction/requirements.txt`](construction/requirements.txt)
+  reproduces every SVG, PNG and ICO byte for byte, and CI redraws them on
+  every change: a hand-edited or traced file fails the build.

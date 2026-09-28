@@ -23,7 +23,7 @@ concurrency:
 jobs:
   assets:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       # owner#750 (zero metered GitHub spend): a public repository may use
@@ -41,3 +41,17 @@ jobs:
         run: python3 scripts/build_tokens.py --check
       - name: Shipped files match the manifest
         run: python3 scripts/manifest.py --check
+      # The manifest proves the files are the ones recorded; this proves the
+      # generator still draws them. A hand-edited or traced file fails here.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: The generator redraws every logo file byte for byte
+        run: |
+          python -m pip install --quiet -r logo/construction/requirements.txt
+          python logo/construction/mark.py
+          if ! git diff --exit-code --stat -- logo || [ -n "$(git status --porcelain -- logo)" ]; then
+            git status --porcelain -- logo
+            echo "::error::logo/ differs from what logo/construction/mark.py draws; edit mark.spec.json or mark.py and regenerate, never the files"
+            exit 1
+          fi
