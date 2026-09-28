@@ -5,6 +5,10 @@
 	--sx-mark-ink: #15130F;
 	--sx-mark-paper: #F2EEE6;
 	--sx-mark-field: #15130F;
+	--sx-status-success-on-dark: #4ADE80;
+	--sx-status-warning-on-dark: #FACC15;
+	--sx-status-danger-on-dark: #F87171;
+	--sx-status-info-on-dark: #6B86FF;
 	--sx-font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
 	--sx-font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
 	--sx-font-display-tracking: -0.03em;

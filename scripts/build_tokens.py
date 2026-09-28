@@ -47,7 +47,7 @@ def flatten(group: dict, prefix: str) -> list[tuple[str, str]]:
 def render() -> str:
     t = json.loads(SRC.read_text())
     common = []
-    for group in ("mark", "font", "radius", "space", "size", "motion", "icon"):
+    for group in ("mark", "status", "font", "radius", "space", "size", "motion", "icon"):
         common += flatten(t[group], f"--sx-{group}")
     light = flatten(t["theme"]["light"], "--sx")
     dark = flatten(t["theme"]["dark"], "--sx")
