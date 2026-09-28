@@ -10,7 +10,7 @@ Outputs (under logo/):
   construction/pixel-grids.txt   the snapped grids, for review in a diff
 
 Run from the repository root:
-  pip install pillow numpy fonttools brotli uharfbuzz resvg-py
+  pip install -r logo/construction/requirements.txt   (Python 3.14)
   python3 logo/construction/mark.py
 """
 
