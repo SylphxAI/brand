@@ -1,329 +1,72 @@
-# Sylphx Brand Guidelines
-
-**Official brand guidelines for Sylphx Limited**
-
----
-
-## 🏢 Company Name
-
-### Official Name
-**Full:** Sylphx Limited
-**Short:** Sylphx
-**Code/GitHub:** SylphxAI
-
-### Usage
-✅ **Correct:**
-- "Sylphx Limited" - Legal documents
-- "Sylphx" - Marketing, website, general use
-- "@SylphxAI" - GitHub organization, social media handles
-
-❌ **Incorrect:**
-- SylphX, Sylph X, SylphxAI (except for GitHub org)
-- sylphx, SYLPHX (except in code: @sylphx npm scope)
-
----
-
-## 🎨 Logo Usage
-
-### Logo Formats
-- **Primary:** SVG (scalable, preferred)
-- **Fallback:** PNG with transparent background
-- **Minimum size:** 120px width for digital, 1 inch for print
-
-### Clear Space
-Maintain clear space around the logo equal to the height of the "S" in Sylphx.
-
-```
-┌─────────────────────────┐
-│         SPACE           │
-│   ┌─────────────┐       │
-│   │   Sylphx    │  SPACE│
-│   └─────────────┘       │
-│         SPACE           │
-└─────────────────────────┘
-```
-
-### Logo Variations
-1. **Full Color** - Use on white/light backgrounds
-2. **Monochrome** - Use when color isn't available
-3. **White** - Use on dark backgrounds
-
-### Don'ts ❌
-- Don't stretch or distort the logo
-- Don't rotate the logo
-- Don't add effects (shadows, gradients)
-- Don't place on busy backgrounds
-- Don't use unapproved colors
-
----
-
-## 🎯 Tagline
-
-### Primary Tagline
-> "Empowering developers to build the future with AI"
-
-### Alternative Taglines
-- "Building AI Agent Infrastructure"
-- "Democratizing AI capabilities through open-source infrastructure"
-
-### Usage
-- Use in website hero sections
-- Include in major announcements
-- Use in conference materials
-
----
-
-## ✍️ Typography
-
-### Primary Font: Inter
-**Usage:** UI, website, documentation
-
-```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-```
-
-### Monospace Font: JetBrains Mono
-**Usage:** Code, technical documentation
-
-```css
-font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-```
-
-### Font Weights
-- **Regular (400)** - Body text
-- **Medium (500)** - Subheadings
-- **Semibold (600)** - Emphasis
-- **Bold (700)** - Headings
-
----
-
-## 🎨 Colors
-
-See [colors.md](colors.md) for complete color palette.
-
-### Quick Reference
-- **Brand Blue:** `#4A90E2`
-- **Brand Dark:** `#1A1A2E`
-- **Success:** `#27AE60`
-- **Error:** `#E74C3C`
-
----
-
-## 🏷️ Badges
-
-### Style
-Use **flat-square** style for consistency:
-
-```markdown
-![npm version](https://img.shields.io/npm/v/@sylphx/package?style=flat-square)
-```
-
-### Standard Badges
-- npm version
-- License (MIT)
-- CI Status
-- Coverage
-- Downloads
-
----
-
-## 📱 Social Media
-
-### Profile Images
-- Use primary logo on white background
-- Minimum 400x400px
-- Square format (1:1 aspect ratio)
-
-### Cover Images
-- Use brand colors (#4A90E2 background)
-- Include tagline
-- 1500x500px (Twitter), 1200x628px (Facebook)
-
-### Handles
-- **GitHub:** @SylphxAI
-- **Twitter/X:** @SylphxAI
-- **npm:** @sylphx (scope)
-- **Medium:** @shtse8
-
----
-
-## 📧 Email Signatures
-
-### Standard Format
-```
-[Name]
-[Title]
-Sylphx Limited
-
-📧 hi@sylphx.com
-🌐 sylphx.com
-🐙 github.com/SylphxAI
-```
-
----
-
-## 📄 Documentation
-
-### README Structure
-Follow template at [templates/README-template.md](../templates/README-template.md)
-
-### Footer Format
-```markdown
----
-
-<p align="center">
-  <strong>Empowering developers to build the future with AI</strong>
-  <br>
-  <sub>© 2025 Sylphx Limited</sub>
-  <br><br>
-  <a href="https://sylphx.com">sylphx.com</a> •
-  <a href="https://x.com/SylphxAI">@SylphxAI</a> •
-  <a href="mailto:hi@sylphx.com">hi@sylphx.com</a>
-</p>
-```
-
----
-
-## 📦 Package Naming
-
-### npm Packages
-```
-@sylphx/<package-name>
-```
-**Examples:** @sylphx/pdf-reader-mcp, @sylphx/craft
-
-### Docker Images
-```
-sylphx/<image-name>
-```
-**Examples:** sylphx/filesystem-mcp
-
-### GitHub Repositories
-```
-github.com/SylphxAI/<repo-name>
-```
-
----
-
-## 🎤 Voice & Tone
-
-### Brand Voice
-- **Professional** but approachable
-- **Technical** but accessible
-- **Confident** but not arrogant
-- **Helpful** and supportive
-
-### Writing Style
-✅ **Do:**
-- Use active voice
-- Be concise and clear
-- Use technical terms appropriately
-- Focus on benefits, not just features
-- Include specific metrics and data
-
-❌ **Don't:**
-- Use jargon unnecessarily
-- Make unsubstantiated claims
-- Be overly formal or stuffy
-- Use marketing buzzwords excessively
-
-### Example Comparisons
-
-**❌ Bad:**
-> "Our revolutionary, cutting-edge, enterprise-grade solution leverages bleeding-edge AI to synergize your workflow paradigm."
-
-**✅ Good:**
-> "PDF Reader MCP processes 50-page PDFs in seconds with 5-10x faster performance than sequential processing."
-
----
-
-## 📊 Data & Metrics
-
-### Formatting
-- Use specific numbers: "94% test coverage" not "high coverage"
-- Include comparisons: "5-10x faster" not just "fast"
-- Show evidence: Link to benchmarks, tests, examples
-
-### Achievement Format
-```markdown
-- 🤖 **300+ GitHub stars** on flagship projects
-- 📦 **8,000+ npm downloads** across packages
-- ✅ **94%+ test coverage** on production systems
-```
-
----
-
-## 🌟 Values & Mission
-
-### Core Values
-```
-🎯 Production-Ready Quality → Ship code you're proud of
-🌍 Open Source First → Community over competition
-⚡ Performance Matters → Every millisecond counts
-🔐 Security by Design → Trust through transparency
-💡 Developer Experience → Tools that developers love
-🤝 Knowledge Sharing → Learn together, grow together
-```
-
-### Mission Statement
-> "Democratizing AI capabilities through open-source infrastructure."
-
----
-
-## ⚖️ Legal
-
-### Copyright Notice
-```
-© 2025 Sylphx Limited. All rights reserved.
-```
-
-### License
-All open-source projects use **MIT License**.
-
-### Trademark
-"Sylphx" is a trademark of Sylphx Limited.
-
----
-
-## 📞 Contact Information
-
-### Primary Contact
-- **Email:** hi@sylphx.com
-- **Website:** https://sylphx.com
-- **GitHub:** https://github.com/SylphxAI
-
-### Location
-London, United Kingdom 🇬🇧
-
----
-
-## 📚 Resources
-
-### Templates
-- [README Template](../templates/README-template.md)
-- [Package.json Template](../templates/package-template.json)
-- [License Template](../templates/LICENSE-MIT)
-
-### Brand Assets
-- Logo files: `brand/logos/` (to be added)
-- Color palette: [colors.md](colors.md)
-
----
-
-## 🔄 Updates
-
-This guide is a living document. Suggestions for improvements are welcome.
-
-**Last Updated:** January 2025
-
----
-
-<p align="center">
-  <strong>Consistent branding builds trust</strong>
-  <br>
-  <sub>© 2025 Sylphx Limited</sub>
-  <br><br>
-  <a href="https://sylphx.com">sylphx.com</a> •
-  <a href="https://x.com/SylphxAI">@SylphxAI</a> •
-  <a href="mailto:hi@sylphx.com">hi@sylphx.com</a>
-</p>
+# Using the Sylphx brand
+
+The usage sheet shows the rules at a glance: [logo/sheet/usage.png](../logo/sheet/usage.png).
+Values below come from [tokens/brand.tokens.json](../tokens/brand.tokens.json);
+if this page and the tokens disagree, the tokens win and this page is fixed.
+
+## Logo
+
+- Use the files in `logo/`, never a redrawn, traced or retyped logo.
+- **Lockup** (mark + wordmark) wherever there is room; the **mark alone** only
+  where the name is already visible or space is square (favicon, app icon,
+  avatar, the console's top-left corner).
+- **Colour** version on paper and light surfaces: cobalt under-current, ink
+  over-current and wordmark. **Colour-on-dark** on ink and dark surfaces.
+  **Black** or **white** only where one colour is all the medium allows.
+- **Clear space:** a quarter of the mark's height on every side.
+- **Minimum size:** mark 16 px (use the pixel-snapped favicons below 48 px);
+  lockup 88 px wide.
+- Don't recolour, rotate, outline, add effects, change the weave order,
+  stretch, re-space the lockup, or set the wordmark in another typeface.
+
+## Colour
+
+Light is the default theme; dark is a full equal, chosen by the system
+setting or the person. Use semantic tokens (`--sx-background`, `--sx-text`,
+`--sx-accent`, …), never raw values.
+
+| Role | Light | Dark |
+| --- | --- | --- |
+| Background (paper / ink) | `#F4F1EA` | `#121110` |
+| Surface | `#FFFDF8` | `#191816` |
+| Text | `#15130F` | `#F2EEE6` |
+| Secondary text | `#55504A` | `#ABA59A` |
+| Accent (cobalt) | `#2448F5` | `#6B86FF` |
+
+- **Cobalt is the one accent.** It marks the primary action, the current
+  place, links and focus. Never decoration, never a background wash larger
+  than a badge.
+- **Status colours are for status only:** success, warning, danger, info.
+- **Contrast:** every text token meets 4.5:1 and every control border 3:1 on
+  every surface, in both themes (WCAG 2.2 AA). A new token meets the same bar.
+- No gradients, glows or glass on any surface. Depth comes from a 1 px
+  border and surface steps.
+
+## Type
+
+- **IBM Plex Sans** for all text, interface and display (400, 500, 600).
+  Display sizes use −0.03em tracking.
+- **IBM Plex Mono** for code, resource names, ids, labels (upper case, +0.06em)
+  and every number that is compared; tabular figures.
+- Both are OFL; self-host them, never load them from a third party.
+- Chinese and Japanese fall back to the platform's system CJK face at the
+  same weights; never a web font for CJK.
+
+## Icons
+
+24 px grid, 1.75 px stroke, butt caps, miter joins, no fills; the icon takes
+the text colour of its context, and the accent only when it marks the current
+place. One icon per concept across site, docs and console.
+
+## Motion
+
+- 150 ms, linear-out (`cubic-bezier(0, 0, 0.2, 1)`) for every state change.
+- Motion shows what changed; nothing moves for decoration. Numbers roll on
+  change; focus rings snap.
+- Under `prefers-reduced-motion`, durations are zero.
+
+## Layout
+
+- 4 px spacing grid; 32 px controls, 36 px table rows, 44 px touch targets.
+- Radius 2–4 px. Structure is visible: hairline rules, mono section labels,
+  aligned columns.

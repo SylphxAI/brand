@@ -23,6 +23,7 @@ concurrency:
 jobs:
   assets:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       # owner#750 (zero metered GitHub spend): a public repository may use
@@ -36,3 +37,7 @@ jobs:
           fi
       - name: Validate JSON files
         run: python3 scripts/validate_json.py
+      - name: Tokens CSS matches its source
+        run: python3 scripts/build_tokens.py --check
+      - name: Shipped files match the manifest
+        run: python3 scripts/manifest.py --check

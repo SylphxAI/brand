@@ -1,15 +1,11 @@
-# Where Sylphx brand assets ship
+# Where the brand appears
 
-| Surface | Asset / note |
-|---------|----------------|
-| sylphx.com | Product UI + marketing |
-| sylphx.ai | Sylphx Models product site (adopted 2026-09-21); hosting is a platform-owned site delivered through Cloud's site/edge pattern |
-| sylphx.bot | Sylphx Bot product site (adopted 2026-09-21); same hosting pattern; the zone is purchased but the site is not built |
-| GitHub org profile | `SylphxAI/.github` `profile/README.md` — story sourced from this repo's copy kit |
-| GitHub org avatar | `logo/current/icon-github.jpg` |
-| npm / README badges | flat-square; brand blue where applicable |
-| Portfolio | `logo/current/icon.png` |
-| Discord | Community presence |
-| status.sylphx.com | Ops |
+Each surface consumes this repository's files or tokens; none keeps a copy.
 
-Update this repo when official icons change, then roll to portfolio + org avatar.
+| Surface | Uses | How it stays current |
+| --- | --- | --- |
+| sylphx.com (site, docs, console, sign-in) | `tokens/brand.css`, `logo/svg/*`, `logo/favicon/*` | The platform repository (`SylphxAI/cloud`, `web/`) pulls them at a pinned commit with hashes checked against `logo/MANIFEST.sha256` |
+| GitHub organization avatar | `logo/app-icon/sylphx-app-icon-1024.png` | Uploaded by the owner when the mark changes |
+| `SylphxAI/.github` profile README | `logo/svg/sylphx-lockup-colour.svg`, copy from `docs/voice.md` | Linked from this repository, not copied |
+| npm and README badges | the lockup and the accent `#2448F5` | Through [Mark](https://mark.sylphx.com) (owner documentation standard) |
+| status.sylphx.com | lockup, favicon, tokens | Pulled like sylphx.com |

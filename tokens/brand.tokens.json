@@ -1,76 +1,327 @@
 {
-  "name": "Sylphx",
-  "colors": {
-    "mark_orange": {
-      "hex": "#D87000",
-      "rgb": [
-        216,
-        112,
-        0
-      ],
-      "role": "icon mark"
+  "$description": "Sylphx design tokens (direction Engineered, chosen 2026-09-28; directions/README.md). The one source for colour, type, radius, spacing and motion on every Sylphx surface. scripts/build_tokens.py generates tokens/brand.css; surfaces consume the CSS or this JSON and never copy a value by hand.",
+  "mark": {
+    "accent": {
+      "$type": "color",
+      "$value": "#2448F5"
     },
-    "icon_field": {
-      "hex": "#1A1414",
-      "rgb": [
-        26,
-        20,
-        20
-      ],
-      "role": "icon background"
+    "accent-on-dark": {
+      "$type": "color",
+      "$value": "#6B86FF"
     },
-    "brand_blue": {
-      "hex": "#4A90E2",
-      "rgb": [
-        74,
-        144,
-        226
-      ],
-      "role": "UI primary (guidelines)"
+    "ink": {
+      "$type": "color",
+      "$value": "#15130F"
     },
-    "brand_dark": {
-      "hex": "#1A1A2E",
-      "rgb": [
-        26,
-        26,
-        46
-      ],
-      "role": "UI dark (guidelines)"
+    "paper": {
+      "$type": "color",
+      "$value": "#F2EEE6"
     },
-    "text_primary": {
-      "hex": "#2C3E50",
-      "rgb": [
-        44,
-        62,
-        80
-      ],
-      "role": "body text"
-    },
-    "success": {
-      "hex": "#27AE60",
-      "rgb": [
-        39,
-        174,
-        96
-      ],
-      "role": "success"
-    },
-    "error": {
-      "hex": "#E74C3C",
-      "rgb": [
-        231,
-        76,
-        60
-      ],
-      "role": "error"
+    "field": {
+      "$type": "color",
+      "$value": "#15130F"
     }
   },
-  "logo": {
-    "master_px": 512,
-    "core_radius_ratio": 0.088,
-    "ring_outer_radius_ratio": 0.275,
-    "ring_stroke_ratio": 0.047,
-    "clear_space_ratio": 0.1,
-    "min_size_css_px": 24
+  "theme": {
+    "light": {
+      "background": {
+        "$type": "color",
+        "$value": "#F4F1EA"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "#FFFDF8"
+      },
+      "surface-sunken": {
+        "$type": "color",
+        "$value": "#ECE8DE"
+      },
+      "surface-raised": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "#D9D3C5"
+      },
+      "border-strong": {
+        "$type": "color",
+        "$value": "#BFB8A8"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "#15130F"
+      },
+      "text-secondary": {
+        "$type": "color",
+        "$value": "#55504A"
+      },
+      "text-tertiary": {
+        "$type": "color",
+        "$value": "#6D685F"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#2448F5"
+      },
+      "accent-text": {
+        "$type": "color",
+        "$value": "#1E3BD0"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "accent-soft": {
+        "$type": "color",
+        "$value": "rgba(36,72,245,0.08)"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#15803D"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#A16207"
+      },
+      "danger": {
+        "$type": "color",
+        "$value": "#B91C1C"
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#2448F5"
+      },
+      "code-background": {
+        "$type": "color",
+        "$value": "#15130F"
+      },
+      "border-control": {
+        "$type": "color",
+        "$value": "#8F8469",
+        "$description": "Boundaries of inputs, checkboxes and other controls: at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
+      }
+    },
+    "dark": {
+      "background": {
+        "$type": "color",
+        "$value": "#121110"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "#191816"
+      },
+      "surface-sunken": {
+        "$type": "color",
+        "$value": "#201F1C"
+      },
+      "surface-raised": {
+        "$type": "color",
+        "$value": "#26241F"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "#302E29"
+      },
+      "border-strong": {
+        "$type": "color",
+        "$value": "#44413A"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "#F2EEE6"
+      },
+      "text-secondary": {
+        "$type": "color",
+        "$value": "#ABA59A"
+      },
+      "text-tertiary": {
+        "$type": "color",
+        "$value": "#8C857B"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#6B86FF"
+      },
+      "accent-text": {
+        "$type": "color",
+        "$value": "#93A7FF"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "#0B0E24"
+      },
+      "accent-soft": {
+        "$type": "color",
+        "$value": "rgba(107,134,255,0.13)"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#4ADE80"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#FACC15"
+      },
+      "danger": {
+        "$type": "color",
+        "$value": "#F87171"
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#6B86FF"
+      },
+      "code-background": {
+        "$type": "color",
+        "$value": "#0E0D0B"
+      },
+      "border-control": {
+        "$type": "color",
+        "$value": "#6E695E",
+        "$description": "Boundaries of inputs, checkboxes and other controls: at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
+      }
+    }
+  },
+  "font": {
+    "sans": {
+      "$type": "fontFamily",
+      "$value": [
+        "IBM Plex Sans",
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif"
+      ],
+      "$description": "Text, interface and display. Self-host IBM Plex Sans (OFL), weights 400, 500, 600."
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": [
+        "IBM Plex Mono",
+        "ui-monospace",
+        "SF Mono",
+        "monospace"
+      ],
+      "$description": "Code, resource names, ids, labels and every number that is compared."
+    },
+    "display-tracking": {
+      "$type": "dimension",
+      "$value": "-0.03em"
+    },
+    "label-tracking": {
+      "$type": "dimension",
+      "$value": "0.06em",
+      "$description": "Uppercase mono labels."
+    }
+  },
+  "radius": {
+    "sm": {
+      "$type": "dimension",
+      "$value": "2px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "3px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px"
+    }
+  },
+  "space": {
+    "$description": "4 px grid.",
+    "1": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": "20px"
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": "40px"
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "64px"
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "80px"
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "96px"
+    }
+  },
+  "size": {
+    "control": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "control-lg": {
+      "$type": "dimension",
+      "$value": "40px"
+    },
+    "row": {
+      "$type": "dimension",
+      "$value": "36px"
+    },
+    "touch": {
+      "$type": "dimension",
+      "$value": "44px"
+    }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "$value": "150ms",
+      "$description": "Every state change. Nothing decorative moves; prefers-reduced-motion sets it to 0."
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "$value": [
+        0,
+        0,
+        0.2,
+        1
+      ],
+      "$description": "Linear-out: changes step like instruments, never bounce."
+    }
+  },
+  "icon": {
+    "stroke": {
+      "$type": "dimension",
+      "$value": "1.75px",
+      "$description": "24 px grid, butt caps, miter joins, no fills."
+    }
   }
 }
