@@ -12,5 +12,6 @@ CJK web font is shipped.
 
 [fonts.css](fonts.css) is the loader: the `@font-face` rules that bind these
 files to the family names `tokens/brand.css` uses. A surface copies it as-is
-and serves the files from its root at `/fonts/`, which is what its `src` URLs
-assume.
+and keeps the files in the same directory beside it: its `src` URLs are
+relative to the stylesheet, so the pair works at any path, including under a
+subpath, with no rewrite.
