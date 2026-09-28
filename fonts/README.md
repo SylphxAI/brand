@@ -9,3 +9,8 @@ and `@fontsource/ibm-plex-mono` packages (IBM Plex 3.x); hashes are in
 
 Chinese and Japanese text uses the system CJK face at the same weights; no
 CJK web font is shipped.
+
+[fonts.css](fonts.css) is the loader: the `@font-face` rules that bind these
+files to the family names `tokens/brand.css` uses. A surface copies it as-is
+and serves the files from its root at `/fonts/`, which is what its `src` URLs
+assume.
