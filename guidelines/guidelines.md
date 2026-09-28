@@ -49,8 +49,9 @@ setting or the person. Use semantic tokens (`--sx-background`, `--sx-text`,
 - **IBM Plex Mono** for code, resource names, ids, labels (upper case, +0.06em)
   and every number that is compared; tabular figures.
 - Both are OFL; self-host them, never load them from a third party. Copy
-  [fonts/fonts.css](../fonts/fonts.css) and serve the files from `/fonts/`;
-  it is the only place the family names meet the files.
+  [fonts/fonts.css](../fonts/fonts.css) with the files beside it (its URLs are
+  relative, so any path works); it is the only place the family names meet
+  the files.
 - Chinese and Japanese fall back to the platform's system CJK face at the
   same weights; never a web font for CJK.
 
