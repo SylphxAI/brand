@@ -37,6 +37,9 @@ setting or the person. Use semantic tokens (`--sx-background`, `--sx-text`,
   place, links and focus. Never decoration, never a background wash larger
   than a badge.
 - **Status colours are for status only:** success, warning, danger, info.
+- **On ink** — the code ground (`--sx-code-background`, dark in both themes) —
+  status text uses `--sx-status-*-on-dark`: at least 4.5:1 on both inks, where
+  the themed status tokens fail. Theme-independent, like `--sx-mark-accent-on-dark`.
 - **Contrast:** every text token meets 4.5:1 and every control border 3:1 on
   every surface, in both themes (WCAG 2.2 AA). A new token meets the same bar.
 - No gradients, glows or glass on any surface. Depth comes from a 1 px

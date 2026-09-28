@@ -22,6 +22,25 @@
       "$value": "#15130F"
     }
   },
+  "status": {
+    "$description": "Status colours for the ink ground (theme `code-background`, dark in both themes): at least 4.5:1 against #15130F and #0E0D0B. Theme-independent, like `mark.accent-on-dark`; the light theme's status tokens fail there.",
+    "success-on-dark": {
+      "$type": "color",
+      "$value": "#4ADE80"
+    },
+    "warning-on-dark": {
+      "$type": "color",
+      "$value": "#FACC15"
+    },
+    "danger-on-dark": {
+      "$type": "color",
+      "$value": "#F87171"
+    },
+    "info-on-dark": {
+      "$type": "color",
+      "$value": "#6B86FF"
+    }
+  },
   "theme": {
     "light": {
       "background": {
