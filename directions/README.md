@@ -8,6 +8,11 @@ asked the design lead to choose on the evidence, without a review
 checkpoint. **Chosen: Engineered.** The Sylphx brand is now built from it
 ([`../logo/README.md`](../logo/README.md), [`../tokens/`](../tokens/)).
 
+**The figures on the boards are illustrative layout text, not claims.** On a
+real page every number and claim is true and sourced: product counts and
+status badges from the product registry, prices from the live price catalog,
+speed figures only when measured (owner standard, sourced numbers).
+
 Everything here is rebuilt by `python3 directions/build.py` (headless
 Chromium plus Pillow). The boards are in `out/`:
 
