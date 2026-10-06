@@ -16,6 +16,8 @@ surface uses it.
 - **Han v3 trial** ([han-v3/](han-v3/)): the same 24 characters as stroke
   skeletons drawn by our own parametric brushes, stored as components plus
   strokes. That directory is under the Arphic Public License; see its README.
+- **Han v4 trial** ([han-v4/](han-v4/)): the v3 skeletons simplified by rule
+  into one near-monoline UI brush. Also under the Arphic Public License.
 
 Latin metrics: 1000 units per em, x-height 520, cap height 700, ascender
 740, descender -200, one stroke width of 104, overshoot 12 on round letters.

@@ -1,6 +1,6 @@
 """Render the specimen PNGs with headless Chromium (real shaping and kerning).
 
-    python specimens.py <chromium> <inter.ttf> <fredoka.ttf> [<noto-tc-instance.ttf>] [<han-v3 dir>]
+    python specimens.py <chromium> <inter.ttf> <fredoka.ttf> [<noto-tc-instance.ttf>] [<han-v3 dir>] [<han-v4 dir> [<out.png> [<title>]]]
 
 Inter and Fredoka (SIL OFL) are only loaded from local paths for the
 comparison image; they are not shipped or copied. The optional fourth font is
@@ -154,8 +154,28 @@ def han_v3(chromium, inter, fredoka, v3):
     shot(chromium, page(body, inter, fredoka, 2000), "07-han-v3-closeup.png", 2000, 1000)
 
 
+def han_v4(chromium, inter, fredoka, d, out="08-han-v4.png", title=None):
+    """Before (v3 pebble), after (v4 UI), and Noto Sans TC 500, at 64 px and in UI lines."""
+    d = Path(d)
+    fonts = "".join(f'@font-face {{ font-family: {fam}; src: url("{(d / f).as_uri()}"); }}' for fam, f in
+                    (("V3", "v3-pebble.woff2"), ("V4", "v4.woff2"), ("RefV4", "noto-ref-500.ttf")))
+    words = "開始遊戲 · 勝利 · 失敗 · 分數 12,480 · 等級 7 · 金幣 4,096 · 麻將 · 大老二 · 你好香港"
+    faces = [("Before: v3 pebble", "V3", INK), ("After: v4 UI", "V4", INK), ("Noto Sans TC 500", "RefV4", MUTED)]
+    rows = "".join(
+        f'<div class="cmp" style="grid-template-columns:200px 1fr"><p class="label" style="margin:0">{label}</p>'
+        f'<div><div style="font-family:{fam};font-size:64px;line-height:1.15;color:{col}">{HAN}</div>'
+        f'<div style="font-family:Pip,{fam};font-size:28px;margin-top:10px;color:{col}">{words}</div>'
+        f'<div style="font-family:Pip,{fam};font-size:16px;margin-top:6px;color:{col}">{words}</div></div></div>'
+        for label, fam, col in faces)
+    title = title or "Han v4: calligraphic skeletons simplified by rule, one near-monoline UI brush, beside Noto Sans TC"
+    body = f"<style>{fonts}</style><p class=\"label\">{title}</p>{rows}"
+    shot(chromium, page(body, inter, fredoka, 2000), out, 2000, 900)
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 5:
+    if len(sys.argv) > 6:
+        han_v4(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[6], *sys.argv[7:9])
+    elif len(sys.argv) > 5:
         han_v3(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[5])
     else:
         main(*sys.argv[1:5])
