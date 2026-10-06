@@ -13,6 +13,10 @@ surface uses it.
   structure comes unchanged from Noto Sans TC (the Source Han Sans design,
   Taiwan forms, SIL OFL 1.1); only the outlines are restyled, by rule.
 
+- **Han v3 trial** ([han-v3/](han-v3/)): the same 24 characters as stroke
+  skeletons drawn by our own parametric brushes, stored as components plus
+  strokes. That directory is under the Arphic Public License; see its README.
+
 Latin metrics: 1000 units per em, x-height 520, cap height 700, ascender
 740, descender -200, one stroke width of 104, overshoot 12 on round letters.
 

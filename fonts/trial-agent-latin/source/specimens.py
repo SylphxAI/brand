@@ -1,6 +1,6 @@
 """Render the specimen PNGs with headless Chromium (real shaping and kerning).
 
-    python specimens.py <chromium> <inter.ttf> <fredoka.ttf> [<noto-tc-instance.ttf>]
+    python specimens.py <chromium> <inter.ttf> <fredoka.ttf> [<noto-tc-instance.ttf>] [<han-v3 dir>]
 
 Inter and Fredoka (SIL OFL) are only loaded from local paths for the
 comparison image; they are not shipped or copied. The optional fourth font is
@@ -126,5 +126,36 @@ def main(chromium, inter, fredoka, ref_tc=None):
     shot(chromium, page(body, inter, fredoka, 2000), "05-han-trial.png", 2000, 1140)
 
 
+def han_v3(chromium, inter, fredoka, v3):
+    """Brush variants rendered from the decoded stroke data, beside Noto Sans TC."""
+    v3 = Path(v3)
+    faces = [("Noto Sans TC 500 (reference)", "RefV3", MUTED)] + [
+        (f"Brush: {n}", f"B{n}", INK) for n in ("pebble", "pop", "block")]
+    fonts = "".join(
+        f'@font-face {{ font-family: B{n}; src: url("{(v3 / f"brush-{n}.woff2").as_uri()}"); }}'
+        for n in ("pebble", "pop", "block"))
+    fonts += f'@font-face {{ font-family: RefV3; src: url("{(v3 / "noto-ref-500.ttf").as_uri()}"); }}'
+    words = "開始遊戲 · 勝利 · 失敗 · 分數 12,480 · 等級 7 · 金幣 4,096 · 麻將 · 大老二 · 你好香港"
+    rows = "".join(
+        f'<div class="cmp" style="grid-template-columns:230px 1fr"><p class="label" style="margin:0">{label}</p>'
+        f'<div><div style="font-family:{fam};font-size:66px;line-height:1.15;color:{col};letter-spacing:.02em">{HAN}</div>'
+        f'<div style="font-family:Pip,{fam};font-size:26px;margin-top:10px;color:{col}">{words}</div>'
+        f'<div style="font-family:Pip,{fam};font-size:15px;margin-top:6px;color:{col}">{words}</div></div></div>'
+        for label, fam, col in faces)
+    body = f"""<style>{fonts}</style>
+<p class="label">Han v3: standard stroke skeletons re-drawn by three parametric brushes, rendered from the compact stroke file (decoded), beside Noto Sans TC</p>{rows}"""
+    shot(chromium, page(body, inter, fredoka, 2000), "06-han-v3-brushes.png", 2000, 1180)
+    big = "永大港數將你戲"
+    rows = "".join(
+        f'<div class="cmp" style="grid-template-columns:230px 1fr"><p class="label" style="margin:0">{label}</p>'
+        f'<div style="font-family:{fam};font-size:170px;line-height:1.1;color:{col};letter-spacing:.06em">{big}</div></div>'
+        for label, fam, col in faces)
+    body = f"""<style>{fonts}</style><p class="label">Han v3 close-up: stroke ends, contrast and hooks per brush</p>{rows}"""
+    shot(chromium, page(body, inter, fredoka, 2000), "07-han-v3-closeup.png", 2000, 1000)
+
+
 if __name__ == "__main__":
-    main(*sys.argv[1:5])
+    if len(sys.argv) > 5:
+        han_v3(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[5])
+    else:
+        main(*sys.argv[1:5])
