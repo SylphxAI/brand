@@ -1,4 +1,8 @@
-Copyright 2026 Sylphx Limited
+Pip Trial: Copyright 2026 Sylphx Limited.
+
+Pip Trial TC: Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+Copyright 2026 Sylphx Limited. Derived from Noto Sans TC (the Source Han Sans design) by
+changing its outlines; it does not use the Reserved Font Name.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 

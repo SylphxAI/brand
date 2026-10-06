@@ -1,6 +1,6 @@
-"""Build Pip Trial (Latin) and Pip Trial TC (24 Han trial glyphs).
+"""Build Pip Trial (Latin). Pip Trial TC is made by derive_tc.py.
 
-    python build.py            # writes ../PipTrial-Regular.{ttf,woff2} and ../PipTrialTC-Regular.{ttf,woff2}
+    python build.py            # writes ../PipTrial-Regular.{ttf,woff2}
 
 Requires fonttools[woff], skia-python and skia-pathops (requirements.txt).
 """
@@ -142,42 +142,6 @@ def build_latin():
     return font
 
 
-def build_cjk():
-    import han
-    import hanrules
-
-    glyphs, metrics, cmap = {}, {}, {}
-    nd = notdef(1000, 880, han.STEM)
-    glyphs[".notdef"] = tt_glyph(nd)
-    metrics[".notdef"] = (1000, 0)
-    from skeleton import Sk
-    glyphs["space"] = tt_glyph(outline(Sk(), han.STEM))
-    metrics["space"] = (500, 0)
-    cmap[32] = "space"
-    cmap[0xA0] = "space"
-    for ch, fn in han.G.items():
-        name = f"uni{ord(ch):04X}"
-        p = hanrules.finish(fn())
-        glyphs[name] = tt_glyph(p)
-        metrics[name] = (1000, 0)
-        cmap[ord(ch)] = name
-    fb = FontBuilder(1000, isTTF=True)
-    font = finish(fb, "Pip Trial TC", (880, -120), cmap, glyphs, metrics, xh=520, cap=700)
-    glyf = font["glyf"]
-    for n in font.getGlyphOrder():
-        g = glyf[n]
-        g.recalcBounds(glyf)
-        adv, _ = font["hmtx"][n]
-        font["hmtx"][n] = (adv, g.xMin if g.numberOfContours else 0)
-    os2 = font["OS/2"]
-    os2.ulUnicodeRange2 |= 1 << (59 - 32)  # CJK Unified Ideographs
-    os2.ulCodePageRange1 = 1 | (1 << 20)  # Latin 1, Chinese Traditional
-    os2.panose.bFamilyType = 2  # text and display
-    os2.panose.bProportion = 9  # every Han glyph is one em wide
-    font["post"].isFixedPitch = 1
-    return font
-
-
 def save(font, stem):
     ttf = OUT / f"{stem}.ttf"
     font.save(ttf)
@@ -189,8 +153,4 @@ def save(font, stem):
 
 if __name__ == "__main__":
     sys.path.insert(0, str(HERE))
-    which = sys.argv[1:] or ["latin", "cjk"]
-    if "latin" in which:
-        save(build_latin(), "PipTrial-Regular")
-    if "cjk" in which:
-        save(build_cjk(), "PipTrialTC-Regular")
+    save(build_latin(), "PipTrial-Regular")

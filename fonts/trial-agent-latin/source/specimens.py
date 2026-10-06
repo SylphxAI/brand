@@ -1,10 +1,11 @@
 """Render the specimen PNGs with headless Chromium (real shaping and kerning).
 
-    python specimens.py <chromium> <inter.ttf> <fredoka.ttf>
+    python specimens.py <chromium> <inter.ttf> <fredoka.ttf> [<noto-tc-instance.ttf>]
 
 Inter and Fredoka (SIL OFL) are only loaded from local paths for the
-comparison image; they are not shipped or copied. Noto Sans CJK TC comes from
-the system's font set.
+comparison image; they are not shipped or copied. The optional fourth font is
+the unmodified Noto Sans TC instance that derive_tc.py writes, for the Han
+comparison.
 """
 
 import subprocess
@@ -61,7 +62,7 @@ def esc(t):
     return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def main(chromium, inter, fredoka):
+def main(chromium, inter, fredoka, ref_tc=None):
     OUT.mkdir(exist_ok=True)
 
     # 1. alphabet
@@ -105,22 +106,25 @@ def main(chromium, inter, fredoka):
     body = f'<p class="label">Same text, same size: Pip Trial against Fredoka Medium and Inter Medium</p>{rows}'
     shot(chromium, page(body, inter, fredoka, 1500), "04-comparison.png", 1500, 820)
 
-    # 5. Han trial next to Noto Sans CJK TC
+    # 5. Han: derived from Noto Sans TC, beside the same weight unmodified
+    if not ref_tc:
+        return
     big = "".join(
-        f'<div class="cell" style="height:150px;flex-direction:column"><div style="font-family:PipTC;font-size:104px;line-height:1">{c}</div></div>'
-        f'<div class="cell" style="height:150px"><div style="font-family:\'Noto Sans CJK TC\';font-size:104px;line-height:1;color:{MUTED}">{c}</div></div>'
+        f'<div class="cell" style="height:150px"><div style="font-family:PipTC;font-size:104px;line-height:1">{c}</div></div>'
+        f'<div class="cell" style="height:150px"><div style="font-family:RefTC;font-size:104px;line-height:1;color:{MUTED}">{c}</div></div>'
         for c in HAN
     )
     words = ["開始遊戲", "勝利！", "失敗", "分數 12,480", "等級 7", "金幣 4,096", "麻將", "大老二", "你好，香港"]
     wl = " · ".join(words)
-    body = f"""<p class="label">24 Han trial glyphs: Pip Trial TC (black) beside Noto Sans CJK TC Regular (grey)</p>
+    body = f"""<style>@font-face {{ font-family: RefTC; src: url("{Path(ref_tc).resolve().as_uri()}"); }}</style>
+<p class="label">Pip Trial TC (black) beside Noto Sans TC at the same weight, unmodified (grey). Structure from Source Han Sans; rounding by rule</p>
 <div class="grid" style="grid-template-columns:repeat(12,1fr)">{big}</div>
 <div class="cmp" style="margin-top:28px"><p class="label" style="margin:0">Pip Trial TC<br>28 / 16 px</p>
 <div><div style="font-family:Pip,PipTC;font-size:28px">{wl}</div><div style="font-family:Pip,PipTC;font-size:16px;margin-top:8px">{wl}</div></div></div>
-<div class="cmp"><p class="label" style="margin:0">Noto Sans CJK TC<br>28 / 16 px</p>
-<div style="font-family:'Noto Sans CJK TC'"><div style="font-size:28px">{wl}</div><div style="font-size:16px;margin-top:8px">{wl}</div></div></div>"""
-    shot(chromium, page(body, inter, fredoka, 2000), "05-han-trial.png", 2000, 1120)
+<div class="cmp"><p class="label" style="margin:0">Noto Sans TC<br>same weight<br>28 / 16 px</p>
+<div style="font-family:Pip,RefTC"><div style="font-size:28px">{wl}</div><div style="font-size:16px;margin-top:8px">{wl}</div></div></div>"""
+    shot(chromium, page(body, inter, fredoka, 2000), "05-han-trial.png", 2000, 1140)
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])
