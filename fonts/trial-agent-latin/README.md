@@ -36,6 +36,16 @@ The specimens are rendered by headless Chromium, so shaping and kerning are
 the browser's. Inter and Fredoka are only loaded for the comparison image and
 are not shipped here.
 
+Han glyphs then go through [source/hanrules.py](source/hanrules.py): rules
+that read only stroke geometry, never the character, so they apply to any
+character added later. They set a common face size and centre of gravity,
+thin the strokes of dense characters (optical weight), make horizontals
+slightly thinner than verticals, taper left-falling strokes, swell
+right-falling ones, shape dots and hooks, and even out the white space
+between free parallel strokes. Side components (氵, 亻, 女 and others) take
+their width from one table. [source/compare.py](source/compare.py) renders a
+before/after sheet for each polish round ([specimens/polish/](specimens/polish/)).
+
 ## Specimens
 
 ![Glyph set](specimens/01-glyph-set.png)

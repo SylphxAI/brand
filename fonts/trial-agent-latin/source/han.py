@@ -138,10 +138,10 @@ def yue():
 
 
 def ren():
-    """亻"""
+    """亻: a short steep falling stroke, the upright starting from its middle."""
     s = Sk()
-    pie(s, 600, 60, 120, 540, 0.15)
-    V(s, 420, 350, 960)
+    s.M(640, 60).C(560, 230, 380, 400, 90, 560)
+    V(s, 430, 330, 960)
     return s
 
 
@@ -158,12 +158,24 @@ def si():
 
 
 def shui():
-    """氵"""
+    """氵: two short curved dots stepping left, then a rising tick."""
     s = Sk()
-    dot(s, 260, 110, 400, 230)
-    dot(s, 190, 380, 330, 500)
-    s.line(160, 900, 400, 590)
+    s.M(250, 110).C(380, 140, 480, 190, 560, 270)
+    s.M(150, 380).C(280, 410, 380, 460, 460, 540)
+    s.M(160, 900).C(260, 800, 400, 690, 560, 580)
     return s
+
+
+# Side-component widths: a left-hand component takes this share of the
+# 920-unit body. One table for every character, so a new character that uses
+# 氵 or 亻 gets the same proportion without hand placement.
+SIDE = {"shui": 0.28, "ren": 0.33, "nv": 0.44, "si": 0.42, "he": 0.58, "yue": 0.40, "bei": 0.50}
+
+
+def side(dst, name, y0, y1):
+    """Place a named left-hand component at its table width."""
+    comp = globals()[name]()
+    return put(dst, comp, 40, y0, 40 + 920 * SIDE[name], y1)
 
 
 # characters -------------------------------------------------------------------
@@ -208,7 +220,7 @@ def _():
 
 @char("始")
 def _():
-    s = put(Sk(), nv(), 50, 70, 470, 940)
+    s = side(Sk(), "nv", 70, 940)
     s.line(700, 90, 550, 410, 880, 380)
     dot(s, 770, 250, 880, 400)
     put(s, kou(), 520, 500, 900, 940)
@@ -262,7 +274,7 @@ def _():
 
 @char("勝")
 def _():
-    s = put(Sk(), yue(), 40, 70, 420, 950)
+    s = side(Sk(), "yue", 70, 950)
     dot(s, 560, 80, 610, 170)
     dot(s, 840, 80, 780, 170)
     H(s, 490, 910, 240)
@@ -276,7 +288,7 @@ def _():
 
 @char("利")
 def _():
-    s = put(Sk(), he(), 40, 60, 600, 960)
+    s = side(Sk(), "he", 60, 960)
     V(s, 700, 180, 700)
     VG(s, 880, 70, 940, 65)
     return s
@@ -295,7 +307,7 @@ def _():
 
 @char("敗")
 def _():
-    s = put(Sk(), bei(), 30, 70, 520, 950)
+    s = side(Sk(), "bei", 70, 950)
     put(s, pu(), 500, 60, 960, 960)
     return s
 
@@ -345,7 +357,7 @@ def _():
 
 @char("級")
 def _():
-    s = put(Sk(), si(), 30, 60, 440, 960)
+    s = side(Sk(), "si", 60, 960)
     s.M(620, 120).L(620, 420).C(610, 680, 560, 830, 460, 945)
     s.line(500, 120, 820, 120, 720, 400, 890, 400).C(830, 580, 740, 700, 640, 790)
     na(s, 630, 540, 950, 930)
@@ -450,7 +462,7 @@ def _():
 
 @char("你")
 def _():
-    s = put(Sk(), ren(), 40, 60, 400, 960)
+    s = side(Sk(), "ren", 60, 960)
     s.M(560, 70).C(540, 180, 500, 260, 430, 330)
     s.line(520, 240, 900, 240, 860, 320)
     VG(s, 690, 320, 930, 65)
@@ -461,7 +473,7 @@ def _():
 
 @char("好")
 def _():
-    s = put(Sk(), nv(), 50, 70, 480, 940)
+    s = side(Sk(), "nv", 70, 940)
     s.line(560, 140, 880, 140, 720, 360)
     VG(s, 720, 360, 920, 70)
     H(s, 490, 950, 540)
@@ -477,7 +489,7 @@ def _():
 
 @char("港")
 def _():
-    s = put(Sk(), shui(), 30, 60, 340, 960)
+    s = side(Sk(), "shui", 60, 960)
     H(s, 450, 900, 220)
     V(s, 560, 70, 460)
     V(s, 790, 70, 460)

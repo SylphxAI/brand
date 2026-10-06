@@ -144,6 +144,7 @@ def build_latin():
 
 def build_cjk():
     import han
+    import hanrules
 
     glyphs, metrics, cmap = {}, {}, {}
     nd = notdef(1000, 880, han.STEM)
@@ -156,7 +157,7 @@ def build_cjk():
     cmap[0xA0] = "space"
     for ch, fn in han.G.items():
         name = f"uni{ord(ch):04X}"
-        p = outline(han.to_font(fn()), han.STEM)
+        p = hanrules.finish(fn())
         glyphs[name] = tt_glyph(p)
         metrics[name] = (1000, 0)
         cmap[ord(ch)] = name
