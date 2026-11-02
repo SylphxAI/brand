@@ -1,0 +1,6 @@
+fonttools[woff]==4.66.1
+skia-python==144.0.post2
+skia-pathops==0.9.2
+numpy
+scipy
+potracer

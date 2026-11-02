@@ -1,0 +1,48 @@
+{
+ "skeleton_seconds_per_char": 0.023,
+ "quantisation_mean_error_units": 1.49,
+ "quantisation_max_error_units": 2.72,
+ "pips_brotli_without_sharing_24": 1972,
+ "shared_components_24": [
+  "女:L",
+  "攵:R"
+ ],
+ "brush_pebble_ms_per_char": 31,
+ "brush_pop_ms_per_char": 34,
+ "brush_block_ms_per_char": 31,
+ "bytes_24": {
+  "noto_tc_500_woff2": 5504,
+  "v2_rounded_woff2": 14704,
+  "pips_raw": 2274,
+  "pips_brotli": 1929
+ },
+ "large_set_chars": 6855,
+ "large_set_pips_brotli_without_sharing": 599390,
+ "large_set_pips_raw": 355666,
+ "large_set_pips_brotli": 260606,
+ "large_set_library_components": 1583,
+ "large_set_placements": 12189,
+ "large_set_top_components": [
+  "氵(L) x377",
+  "艹(T) x331",
+  "口(L) x272",
+  "扌(L) x272",
+  "木(L) x248",
+  "亻(L) x237",
+  "虫(L) x143",
+  "言(L) x140",
+  "忄(L) x133",
+  "釒(L) x125",
+  "糹(L) x124",
+  "⺮(T) x114",
+  "⺼(L) x109",
+  "辶(O) x107",
+  "女(L) x106",
+  "土(L) x98",
+  "疒(O) x93",
+  "足(L) x90",
+  "王(L) x83",
+  "石(L) x79"
+ ],
+ "large_set_noto_tc_500_woff2": 1072724
+}

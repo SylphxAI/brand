@@ -1,0 +1,16 @@
+{
+ "normalise_ms_per_char": 0.3,
+ "quantisation_mean_error_units": 1.53,
+ "brush_ms_per_char": 12,
+ "bytes_24": {
+  "noto_tc_500_woff2": 5504,
+  "v4_brushed_outlines_woff2": 12328,
+  "v4_pips_brotli": 1918,
+  "v3_pips_brotli": 1929
+ },
+ "large_set_chars": 6855,
+ "large_set_normalise_seconds": 2.7,
+ "large_set_v4_pips_brotli": 259813,
+ "large_set_v3_pips_brotli": 260606,
+ "large_set_noto_tc_500_woff2": 1073476
+}
