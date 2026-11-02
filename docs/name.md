@@ -15,9 +15,15 @@
 - **Chinese and Japanese:** the name stays in Latin letters in every locale,
   with no transliteration, and service names stay in English (Sylphx Data in
   a Traditional Chinese page, not a translated service word).
-- **Apps are not Sylphx.** Products we build on the platform carry their own brands and never the Sylphx name or
-  mark, on any surface. The platform never presents an app as a service.
+- **Our own products carry their own brands, endorsed “by Sylphx”.** Products
+  built on our engine and services normally use their own domains; Mark keeps
+  `mark.sylphx.com`. Entertainment, practice and children's products show
+  Sylphx as publisher only: in the site footer, store developer field, privacy
+  policy and publisher page. Sign-in pages, email senders, passkey names and
+  consent screens follow the product's name and never show a “by Sylphx” mark.
+  The platform never presents an app as a service.
 
 Naming law, the lifecycle register and retired names live in the owner
-repository: [portfolio.md](https://github.com/SylphxAI/owner/blob/main/company/portfolio.md)
+repository: [brand.md](https://github.com/SylphxAI/owner/blob/main/company/brand.md),
+[portfolio.md](https://github.com/SylphxAI/owner/blob/main/company/portfolio.md)
 and [names.md](https://github.com/SylphxAI/owner/blob/main/company/names.md).

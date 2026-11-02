@@ -10,5 +10,5 @@ The one home of the Sylphx identity (owner standard `standards/experience.md`,
   source, because surfaces pin these files by hash.
 - A new mark or direction lands here first, with a similarity check recorded
   in `directions/`, and then the surfaces follow.
-- Apps built on the platform, our own included, never use the Sylphx name or mark
-  ([docs/name.md](docs/name.md)).
+- Product brands, “by Sylphx” endorsement, publisher-only exceptions and
+  sign-in naming follow [docs/name.md](docs/name.md).
