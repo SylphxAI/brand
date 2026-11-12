@@ -20,6 +20,9 @@ OUT = ROOT / "tokens/brand.css"
 
 def value(token: dict) -> str:
     v = token["$value"]
+    if isinstance(v, str) and v.startswith("{") and v.endswith("}"):
+        # A DTCG alias such as {font.sans} becomes a reference to that property.
+        return "var(--sx-" + v[1:-1].replace(".", "-") + ")"
     if token["$type"] == "gradient":
         angle = token.get("$extensions", {}).get("com.sylphx.angle", "180deg")
         stops = ", ".join(f"{s['color']} {round(s['position'] * 100)}%" for s in v)
@@ -28,7 +31,7 @@ def value(token: dict) -> str:
         return "cubic-bezier(" + ", ".join(str(x) for x in v) + ")"
     if token["$type"] == "fontFamily":
         return ", ".join(f'"{f}"' if " " in f else f for f in v)
-    return v
+    return str(v)
 
 
 def flatten(group: dict, prefix: str) -> list[tuple[str, str]]:
@@ -47,7 +50,7 @@ def flatten(group: dict, prefix: str) -> list[tuple[str, str]]:
 def render() -> str:
     t = json.loads(SRC.read_text())
     common = []
-    for group in ("mark", "status", "font", "radius", "space", "size", "motion", "icon"):
+    for group in ("mark", "status", "font", "type", "radius", "space", "size", "motion", "icon"):
         common += flatten(t[group], f"--sx-{group}")
     light = flatten(t["theme"]["light"], "--sx")
     dark = flatten(t["theme"]["dark"], "--sx")

@@ -1,12 +1,18 @@
 # Visual directions, 2026-09-28
 
+> **Superseded for the interface.** The palette, type and spacing now follow
+> the Sylphx DESIGN.md in `SylphxAI/cloud` (direction *Clear air, one live
+> current*: cool surfaces, Inter and JetBrains Mono), and `tokens/` carries
+> its values. Engineered's mark is kept. The record below is the 2026-09-28
+> decision as it was made.
+
 The owner ordered a complete redesign of sylphx.com: site, docs, sign-in and
 console. Three complete identity systems were built and rendered onto real
 pages (home, the Database product page, a docs page, the console home and a
 console resource page) at 1440 px and 390 px, in dark and light. The owner
 asked the design lead to choose on the evidence, without a review
-checkpoint. **Chosen: Engineered.** The Sylphx brand is now built from it
-([`../logo/README.md`](../logo/README.md), [`../tokens/`](../tokens/)).
+checkpoint. **Chosen: Engineered.** The mark was built from it
+([`../logo/README.md`](../logo/README.md)).
 
 **The figures on the boards are illustrative layout text, not claims.** On a
 real page every number and claim is true and sourced: product counts and

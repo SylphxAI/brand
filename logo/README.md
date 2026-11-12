@@ -2,7 +2,9 @@
 
 The mark is two currents that cross and weave into an x, the x of Sylphx:
 the rising current (cobalt) passes under the falling one (ink). The wordmark
-is *Sylphx* in IBM Plex Sans SemiBold, outlined. Every file here is drawn by
+is *Sylphx* in IBM Plex Sans SemiBold, outlined. The logo keeps its own
+colours and face: the interface moved to the DESIGN.md palette and Inter, but
+the mark is never redrawn or recoloured. Every file here is drawn by
 [`construction/mark.py`](construction/mark.py) from
 [`construction/mark.spec.json`](construction/mark.spec.json). Never edit an
 output by hand: change the spec and rerun (see the repository README).
