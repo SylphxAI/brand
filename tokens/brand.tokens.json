@@ -1,5 +1,5 @@
 {
-  "$description": "Sylphx design tokens (direction Engineered, chosen 2026-09-28; directions/README.md). The one source for colour, type, radius, spacing and motion on every Sylphx surface. scripts/build_tokens.py generates tokens/brand.css; surfaces consume the CSS or this JSON and never copy a value by hand.",
+  "$description": "Sylphx design tokens: the values of the Sylphx DESIGN.md (direction Clear air, one live current; SylphxAI/cloud DESIGN.md) in the names surfaces already use. The one source for colour, type, radius, spacing and motion on every Sylphx surface. scripts/build_tokens.py generates tokens/brand.css; surfaces consume the CSS or this JSON and never copy a value by hand. Each `$description` names the DESIGN.md token a value comes from.",
   "mark": {
     "accent": {
       "$type": "color",
@@ -20,184 +20,285 @@
     "field": {
       "$type": "color",
       "$value": "#15130F"
-    }
+    },
+    "$description": "The logo's own colours, which mark.spec.json draws with. DESIGN.md keeps the mark as drawn, so these stay as they are even where the interface palette moved (ink and paper are the logo's, not interface colours)."
   },
   "status": {
-    "$description": "Status colours for the ink ground (theme `code-background`, dark in both themes): at least 4.5:1 against #15130F and #0E0D0B. Theme-independent, like `mark.accent-on-dark`; the light theme's status tokens fail there.",
+    "$description": "Status colours on the code ground (`code-background`, Midnight #0B1220 in both themes): DESIGN.md's dark status colours, at least 4.5:1 there. Theme-independent, like `mark.accent-on-dark`; the light theme's status tokens fail on that ground.",
     "success-on-dark": {
       "$type": "color",
-      "$value": "#4ADE80"
+      "$value": "#4CC98A",
+      "$description": "DESIGN.md success-dark."
     },
     "warning-on-dark": {
       "$type": "color",
-      "$value": "#FACC15"
+      "$value": "#E9A23B",
+      "$description": "DESIGN.md warning-dark."
     },
     "danger-on-dark": {
       "$type": "color",
-      "$value": "#F87171"
+      "$value": "#FF8A80",
+      "$description": "DESIGN.md error-dark."
     },
     "info-on-dark": {
       "$type": "color",
-      "$value": "#6B86FF"
+      "$value": "#6B86FF",
+      "$description": "DESIGN.md primary-dark."
     }
   },
   "theme": {
     "light": {
       "background": {
         "$type": "color",
-        "$value": "#F4F1EA"
+        "$value": "#F6F8FB",
+        "$description": "DESIGN.md surface (Clear Air), the page."
       },
       "surface": {
         "$type": "color",
-        "$value": "#FFFDF8"
+        "$value": "#FFFFFF",
+        "$description": "DESIGN.md surface-raised: cards, inputs, panels."
       },
       "surface-sunken": {
         "$type": "color",
-        "$value": "#ECE8DE"
+        "$value": "#EDF1F6",
+        "$description": "DESIGN.md surface-sunken: wells, the console sidebar, row hover."
       },
       "surface-raised": {
         "$type": "color",
-        "$value": "#FFFFFF"
+        "$value": "#FFFFFF",
+        "$description": "DESIGN.md surface-raised: menus, popovers, dialogs."
       },
       "border": {
         "$type": "color",
-        "$value": "#D9D3C5"
+        "$value": "#D6DCE6",
+        "$description": "DESIGN.md outline: dividers and card edges."
       },
       "border-strong": {
         "$type": "color",
-        "$value": "#BFB8A8"
-      },
-      "text": {
-        "$type": "color",
-        "$value": "#15130F"
-      },
-      "text-secondary": {
-        "$type": "color",
-        "$value": "#55504A"
-      },
-      "text-tertiary": {
-        "$type": "color",
-        "$value": "#6D685F"
-      },
-      "accent": {
-        "$type": "color",
-        "$value": "#2448F5"
-      },
-      "accent-text": {
-        "$type": "color",
-        "$value": "#1E3BD0"
-      },
-      "on-accent": {
-        "$type": "color",
-        "$value": "#FFFFFF"
-      },
-      "accent-soft": {
-        "$type": "color",
-        "$value": "rgba(36,72,245,0.08)"
-      },
-      "success": {
-        "$type": "color",
-        "$value": "#15803D"
-      },
-      "warning": {
-        "$type": "color",
-        "$value": "#A16207"
-      },
-      "danger": {
-        "$type": "color",
-        "$value": "#B91C1C"
-      },
-      "info": {
-        "$type": "color",
-        "$value": "#2448F5"
-      },
-      "code-background": {
-        "$type": "color",
-        "$value": "#15130F"
+        "$value": "#7A8599",
+        "$description": "DESIGN.md outline-strong: hovered link cards and other strong edges."
       },
       "border-control": {
         "$type": "color",
-        "$value": "#8F8469",
-        "$description": "Boundaries of inputs, checkboxes and other controls: at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
+        "$value": "#7A8599",
+        "$description": "DESIGN.md outline-strong: boundaries of inputs, checkboxes and other controls, at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
+      },
+      "text": {
+        "$type": "color",
+        "$value": "#0B1220",
+        "$description": "DESIGN.md on-surface (Midnight)."
+      },
+      "text-secondary": {
+        "$type": "color",
+        "$value": "#4A5466",
+        "$description": "DESIGN.md on-surface-variant (Slate): secondary text and metadata."
+      },
+      "text-tertiary": {
+        "$type": "color",
+        "$value": "#4A5466",
+        "$description": "DESIGN.md Alias of text-secondary (on-surface-variant); DESIGN.md has two text levels. Kept so existing consumers keep working."
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#2448F5",
+        "$description": "DESIGN.md primary (Current Cobalt): the one primary action, focus, selection, current lines."
+      },
+      "accent-hover": {
+        "$type": "color",
+        "$value": "#1A36C9",
+        "$description": "DESIGN.md primary-hover. DESIGN.md defines no dark hover, so dark keeps primary-dark."
+      },
+      "accent-text": {
+        "$type": "color",
+        "$value": "#1E3BD0",
+        "$description": "DESIGN.md primary-text: cobalt text and links."
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "DESIGN.md on-primary."
+      },
+      "accent-soft": {
+        "$type": "color",
+        "$value": "#E8EDFF",
+        "$description": "DESIGN.md secondary (Updraft): selected rows, info badges, the active sidebar item."
+      },
+      "on-accent-soft": {
+        "$type": "color",
+        "$value": "#1A2A80",
+        "$description": "DESIGN.md on-secondary: text on accent-soft."
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#0E7A4A",
+        "$description": "DESIGN.md success."
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#9A5800",
+        "$description": "DESIGN.md warning."
+      },
+      "danger": {
+        "$type": "color",
+        "$value": "#C2281F",
+        "$description": "DESIGN.md error."
+      },
+      "on-danger": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "DESIGN.md on-error: text on a danger fill."
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#1E3BD0",
+        "$description": "DESIGN.md Info status text: primary-text, since DESIGN.md has no info colour and cobalt is the info accent."
+      },
+      "code-background": {
+        "$type": "color",
+        "$value": "#0B1220",
+        "$description": "DESIGN.md code (Midnight), the code ground in both themes."
+      },
+      "code-text": {
+        "$type": "color",
+        "$value": "#D7DEEA",
+        "$description": "DESIGN.md on-code."
+      },
+      "code-comment": {
+        "$type": "color",
+        "$value": "#8A96AB",
+        "$description": "DESIGN.md code-comment: comments and the `$` prompt."
+      },
+      "shadow-float": {
+        "$type": "shadow",
+        "$value": "0 8px 24px rgba(11,18,32,0.12), 0 1px 2px rgba(11,18,32,0.08)",
+        "$description": "DESIGN.md elevation: menus, popovers and dialogs only."
       }
     },
     "dark": {
       "background": {
         "$type": "color",
-        "$value": "#121110"
+        "$value": "#080C14",
+        "$description": "DESIGN.md surface-dark."
       },
       "surface": {
         "$type": "color",
-        "$value": "#191816"
+        "$value": "#101623",
+        "$description": "DESIGN.md surface-raised-dark."
       },
       "surface-sunken": {
         "$type": "color",
-        "$value": "#201F1C"
+        "$value": "#05080E",
+        "$description": "DESIGN.md surface-sunken-dark."
       },
       "surface-raised": {
         "$type": "color",
-        "$value": "#26241F"
+        "$value": "#101623",
+        "$description": "DESIGN.md surface-raised-dark."
       },
       "border": {
         "$type": "color",
-        "$value": "#302E29"
+        "$value": "#222B3B",
+        "$description": "DESIGN.md outline-dark."
       },
       "border-strong": {
         "$type": "color",
-        "$value": "#44413A"
-      },
-      "text": {
-        "$type": "color",
-        "$value": "#F2EEE6"
-      },
-      "text-secondary": {
-        "$type": "color",
-        "$value": "#ABA59A"
-      },
-      "text-tertiary": {
-        "$type": "color",
-        "$value": "#8C857B"
-      },
-      "accent": {
-        "$type": "color",
-        "$value": "#6B86FF"
-      },
-      "accent-text": {
-        "$type": "color",
-        "$value": "#93A7FF"
-      },
-      "on-accent": {
-        "$type": "color",
-        "$value": "#0B0E24"
-      },
-      "accent-soft": {
-        "$type": "color",
-        "$value": "rgba(107,134,255,0.13)"
-      },
-      "success": {
-        "$type": "color",
-        "$value": "#4ADE80"
-      },
-      "warning": {
-        "$type": "color",
-        "$value": "#FACC15"
-      },
-      "danger": {
-        "$type": "color",
-        "$value": "#F87171"
-      },
-      "info": {
-        "$type": "color",
-        "$value": "#6B86FF"
-      },
-      "code-background": {
-        "$type": "color",
-        "$value": "#0E0D0B"
+        "$value": "#5D687C",
+        "$description": "DESIGN.md outline-strong-dark."
       },
       "border-control": {
         "$type": "color",
-        "$value": "#6E695E",
-        "$description": "Boundaries of inputs, checkboxes and other controls: at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
+        "$value": "#5D687C",
+        "$description": "DESIGN.md outline-strong-dark."
+      },
+      "text": {
+        "$type": "color",
+        "$value": "#E6EAF2",
+        "$description": "DESIGN.md on-surface-dark."
+      },
+      "text-secondary": {
+        "$type": "color",
+        "$value": "#98A2B5",
+        "$description": "DESIGN.md on-surface-variant-dark."
+      },
+      "text-tertiary": {
+        "$type": "color",
+        "$value": "#98A2B5",
+        "$description": "DESIGN.md on-surface-variant-dark."
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "#6B86FF",
+        "$description": "DESIGN.md primary-dark."
+      },
+      "accent-hover": {
+        "$type": "color",
+        "$value": "#6B86FF",
+        "$description": "DESIGN.md primary-dark."
+      },
+      "accent-text": {
+        "$type": "color",
+        "$value": "#6B86FF",
+        "$description": "DESIGN.md primary-dark (DESIGN.md uses it for dark links)."
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "#080C14",
+        "$description": "DESIGN.md on-primary-dark."
+      },
+      "accent-soft": {
+        "$type": "color",
+        "$value": "#16204A",
+        "$description": "DESIGN.md secondary-dark."
+      },
+      "on-accent-soft": {
+        "$type": "color",
+        "$value": "#C9D3FF",
+        "$description": "DESIGN.md on-secondary-dark."
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#4CC98A",
+        "$description": "DESIGN.md success-dark."
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#E9A23B",
+        "$description": "DESIGN.md warning-dark."
+      },
+      "danger": {
+        "$type": "color",
+        "$value": "#FF8A80",
+        "$description": "DESIGN.md error-dark."
+      },
+      "on-danger": {
+        "$type": "color",
+        "$value": "#080C14",
+        "$description": "DESIGN.md on-error-dark."
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#6B86FF",
+        "$description": "DESIGN.md primary-dark."
+      },
+      "code-background": {
+        "$type": "color",
+        "$value": "#0B1220",
+        "$description": "DESIGN.md code (the same in both themes)."
+      },
+      "code-text": {
+        "$type": "color",
+        "$value": "#D7DEEA",
+        "$description": "DESIGN.md on-code."
+      },
+      "code-comment": {
+        "$type": "color",
+        "$value": "#8A96AB",
+        "$description": "DESIGN.md code-comment."
+      },
+      "shadow-float": {
+        "$type": "shadow",
+        "$value": "none",
+        "$description": "DESIGN.md elevation: dark mode replaces the shadow with a 1px border-strong edge."
       }
     }
   },
@@ -205,45 +306,57 @@
     "sans": {
       "$type": "fontFamily",
       "$value": [
-        "IBM Plex Sans",
-        "ui-sans-serif",
+        "Inter",
+        "Noto Sans TC",
+        "Noto Sans SC",
+        "Noto Sans JP",
         "system-ui",
+        "-apple-system",
+        "Segoe UI",
         "sans-serif"
       ],
-      "$description": "Text, interface and display. Self-host IBM Plex Sans (OFL), weights 400, 500, 600."
+      "$description": "Interface and display; Noto Sans TC, SC and JP for Chinese and Japanese. Self-host Inter (OFL), weights 400, 500, 600 only."
     },
     "mono": {
       "$type": "fontFamily",
       "$value": [
-        "IBM Plex Mono",
+        "JetBrains Mono",
         "ui-monospace",
-        "SF Mono",
+        "SFMono-Regular",
+        "Menlo",
         "monospace"
       ],
-      "$description": "Code, resource names, ids, labels and every number that is compared."
+      "$description": "Code, commands, resource names, ids, mono labels and every number that is compared. Self-host JetBrains Mono (OFL), weights 400, 500."
     },
     "display-tracking": {
       "$type": "dimension",
-      "$value": "-0.03em"
+      "$value": "-0.035em",
+      "$description": "DESIGN.md display."
     },
     "label-tracking": {
       "$type": "dimension",
-      "$value": "0.06em",
-      "$description": "Uppercase mono labels."
+      "$value": "0.08em",
+      "$description": "DESIGN.md label-mono: upper-case mono labels."
+    },
+    "data-features": {
+      "$type": "string",
+      "$value": "\"tnum\" 1, \"zero\" 1",
+      "$description": "DESIGN.md data: tabular, slashed-zero figures (font-feature-settings)."
     }
   },
   "radius": {
+    "$description": "DESIGN.md rounded: sm for tags in tables, md for buttons, inputs and chips, lg for cards, code, dialogs and screenshots, full for badges and avatars.",
     "sm": {
       "$type": "dimension",
-      "$value": "2px"
+      "$value": "4px"
     },
     "md": {
       "$type": "dimension",
-      "$value": "3px"
+      "$value": "6px"
     },
     "lg": {
       "$type": "dimension",
-      "$value": "4px"
+      "$value": "10px"
     },
     "full": {
       "$type": "dimension",
@@ -251,7 +364,7 @@
     }
   },
   "space": {
-    "$description": "4 px grid.",
+    "$description": "DESIGN.md spacing: a 4px grid. The numbered steps are multiples of 4px; the named steps are DESIGN.md's.",
     "1": {
       "$type": "dimension",
       "$value": "4px"
@@ -299,24 +412,93 @@
     "24": {
       "$type": "dimension",
       "$value": "96px"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "DESIGN.md spacing xs."
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "DESIGN.md spacing sm."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "DESIGN.md spacing md."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "DESIGN.md spacing lg."
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$description": "DESIGN.md spacing xl."
+    },
+    "section": {
+      "$type": "dimension",
+      "$value": "120px",
+      "$description": "DESIGN.md spacing section."
+    },
+    "section-mobile": {
+      "$type": "dimension",
+      "$value": "72px",
+      "$description": "DESIGN.md spacing section-mobile."
     }
   },
   "size": {
     "control": {
       "$type": "dimension",
-      "$value": "32px"
+      "$value": "36px",
+      "$description": "DESIGN.md control-height: buttons and inputs."
     },
     "control-lg": {
       "$type": "dimension",
-      "$value": "40px"
+      "$value": "44px",
+      "$description": "DESIGN.md touch-target: buttons on touch and hero calls to action."
     },
     "row": {
       "$type": "dimension",
-      "$value": "36px"
+      "$value": "40px",
+      "$description": "DESIGN.md row-height."
     },
     "touch": {
       "$type": "dimension",
-      "$value": "44px"
+      "$value": "44px",
+      "$description": "DESIGN.md touch-target."
+    },
+    "nav": {
+      "$type": "dimension",
+      "$value": "60px",
+      "$description": "DESIGN.md nav and console top bar height."
+    },
+    "page-max": {
+      "$type": "dimension",
+      "$value": "1200px",
+      "$description": "DESIGN.md page-max: marketing pages."
+    },
+    "console-max": {
+      "$type": "dimension",
+      "$value": "1440px",
+      "$description": "DESIGN.md console content width."
+    },
+    "console-sidebar": {
+      "$type": "dimension",
+      "$value": "240px",
+      "$description": "DESIGN.md console-sidebar."
+    },
+    "focus-ring": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "DESIGN.md focus: a 2px cobalt ring."
+    },
+    "focus-offset": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "DESIGN.md focus: 2px offset."
     }
   },
   "motion": {
@@ -337,10 +519,232 @@
     }
   },
   "icon": {
+    "size": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "DESIGN.md: icons are 20px on a 24px grid."
+    },
     "stroke": {
       "$type": "dimension",
-      "$value": "1.75px",
-      "$description": "24 px grid, butt caps, miter joins, no fills."
+      "$value": "1.5px",
+      "$description": "DESIGN.md: 1.5px stroke, round joins, no fills, coloured like their text."
+    }
+  },
+  "type": {
+    "$description": "DESIGN.md typography, one group per style. Display is 40px on mobile; CJK headlines use 0 tracking and 1.2 line height.",
+    "display": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "64px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.04
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": "-0.035em"
+      }
+    },
+    "headline-lg": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.1
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": "-0.025em"
+      }
+    },
+    "headline-md": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.25
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": "-0.015em"
+      }
+    },
+    "title": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.4
+      }
+    },
+    "body-lg": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "18px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.6
+      }
+    },
+    "body-md": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "15px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.55
+      }
+    },
+    "body-sm": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "13px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.5
+      }
+    },
+    "label-md": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.sans}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "13px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 500
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1
+      }
+    },
+    "label-mono": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.mono}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "11px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 500
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1
+      },
+      "tracking": {
+        "$type": "dimension",
+        "$value": "0.08em"
+      }
+    },
+    "code": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.mono}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "13px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.6
+      }
+    },
+    "data": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "{font.mono}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "13px"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.4
+      }
     }
   }
 }

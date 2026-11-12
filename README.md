@@ -8,10 +8,11 @@ docs, the console, the CLI, READMEs, the GitHub organization) takes its
 identity from here and keeps no redrawn copy or hand-picked colour
 (owner standard, `standards/experience.md`, "Brand home").
 
-The current identity is **Engineered**, chosen 2026-09-28 from three complete
-directions: paper and ink, one cobalt accent, IBM Plex, and a mark of two
-currents that weave into the x of Sylphx. Why, and the alternatives:
-[directions/README.md](directions/README.md).
+The interface identity is the Sylphx DESIGN.md in `SylphxAI/cloud`, direction
+*Clear air, one live current*: cool bright surfaces, one cobalt current,
+Inter and JetBrains Mono. The tokens here carry its values. The mark of two
+currents that weave into the x of Sylphx is unchanged from direction
+Engineered, chosen 2026-09-28 ([directions/README.md](directions/README.md)).
 
 | Need | Where |
 | --- | --- |
@@ -20,7 +21,7 @@ currents that weave into the x of Sylphx. Why, and the alternatives:
 | How to use the logo, colour, type, icons and motion | [guidelines/guidelines.md](guidelines/guidelines.md) and the usage sheet [logo/sheet/usage.png](logo/sheet/usage.png) |
 | Logo files, construction, small sizes, provenance | [logo/README.md](logo/README.md) |
 | Design tokens | [tokens/brand.tokens.json](tokens/brand.tokens.json) (source) and [tokens/brand.css](tokens/brand.css) (generated) |
-| Fonts to self-host | [fonts/](fonts/) (IBM Plex Sans and Mono, OFL) and the loader [fonts/fonts.css](fonts/fonts.css) |
+| Fonts to self-host | [fonts/](fonts/) (Inter and JetBrains Mono, OFL) and the loader [fonts/fonts.css](fonts/fonts.css) |
 | Voice | [docs/voice.md](docs/voice.md) |
 | Trademark status | [docs/trademarks.md](docs/trademarks.md) |
 | Where the brand appears | [docs/surfaces.md](docs/surfaces.md) |
