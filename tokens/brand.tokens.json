@@ -1,304 +1,349 @@
 {
-  "$description": "Sylphx design tokens: the values of the Sylphx DESIGN.md (direction Clear air, one live current; SylphxAI/cloud DESIGN.md) in the names surfaces already use. The one source for colour, type, radius, spacing and motion on every Sylphx surface. scripts/build_tokens.py generates tokens/brand.css; surfaces consume the CSS or this JSON and never copy a value by hand. Each `$description` names the DESIGN.md token a value comes from.",
+  "$description": "Sylphx design tokens, direction Altitude (2026-11-16; directions/2026-11-altitude.md): high, clear air. Near-neutral cool surfaces, ink for primary actions, one azure accent, and one brand gradient (the current) kept for the mark and rare brand moments. The one source for colour, type, radius, spacing and motion on every Sylphx surface. scripts/build_tokens.py generates tokens/brand.css; surfaces consume the CSS or this JSON and never copy a value by hand.",
   "mark": {
+    "$description": "The logo's own colours, which logo/construction/mark.spec.json draws with. The mark is filled with the current (current-start, current-mid, current-end); ink and paper set the wordmark; field is the ground of the tile, favicon and app icon.",
     "accent": {
       "$type": "color",
-      "$value": "#2448F5"
+      "$value": "#2FA8FF",
+      "$description": "Azure, the middle of the current: the mark's single flat colour where a gradient cannot be used."
     },
     "accent-on-dark": {
       "$type": "color",
-      "$value": "#6B86FF"
+      "$value": "#2FA8FF",
+      "$description": "The same azure; it holds on dark grounds."
     },
     "ink": {
       "$type": "color",
-      "$value": "#15130F"
+      "$value": "#0A0D14",
+      "$description": "Wordmark on light grounds."
     },
     "paper": {
       "$type": "color",
-      "$value": "#F2EEE6"
+      "$value": "#F4F6FA",
+      "$description": "Wordmark on dark grounds."
     },
     "field": {
       "$type": "color",
-      "$value": "#15130F"
+      "$value": "#0A0D14",
+      "$description": "Ground of the tile, favicon and app icon."
     },
-    "$description": "The logo's own colours, which mark.spec.json draws with. DESIGN.md keeps the mark as drawn, so these stay as they are even where the interface palette moved (ink and paper are the logo's, not interface colours)."
+    "current-start": {
+      "$type": "color",
+      "$value": "#2F4BFF",
+      "$description": "The current, first stop: deep blue."
+    },
+    "current-mid": {
+      "$type": "color",
+      "$value": "#2FA8FF",
+      "$description": "The current, middle stop at 55%: azure."
+    },
+    "current-end": {
+      "$type": "color",
+      "$value": "#9FE3FF",
+      "$description": "The current, last stop: pale sky."
+    },
+    "dawn": {
+      "$type": "color",
+      "$value": "#FFB58A",
+      "$description": "Warm counterpoint for illustration and rare highlights. Not a text or interface colour."
+    }
+  },
+  "gradient": {
+    "$description": "The one brand gradient. For the mark and at most one brand moment per page; never for text, controls or status.",
+    "current": {
+      "$type": "gradient",
+      "$value": [
+        {
+          "color": "#2F4BFF",
+          "position": 0
+        },
+        {
+          "color": "#2FA8FF",
+          "position": 0.55
+        },
+        {
+          "color": "#9FE3FF",
+          "position": 1
+        }
+      ],
+      "$extensions": {
+        "com.sylphx.angle": "135deg"
+      },
+      "$description": "The current: deep blue to azure to pale sky, at 135deg."
+    }
   },
   "status": {
-    "$description": "Status colours on the code ground (`code-background`, Midnight #0B1220 in both themes): DESIGN.md's dark status colours, at least 4.5:1 there. Theme-independent, like `mark.accent-on-dark`; the light theme's status tokens fail on that ground.",
+    "$description": "Status colours on the code ground (`code-background`, ink #0A0D14 in both themes), at least 4.5:1 there. Theme-independent; the light theme's status tokens fail on that ground.",
     "success-on-dark": {
       "$type": "color",
-      "$value": "#4CC98A",
-      "$description": "DESIGN.md success-dark."
+      "$value": "#4CC98A"
     },
     "warning-on-dark": {
       "$type": "color",
-      "$value": "#E9A23B",
-      "$description": "DESIGN.md warning-dark."
+      "$value": "#E9A23B"
     },
     "danger-on-dark": {
       "$type": "color",
-      "$value": "#FF8A80",
-      "$description": "DESIGN.md error-dark."
+      "$value": "#FF8A80"
     },
     "info-on-dark": {
       "$type": "color",
-      "$value": "#6B86FF",
-      "$description": "DESIGN.md primary-dark."
+      "$value": "#6AA8FF"
     }
   },
   "theme": {
     "light": {
       "background": {
         "$type": "color",
-        "$value": "#F6F8FB",
-        "$description": "DESIGN.md surface (Clear Air), the page."
+        "$value": "#FAFBFD",
+        "$description": "The page."
       },
       "surface": {
         "$type": "color",
         "$value": "#FFFFFF",
-        "$description": "DESIGN.md surface-raised: cards, inputs, panels."
+        "$description": "Cards, inputs, panels."
       },
       "surface-sunken": {
         "$type": "color",
-        "$value": "#EDF1F6",
-        "$description": "DESIGN.md surface-sunken: wells, the console sidebar, row hover."
+        "$value": "#F1F4F8",
+        "$description": "Wells, the console sidebar, row hover."
       },
       "surface-raised": {
         "$type": "color",
         "$value": "#FFFFFF",
-        "$description": "DESIGN.md surface-raised: menus, popovers, dialogs."
+        "$description": "Menus, popovers, dialogs."
       },
       "border": {
         "$type": "color",
-        "$value": "#D6DCE6",
-        "$description": "DESIGN.md outline: dividers and card edges."
+        "$value": "#E2E7EE",
+        "$description": "Dividers and card edges."
       },
       "border-strong": {
         "$type": "color",
-        "$value": "#7A8599",
-        "$description": "DESIGN.md outline-strong: hovered link cards and other strong edges."
+        "$value": "#8A94A6",
+        "$description": "Hovered link cards and other strong edges."
       },
       "border-control": {
         "$type": "color",
-        "$value": "#7A8599",
-        "$description": "DESIGN.md outline-strong: boundaries of inputs, checkboxes and other controls, at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
+        "$value": "#828DA0",
+        "$description": "Boundaries of inputs, checkboxes and other controls, at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
       },
       "text": {
         "$type": "color",
-        "$value": "#0B1220",
-        "$description": "DESIGN.md on-surface (Midnight)."
+        "$value": "#0A0D14",
+        "$description": "Primary text, and the fill of the primary action (ink)."
       },
       "text-secondary": {
         "$type": "color",
-        "$value": "#4A5466",
-        "$description": "DESIGN.md on-surface-variant (Slate): secondary text and metadata."
+        "$value": "#4B5565",
+        "$description": "Secondary text and metadata."
       },
       "text-tertiary": {
         "$type": "color",
-        "$value": "#4A5466",
-        "$description": "DESIGN.md Alias of text-secondary (on-surface-variant); DESIGN.md has two text levels. Kept so existing consumers keep working."
+        "$value": "#667085",
+        "$description": "Tertiary text: captions, placeholders, timestamps. At least 4.5:1 on every surface."
       },
       "accent": {
         "$type": "color",
-        "$value": "#2448F5",
-        "$description": "DESIGN.md primary (Current Cobalt): the one primary action, focus, selection, current lines."
+        "$value": "#1463FF",
+        "$description": "Azure: focus, selection, current-place markers and accent fills. The primary action is ink, not this."
       },
       "accent-hover": {
         "$type": "color",
-        "$value": "#1A36C9",
-        "$description": "DESIGN.md primary-hover. DESIGN.md defines no dark hover, so dark keeps primary-dark."
+        "$value": "#0B4FDB",
+        "$description": "Hover of an azure fill."
       },
       "accent-text": {
         "$type": "color",
-        "$value": "#1E3BD0",
-        "$description": "DESIGN.md primary-text: cobalt text and links."
+        "$value": "#0F56E6",
+        "$description": "Azure text and links."
       },
       "on-accent": {
         "$type": "color",
         "$value": "#FFFFFF",
-        "$description": "DESIGN.md on-primary."
+        "$description": "Text on an azure fill."
       },
       "accent-soft": {
         "$type": "color",
-        "$value": "#E8EDFF",
-        "$description": "DESIGN.md secondary (Updraft): selected rows, info badges, the active sidebar item."
+        "$value": "#E6F0FF",
+        "$description": "Selection tint: selected rows, info badges, the active sidebar item."
       },
       "on-accent-soft": {
         "$type": "color",
-        "$value": "#1A2A80",
-        "$description": "DESIGN.md on-secondary: text on accent-soft."
+        "$value": "#0B3A9E",
+        "$description": "Text on accent-soft."
       },
       "success": {
         "$type": "color",
-        "$value": "#0E7A4A",
-        "$description": "DESIGN.md success."
+        "$value": "#0B7A4B",
+        "$description": "Success status text."
       },
       "warning": {
         "$type": "color",
-        "$value": "#9A5800",
-        "$description": "DESIGN.md warning."
+        "$value": "#955600",
+        "$description": "Warning status text."
       },
       "danger": {
         "$type": "color",
-        "$value": "#C2281F",
-        "$description": "DESIGN.md error."
+        "$value": "#C4271F",
+        "$description": "Danger status text and destructive fills."
       },
       "on-danger": {
         "$type": "color",
         "$value": "#FFFFFF",
-        "$description": "DESIGN.md on-error: text on a danger fill."
+        "$description": "Text on a danger fill."
       },
       "info": {
         "$type": "color",
-        "$value": "#1E3BD0",
-        "$description": "DESIGN.md Info status text: primary-text, since DESIGN.md has no info colour and cobalt is the info accent."
+        "$value": "#0F56E6",
+        "$description": "Info status text."
       },
       "code-background": {
         "$type": "color",
-        "$value": "#0B1220",
-        "$description": "DESIGN.md code (Midnight), the code ground in both themes."
+        "$value": "#0A0D14",
+        "$description": "The code ground, ink in both themes."
       },
       "code-text": {
         "$type": "color",
-        "$value": "#D7DEEA",
-        "$description": "DESIGN.md on-code."
+        "$value": "#D9DFEA",
+        "$description": "Text on the code ground."
       },
       "code-comment": {
         "$type": "color",
-        "$value": "#8A96AB",
-        "$description": "DESIGN.md code-comment: comments and the `$` prompt."
+        "$value": "#8792A6",
+        "$description": "Comments and the `$` prompt on the code ground."
       },
       "shadow-float": {
         "$type": "shadow",
-        "$value": "0 8px 24px rgba(11,18,32,0.12), 0 1px 2px rgba(11,18,32,0.08)",
-        "$description": "DESIGN.md elevation: menus, popovers and dialogs only."
+        "$value": "0 12px 32px rgba(10,13,20,0.12), 0 2px 6px rgba(10,13,20,0.06)",
+        "$description": "Elevation for menus, popovers and dialogs only."
       }
     },
     "dark": {
       "background": {
         "$type": "color",
-        "$value": "#080C14",
-        "$description": "DESIGN.md surface-dark."
+        "$value": "#06080C",
+        "$description": "The page."
       },
       "surface": {
         "$type": "color",
-        "$value": "#101623",
-        "$description": "DESIGN.md surface-raised-dark."
+        "$value": "#0C0F15",
+        "$description": "Cards, inputs, panels."
       },
       "surface-sunken": {
         "$type": "color",
-        "$value": "#05080E",
-        "$description": "DESIGN.md surface-sunken-dark."
+        "$value": "#040508",
+        "$description": "Wells, the console sidebar, row hover."
       },
       "surface-raised": {
         "$type": "color",
-        "$value": "#101623",
-        "$description": "DESIGN.md surface-raised-dark."
+        "$value": "#12161E",
+        "$description": "Menus, popovers, dialogs."
       },
       "border": {
         "$type": "color",
-        "$value": "#222B3B",
-        "$description": "DESIGN.md outline-dark."
+        "$value": "#1C222D",
+        "$description": "Dividers and card edges."
       },
       "border-strong": {
         "$type": "color",
-        "$value": "#5D687C",
-        "$description": "DESIGN.md outline-strong-dark."
+        "$value": "#5A6577",
+        "$description": "Hovered link cards and other strong edges."
       },
       "border-control": {
         "$type": "color",
-        "$value": "#5D687C",
-        "$description": "DESIGN.md outline-strong-dark."
+        "$value": "#5A6577",
+        "$description": "Boundaries of inputs, checkboxes and other controls, at least 3:1 against every surface (WCAG 2.2, 1.4.11)."
       },
       "text": {
         "$type": "color",
-        "$value": "#E6EAF2",
-        "$description": "DESIGN.md on-surface-dark."
+        "$value": "#EEF1F6",
+        "$description": "Primary text, and the fill of the primary action (ink)."
       },
       "text-secondary": {
         "$type": "color",
-        "$value": "#98A2B5",
-        "$description": "DESIGN.md on-surface-variant-dark."
+        "$value": "#9BA4B4",
+        "$description": "Secondary text and metadata."
       },
       "text-tertiary": {
         "$type": "color",
-        "$value": "#98A2B5",
-        "$description": "DESIGN.md on-surface-variant-dark."
+        "$value": "#7F8999",
+        "$description": "Tertiary text: captions, placeholders, timestamps. At least 4.5:1 on every surface."
       },
       "accent": {
         "$type": "color",
-        "$value": "#6B86FF",
-        "$description": "DESIGN.md primary-dark."
+        "$value": "#4D94FF",
+        "$description": "Azure: focus, selection, current-place markers and accent fills. The primary action is ink, not this."
       },
       "accent-hover": {
         "$type": "color",
-        "$value": "#6B86FF",
-        "$description": "DESIGN.md primary-dark."
+        "$value": "#74ADFF",
+        "$description": "Hover of an azure fill."
       },
       "accent-text": {
         "$type": "color",
-        "$value": "#6B86FF",
-        "$description": "DESIGN.md primary-dark (DESIGN.md uses it for dark links)."
+        "$value": "#6AA8FF",
+        "$description": "Azure text and links."
       },
       "on-accent": {
         "$type": "color",
-        "$value": "#080C14",
-        "$description": "DESIGN.md on-primary-dark."
+        "$value": "#04070D",
+        "$description": "Text on an azure fill."
       },
       "accent-soft": {
         "$type": "color",
-        "$value": "#16204A",
-        "$description": "DESIGN.md secondary-dark."
+        "$value": "#0F2347",
+        "$description": "Selection tint: selected rows, info badges, the active sidebar item."
       },
       "on-accent-soft": {
         "$type": "color",
-        "$value": "#C9D3FF",
-        "$description": "DESIGN.md on-secondary-dark."
+        "$value": "#C7DEFF",
+        "$description": "Text on accent-soft."
       },
       "success": {
         "$type": "color",
         "$value": "#4CC98A",
-        "$description": "DESIGN.md success-dark."
+        "$description": "Success status text."
       },
       "warning": {
         "$type": "color",
         "$value": "#E9A23B",
-        "$description": "DESIGN.md warning-dark."
+        "$description": "Warning status text."
       },
       "danger": {
         "$type": "color",
         "$value": "#FF8A80",
-        "$description": "DESIGN.md error-dark."
+        "$description": "Danger status text and destructive fills."
       },
       "on-danger": {
         "$type": "color",
-        "$value": "#080C14",
-        "$description": "DESIGN.md on-error-dark."
+        "$value": "#06080C",
+        "$description": "Text on a danger fill."
       },
       "info": {
         "$type": "color",
-        "$value": "#6B86FF",
-        "$description": "DESIGN.md primary-dark."
+        "$value": "#6AA8FF",
+        "$description": "Info status text."
       },
       "code-background": {
         "$type": "color",
-        "$value": "#0B1220",
-        "$description": "DESIGN.md code (the same in both themes)."
+        "$value": "#0A0D14",
+        "$description": "The code ground, ink in both themes."
       },
       "code-text": {
         "$type": "color",
-        "$value": "#D7DEEA",
-        "$description": "DESIGN.md on-code."
+        "$value": "#D9DFEA",
+        "$description": "Text on the code ground."
       },
       "code-comment": {
         "$type": "color",
-        "$value": "#8A96AB",
-        "$description": "DESIGN.md code-comment."
+        "$value": "#8792A6",
+        "$description": "Comments and the `$` prompt on the code ground."
       },
       "shadow-float": {
         "$type": "shadow",
-        "$value": "none",
-        "$description": "DESIGN.md elevation: dark mode replaces the shadow with a 1px border-strong edge."
+        "$value": "0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)",
+        "$description": "Elevation for menus, popovers and dialogs only. In dark the float also carries a 1px light edge."
       }
     }
   },
@@ -306,7 +351,7 @@
     "sans": {
       "$type": "fontFamily",
       "$value": [
-        "Inter",
+        "Geist",
         "Noto Sans TC",
         "Noto Sans SC",
         "Noto Sans JP",
@@ -315,48 +360,62 @@
         "Segoe UI",
         "sans-serif"
       ],
-      "$description": "Interface and display; Noto Sans TC, SC and JP for Chinese and Japanese. Self-host Inter (OFL), weights 400, 500, 600 only."
+      "$description": "Interface and display; Noto Sans TC, SC and JP for Chinese and Japanese. Self-host Geist (OFL), weights 400, 500, 600 only."
     },
     "mono": {
       "$type": "fontFamily",
       "$value": [
-        "JetBrains Mono",
+        "Geist Mono",
         "ui-monospace",
         "SFMono-Regular",
         "Menlo",
         "monospace"
       ],
-      "$description": "Code, commands, resource names, ids, mono labels and every number that is compared. Self-host JetBrains Mono (OFL), weights 400, 500."
+      "$description": "Code, commands, resource names, ids, mono labels and every number that is compared. Self-host Geist Mono (OFL), weights 400, 500."
+    },
+    "accent": {
+      "$type": "fontFamily",
+      "$value": [
+        "Instrument Serif",
+        "Iowan Old Style",
+        "Georgia",
+        "serif"
+      ],
+      "$description": "Accent face: Instrument Serif italic (OFL), 400, for a word or short phrase inside a display line. Never for body text, interface or the console."
     },
     "display-tracking": {
       "$type": "dimension",
-      "$value": "-0.035em",
-      "$description": "DESIGN.md display."
+      "$value": "-0.045em",
+      "$description": "Tracking of the display style."
     },
     "label-tracking": {
       "$type": "dimension",
-      "$value": "0.08em",
-      "$description": "DESIGN.md label-mono: upper-case mono labels."
+      "$value": "0.06em",
+      "$description": "Tracking of upper-case mono labels."
     },
     "data-features": {
       "$type": "string",
       "$value": "\"tnum\" 1, \"zero\" 1",
-      "$description": "DESIGN.md data: tabular, slashed-zero figures (font-feature-settings)."
+      "$description": "Tabular, slashed-zero figures for data (font-feature-settings)."
     }
   },
   "radius": {
-    "$description": "DESIGN.md rounded: sm for tags in tables, md for buttons, inputs and chips, lg for cards, code, dialogs and screenshots, full for badges and avatars.",
+    "$description": "sm for tags in tables, md for buttons, inputs and chips, lg for cards, code and dialogs, xl for hero panels and screenshots, full for badges and avatars.",
     "sm": {
-      "$type": "dimension",
-      "$value": "4px"
-    },
-    "md": {
       "$type": "dimension",
       "$value": "6px"
     },
-    "lg": {
+    "md": {
       "$type": "dimension",
       "$value": "10px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "14px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "20px"
     },
     "full": {
       "$type": "dimension",
@@ -364,7 +423,7 @@
     }
   },
   "space": {
-    "$description": "DESIGN.md spacing: a 4px grid. The numbered steps are multiples of 4px; the named steps are DESIGN.md's.",
+    "$description": "A 4px grid. The numbered steps are multiples of 4px; the named steps are the ones layouts use by name.",
     "1": {
       "$type": "dimension",
       "$value": "4px"
@@ -416,122 +475,122 @@
     "xs": {
       "$type": "dimension",
       "$value": "4px",
-      "$description": "DESIGN.md spacing xs."
+      "$description": "Named step xs."
     },
     "sm": {
       "$type": "dimension",
       "$value": "8px",
-      "$description": "DESIGN.md spacing sm."
+      "$description": "Named step sm."
     },
     "md": {
       "$type": "dimension",
       "$value": "16px",
-      "$description": "DESIGN.md spacing md."
+      "$description": "Named step md."
     },
     "lg": {
       "$type": "dimension",
       "$value": "24px",
-      "$description": "DESIGN.md spacing lg."
+      "$description": "Named step lg."
     },
     "xl": {
       "$type": "dimension",
       "$value": "40px",
-      "$description": "DESIGN.md spacing xl."
+      "$description": "Named step xl."
     },
     "section": {
       "$type": "dimension",
       "$value": "120px",
-      "$description": "DESIGN.md spacing section."
+      "$description": "Between sections of a marketing page."
     },
     "section-mobile": {
       "$type": "dimension",
       "$value": "72px",
-      "$description": "DESIGN.md spacing section-mobile."
+      "$description": "Between sections on mobile."
     }
   },
   "size": {
     "control": {
       "$type": "dimension",
       "$value": "36px",
-      "$description": "DESIGN.md control-height: buttons and inputs."
+      "$description": "Buttons and inputs."
     },
     "control-lg": {
       "$type": "dimension",
       "$value": "44px",
-      "$description": "DESIGN.md touch-target: buttons on touch and hero calls to action."
+      "$description": "Buttons on touch and hero calls to action."
     },
     "row": {
       "$type": "dimension",
       "$value": "40px",
-      "$description": "DESIGN.md row-height."
+      "$description": "Table rows."
     },
     "touch": {
       "$type": "dimension",
       "$value": "44px",
-      "$description": "DESIGN.md touch-target."
+      "$description": "Minimum touch target."
     },
     "nav": {
       "$type": "dimension",
-      "$value": "60px",
-      "$description": "DESIGN.md nav and console top bar height."
+      "$value": "64px",
+      "$description": "Navigation and console top bar height."
     },
     "page-max": {
       "$type": "dimension",
       "$value": "1200px",
-      "$description": "DESIGN.md page-max: marketing pages."
+      "$description": "Marketing page width."
     },
     "console-max": {
       "$type": "dimension",
       "$value": "1440px",
-      "$description": "DESIGN.md console content width."
+      "$description": "Console content width."
     },
     "console-sidebar": {
       "$type": "dimension",
-      "$value": "240px",
-      "$description": "DESIGN.md console-sidebar."
+      "$value": "248px",
+      "$description": "Console sidebar width."
     },
     "focus-ring": {
       "$type": "dimension",
       "$value": "2px",
-      "$description": "DESIGN.md focus: a 2px cobalt ring."
+      "$description": "Focus: a 2px azure ring."
     },
     "focus-offset": {
       "$type": "dimension",
       "$value": "2px",
-      "$description": "DESIGN.md focus: 2px offset."
+      "$description": "Focus: 2px offset."
     }
   },
   "motion": {
     "duration": {
       "$type": "duration",
-      "$value": "150ms",
+      "$value": "180ms",
       "$description": "Every state change. Nothing decorative moves; prefers-reduced-motion sets it to 0."
     },
     "easing": {
       "$type": "cubicBezier",
       "$value": [
-        0,
-        0,
         0.2,
+        0,
+        0,
         1
       ],
-      "$description": "Linear-out: changes step like instruments, never bounce."
+      "$description": "Quick out, soft settle: changes arrive like air, never bounce."
     }
   },
   "icon": {
     "size": {
       "$type": "dimension",
       "$value": "20px",
-      "$description": "DESIGN.md: icons are 20px on a 24px grid."
+      "$description": "Icons are 20px on a 24px grid."
     },
     "stroke": {
       "$type": "dimension",
       "$value": "1.5px",
-      "$description": "DESIGN.md: 1.5px stroke, round joins, no fills, coloured like their text."
+      "$description": "1.5px stroke, round joins, no fills, coloured like their text."
     }
   },
   "type": {
-    "$description": "DESIGN.md typography, one group per style. Display is 40px on mobile; CJK headlines use 0 tracking and 1.2 line height.",
+    "$description": "The type scale, one group per style. Display is 40px on mobile; CJK headlines use 0 tracking and 1.2 line height.",
     "display": {
       "family": {
         "$type": "fontFamily",
@@ -539,19 +598,19 @@
       },
       "size": {
         "$type": "dimension",
-        "$value": "64px"
+        "$value": "72px"
       },
       "weight": {
         "$type": "fontWeight",
-        "$value": 600
+        "$value": 500
       },
       "line-height": {
         "$type": "number",
-        "$value": 1.04
+        "$value": 1.02
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "-0.035em"
+        "$value": "-0.045em"
       }
     },
     "headline-lg": {
@@ -561,19 +620,19 @@
       },
       "size": {
         "$type": "dimension",
-        "$value": "40px"
+        "$value": "44px"
       },
       "weight": {
         "$type": "fontWeight",
-        "$value": 600
+        "$value": 500
       },
       "line-height": {
         "$type": "number",
-        "$value": 1.1
+        "$value": 1.08
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "-0.025em"
+        "$value": "-0.035em"
       }
     },
     "headline-md": {
@@ -595,7 +654,7 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "-0.015em"
+        "$value": "-0.02em"
       }
     },
     "title": {
@@ -707,7 +766,7 @@
       },
       "tracking": {
         "$type": "dimension",
-        "$value": "0.08em"
+        "$value": "0.06em"
       }
     },
     "code": {

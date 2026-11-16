@@ -1,10 +1,11 @@
 # Sylphx logo
 
-The mark is two currents that cross and weave into an x, the x of Sylphx:
-the rising current (cobalt) passes under the falling one (ink). The wordmark
-is *Sylphx* in IBM Plex Sans SemiBold, outlined. The logo keeps its own
-colours and face: the interface moved to the DESIGN.md palette and Inter, but
-the mark is never redrawn or recoloured. Every file here is drawn by
+The mark is two wings and one current: two identical solid blades, the
+second the first turned 180° about the centre, that read as an S, a pair of
+wings and a stream of air. The colour versions fill the pair with one
+gradient, the current (deep blue `#2F4BFF`, azure `#2FA8FF`, pale sky
+`#9FE3FF`). The wordmark is *Sylphx* in Geist SemiBold, outlined. Every file
+here is drawn by
 [`construction/mark.py`](construction/mark.py) from
 [`construction/mark.spec.json`](construction/mark.spec.json). Never edit an
 output by hand: change the spec and rerun (see the repository README).
@@ -22,7 +23,7 @@ output by hand: change the spec and rerun (see the repository README).
 | Ready-made PNGs | `png/` (lockups and wordmarks 1600 px wide, marks 1024 px) |
 | Browser tab | `favicon/favicon.svg`, `favicon/favicon.ico` (16, 32, 48), `favicon/favicon-{16,32,48,192,512}.png`, `favicon/apple-touch-icon-180.png` |
 | App stores and avatars | `app-icon/sylphx-app-icon-1024.{svg,png}` (full bleed; the store applies its corner mask) |
-| Android adaptive icon | `app-icon/sylphx-android-foreground.svg` and `-432.png` on the ink field `#15130F` |
+| Android adaptive icon | `app-icon/sylphx-android-foreground.svg` and `-432.png` on the ink field `#0A0D14` |
 | Usage sheet | `sheet/usage.png` |
 
 SVG view boxes are tight to the artwork. Clear space is added where the logo
@@ -36,32 +37,43 @@ is placed (a quarter of the mark's height), not inside the file.
 
 ## Construction
 
-On a 512 grid, each current is one cubic curve from one corner of a 300 × 300
-square to the opposite corner, leaving and arriving horizontally (control
-points 40 units past the centre line), stroked 70 units wide with flat ends.
-The falling current is drawn whole; the rising current is cut where the
-falling one crosses it, with a 28-unit gap on each side, so the weave reads
-at every size. In the lockup the mark is 1.45 times the wordmark's cap
-height, centred on it, with a gap of 0.36 mark heights.
+The blade is one closed path of three cubic curves on a 64 grid:
+`M58 6C34 2 8 14 7 39 17 27 33 21 52 23 56 18 58 12 58 6z`. The second blade
+is the same path turned 180° about the centre (32, 32), so the pair is
+point-symmetric and its centre is the centre of the grid. The pair's ink
+spans x 6 to 58 and y 5.244 to 58.756; the masters are output on a 512 grid
+(every coordinate times 8) with coordinates written out, not transformed.
+
+The current is one linear gradient across the pair, not one per blade, in
+user space: from 10% across the top edge of the pair's bounding box to 90%
+across its bottom edge, with stops at 0, 0.55 and 1. Each file gives its
+gradient its own id (`sx-current-<file>`), so files inlined on one page do
+not collide. The black and white versions are flat.
+
+In the lockup the mark is 1.5 times the wordmark's cap height, centred on it,
+with a gap of 0.30 mark heights. The tile is a 512 square with a corner
+radius of 116 on the ink field, the mark 0.60 of its width and centred.
 
 ## Small sizes
 
-At 16 and 32 px the curves fall between pixels, so the favicons are snapped
-to whole pixels: each pixel takes the tone covering most of it, and a current
-wins a pixel it covers by 40% so the strokes stay continuous. The grids are
-in [`construction/pixel-grids.txt`](construction/pixel-grids.txt) for review.
-From 48 px up every file uses the vector.
+`favicon/favicon.svg` is the tile as a clean vector, and every favicon PNG
+and ICO frame is rendered from it; nothing is snapped to pixels. At 16 px the
+gradient has too few pixels to read against the ink field (its deep-blue end
+goes dim), so the 16 px PNG and the 16 px ICO frame draw the mark in white.
+From 32 px up the mark is in the current.
 
 ## Provenance
 
-- **Designed, not traced.** The mark was drawn as geometry on 2026-09-28 as
-  part of direction Engineered, chosen from three complete directions
-  ([../directions/README.md](../directions/README.md)). It replaces two
-  earlier marks (a blocky S and an amber ring with a dot) and every traced
-  or vectorised copy of them; those are in Git history only.
-- **Type:** IBM Plex Sans SemiBold 3.201 (`construction/fonts/`, SIL Open
-  Font License 1.1, `construction/fonts/IBM-Plex-OFL.txt`), shaped with
-  HarfBuzz and outlined with fontTools, tracking −0.02em.
+- **Designed, not traced.** The mark was drawn as geometry on 2026-11-16 as
+  direction Altitude, an owner-authorised full redesign
+  ([../directions/2026-11-altitude.md](../directions/2026-11-altitude.md)).
+  It replaces the mark of direction Engineered (2026-09-28) and
+  the two before it (a blocky S and an amber ring with a dot); those are in
+  Git history only.
+- **Type:** Geist SemiBold 1.900, from the `geist` npm package 1.9.2
+  (`construction/fonts/`, SIL Open Font License 1.1, copyright Vercel,
+  `construction/fonts/Geist-OFL.txt`), shaped with HarfBuzz and outlined with
+  fontTools, tracking −0.04em.
 - **Rendering:** resvg for every PNG; Pillow for the ICO and the sheet.
 - **Hashes:** [`MANIFEST.sha256`](MANIFEST.sha256) lists the SHA-256 of every
   shipped file, the spec, the generator and the fonts. Rebuilding from the
