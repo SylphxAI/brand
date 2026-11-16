@@ -4,10 +4,9 @@
 Outputs (under logo/):
   svg/       symbol, wordmark and lockup masters in every colour variant, the tile
   png/       renders of the masters
-  favicon/   pixel-snapped 16 and 32 px icons, favicon.svg and .ico, PNG sizes, apple-touch icon
+  favicon/   favicon.svg (the tile as a vector), favicon.ico, PNG sizes, apple-touch icon
   app-icon/  full-bleed store icon and the Android adaptive foreground
   sheet/     the usage sheet
-  construction/pixel-grids.txt   the snapped grids, for review in a diff
 
 Run from the repository root:
   pip install -r logo/construction/requirements.txt   (Python 3.14)
@@ -18,9 +17,9 @@ from __future__ import annotations
 
 import io
 import json
+import re
 from pathlib import Path
 
-import numpy as np
 import resvg_py
 import uharfbuzz as hb
 from fontTools.pens.boundsPen import BoundsPen
@@ -35,12 +34,13 @@ SPEC = json.loads((HERE / "mark.spec.json").read_text())
 M = SPEC["mark"]
 C = SPEC["colours"]
 
-# Colour variants: (under current, over current, wordmark)
+# Colour variants: (mark fill, wordmark). CURRENT is the gradient, drawn per file.
+CURRENT = "current"
 VARIANTS = {
-    "colour": (C["accent"], C["ink"], C["ink"]),
-    "colour-on-dark": (C["accent_on_dark"], C["paper"], C["paper"]),
-    "black": (C["black"], C["black"], C["black"]),
-    "white": (C["white"], C["white"], C["white"]),
+    "colour": (CURRENT, C["ink"]),
+    "colour-on-dark": (CURRENT, C["paper"]),
+    "black": (C["black"], C["black"]),
+    "white": (C["white"], C["white"]),
 }
 
 
@@ -78,31 +78,80 @@ def save_png(rel: str, im: Image.Image) -> None:
 # ── The symbol ──────────────────────────────────────────────────────────────
 
 
-def currents(cx: float, cy: float, k: float) -> tuple[str, str]:
-    """The rising (under) and falling (over) currents as path data, scaled by k about (cx, cy)."""
-    h, p = M["half_span"] * k, M["control_pull"] * k
-    under = f"M{fmt(cx - h)} {fmt(cy - h)}C{fmt(cx + p)} {fmt(cy - h)} {fmt(cx - p)} {fmt(cy + h)} {fmt(cx + h)} {fmt(cy + h)}"
-    over = f"M{fmt(cx + h)} {fmt(cy - h)}C{fmt(cx - p)} {fmt(cy - h)} {fmt(cx + p)} {fmt(cy + h)} {fmt(cx - h)} {fmt(cy + h)}"
-    return under, over
+def blade() -> list[tuple[str, list[tuple[float, float]]]]:
+    """The blade as (command, points) on the blade grid: one M, then cubic segments, closed."""
+    tokens = re.findall(r"[MCz]|-?\d+(?:\.\d+)?", M["blade"])
+    assert tokens[0] == "M" and tokens[3] == "C" and tokens[-1] == "z", "blade must be M, one run of C, z"
+    nums = [float(t) for t in tokens[4:-1]]
+    assert len(nums) % 6 == 0, "each cubic segment takes three points"
+    pts = [(nums[i], nums[i + 1]) for i in range(0, len(nums), 2)]
+    return [("M", [(float(tokens[1]), float(tokens[2]))])] + [("C", pts[i : i + 3]) for i in range(0, len(pts), 3)]
 
 
-def symbol(under_c: str, over_c: str, cx: float, cy: float, k: float, uid: str) -> str:
-    under, over = currents(cx, cy, k)
-    w = M["stroke_width"] * k
-    gap = M["weave_gap"] * k
-    g = M["grid"]
-    return (
-        f'<defs><mask id="w{uid}" maskUnits="userSpaceOnUse" x="-{g}" y="-{g}" width="{3 * g}" height="{3 * g}">'
-        f'<rect x="-{g}" y="-{g}" width="{3 * g}" height="{3 * g}" fill="#fff"/>'
-        f'<path d="{over}" fill="none" stroke="#000" stroke-width="{fmt(w + 2 * gap)}"/></mask></defs>'
-        f'<path d="{under}" fill="none" stroke="{under_c}" stroke-width="{fmt(w)}" mask="url(#w{uid})"/>'
-        f'<path d="{over}" fill="none" stroke="{over_c}" stroke-width="{fmt(w)}"/>'
-    )
+def blades() -> list[list[tuple[str, list[tuple[float, float]]]]]:
+    """Both blades on the blade grid: the second is the first rotated 180 degrees about the centre."""
+    g = M["blade_grid"]
+    first = blade()
+    return [first, [(cmd, [(g - x, g - y) for x, y in pts]) for cmd, pts in first]]
+
+
+def cubic_extent(p0: float, p1: float, p2: float, p3: float) -> tuple[float, float]:
+    """Smallest and largest value one coordinate of a cubic takes for t in 0..1."""
+    a, b, c = -p0 + 3 * p1 - 3 * p2 + p3, 2 * (p0 - 2 * p1 + p2), p1 - p0  # derivative / 3
+    ts = []
+    if abs(a) < 1e-12:
+        if abs(b) > 1e-12:
+            ts.append(-c / b)
+    else:
+        disc = b * b - 4 * a * c
+        if disc >= 0:
+            ts += [(-b + disc**0.5) / (2 * a), (-b - disc**0.5) / (2 * a)]
+    vals = [p0, p3] + [
+        (1 - t) ** 3 * p0 + 3 * (1 - t) ** 2 * t * p1 + 3 * (1 - t) * t * t * p2 + t**3 * p3 for t in ts if 0 < t < 1
+    ]
+    return min(vals), max(vals)
+
+
+def symbol_bounds() -> tuple[float, float, float, float]:
+    """Tight bounds of the pair on the blade grid, from the curves themselves (not their control points)."""
+    xs, ys = [], []
+    for b in blades():
+        cur = b[0][1][0]
+        for _cmd, (c1, c2, end) in b[1:]:
+            xs += cubic_extent(cur[0], c1[0], c2[0], end[0])
+            ys += cubic_extent(cur[1], c1[1], c2[1], end[1])
+            cur = end
+    return min(xs), min(ys), max(xs), max(ys)
 
 
 def symbol_box(k: float = 1.0) -> tuple[float, float]:
-    """Width and height of the symbol's ink: flat ends, horizontal at the tips."""
-    return 2 * M["half_span"] * k, (2 * M["half_span"] + M["stroke_width"]) * k
+    """Width and height of the symbol's ink at k output units per blade-grid unit."""
+    x0, y0, x1, y1 = symbol_bounds()
+    return (x1 - x0) * k, (y1 - y0) * k
+
+
+def symbol(fill: str, cx: float, cy: float, k: float, uid: str) -> str:
+    """Both blades as one path, centred on (cx, cy) at k output units per blade-grid unit.
+
+    Coordinates are written out, not transformed, so the gradient spans the pair
+    as one field. The pair is point-symmetric, so its centre is the grid centre.
+    """
+    half = M["blade_grid"] / 2
+    pt = lambda p: f"{fmt(cx + (p[0] - half) * k)} {fmt(cy + (p[1] - half) * k)}"
+    d = "".join("".join(cmd + " ".join(pt(p) for p in pts) for cmd, pts in b) + "z" for b in blades())
+    if fill != CURRENT:
+        return f'<path fill="{fill}" d="{d}"/>'
+    w, h = symbol_box(k)
+    left, top = cx - w / 2, cy - h / 2
+    cur = C["current"]
+    (fx, fy), (tx, ty) = cur["from"], cur["to"]
+    stops = "".join(f'<stop offset="{fmt(o)}" stop-color="{c}"/>' for o, c in cur["stops"])
+    gid = f"sx-current-{uid}"
+    return (
+        f'<defs><linearGradient id="{gid}" gradientUnits="userSpaceOnUse" x1="{fmt(left + fx * w)}" y1="{fmt(top + fy * h)}" '
+        f'x2="{fmt(left + tx * w)}" y2="{fmt(top + ty * h)}">{stops}</linearGradient></defs>'
+        f'<path fill="url(#{gid})" d="{d}"/>'
+    )
 
 
 # ── The wordmark ────────────────────────────────────────────────────────────
@@ -139,21 +188,22 @@ def wordmark() -> tuple[str, float, float, tuple[float, float, float, float]]:
 # ── Masters ─────────────────────────────────────────────────────────────────
 
 
+def tile_svg(uid: str, fill: str = CURRENT) -> str:
+    g = M["grid"]
+    k = M["tile_symbol_ratio"] * g / symbol_box()[0]
+    return svg(g, g, f'<rect width="{g}" height="{g}" rx="{M["tile_corner_radius"]}" fill="{C["field"]}"/>' + symbol(fill, g / 2, g / 2, k, uid))
+
+
 def masters() -> dict[str, str]:
     out: dict[str, str] = {}
     g = M["grid"]
+    k0 = g / M["blade_grid"]
     cx = cy = g / 2
-    sw, sh = symbol_box()
-    for name, (u, o, _w) in VARIANTS.items():
-        out[f"svg/sylphx-symbol-{name}.svg"] = svg(sw, sh, symbol(u, o, cx, cy, 1, name), cx - sw / 2, cy - sh / 2)
+    sw, sh = symbol_box(k0)
+    for name, (fill, _w) in VARIANTS.items():
+        out[f"svg/sylphx-symbol-{name}.svg"] = svg(sw, sh, symbol(fill, cx, cy, k0, f"symbol-{name}"), cx - sw / 2, cy - sh / 2)
 
-    u, o, _ = VARIANTS["colour-on-dark"]
-    r = M["tile_corner_radius"]
-    out["svg/sylphx-tile.svg"] = svg(
-        g, g,
-        f'<rect width="{g}" height="{g}" rx="{r}" fill="{C["field"]}"/>'
-        + symbol(u, o, cx, cy, M["tile_symbol_scale"], "tile"),
-    )
+    out["svg/sylphx-tile.svg"] = tile_svg("tile")
 
     path, cap, s, (x0, y0, x1, y1) = wordmark()
     ww, wh = (x1 - x0) * s, (y1 - y0) * s
@@ -163,92 +213,33 @@ def masters() -> dict[str, str]:
 
     lk = SPEC["lockup"]
     sym_h = lk["symbol_height_per_cap_height"] * cap
-    k = sym_h / sh
-    sym_w = sw * k
+    k = sym_h / symbol_box()[1]
+    sym_w = symbol_box(k)[0]
     gap = lk["gap_per_symbol_height"] * sym_h
     cap_mid = -cap / 2  # the symbol centres on the cap height; baseline is y = 0
     top = min(cap_mid - sym_h / 2, y0 * s)
     bottom = max(cap_mid + sym_h / 2, y1 * s)
     width = sym_w + gap + ww
-    for name, (u, o, wcol) in VARIANTS.items():
-        body = symbol(u, o, sym_w / 2, cap_mid - top, k, f"l{name}") + (
+    for name, (fill, wcol) in VARIANTS.items():
+        body = symbol(fill, sym_w / 2, cap_mid - top, k, f"lockup-{name}") + (
             f'<path fill="{wcol}" transform="translate({fmt(sym_w + gap - x0 * s)} {fmt(-top)}) scale({fmt(s)})" d="{path}"/>'
         )
         out[f"svg/sylphx-lockup-{name}.svg"] = svg(width, bottom - top, body)
     return out
 
 
-# ── Pixel-snapped icons ────────────────────────────────────────────────────
+# ── Icons ───────────────────────────────────────────────────────────────────
 
 
-def hexrgb(h: str) -> np.ndarray:
-    return np.array([int(h[i : i + 2], 16) for i in (1, 3, 5)], dtype=float)
+def favicon_png(px: int) -> Image.Image:
+    """The tile at px; at the smallest sizes the mark is flat (see spec, favicon)."""
+    fv = SPEC["favicon"]
+    return png(tile_svg("favicon", fv["flat_mark_colour"] if px <= fv["flat_mark_max_px"] else CURRENT), px)
 
 
-def snap(tile_svg: str, px: int) -> list[str]:
-    """Whole-pixel grid: '.' empty, 'f' field, 'a' accent, 'p' paper.
-
-    Each pixel takes the colour that covers most of it (supersampled 16x), so
-    every edge lands on a pixel boundary and the two currents stay two tones.
-    """
-    ss = 16
-    im = np.asarray(png(tile_svg, px * ss)).astype(float)
-    cols = {"f": hexrgb(C["field"]), "a": hexrgb(C["accent_on_dark"]), "p": hexrgb(C["paper"])}
-    keys = list(cols)
-    ref = np.stack([cols[k] for k in keys])
-    alpha = im[..., 3] / 255
-    rgb = im[..., :3]
-    nearest = np.argmin(((rgb[..., None, :] - ref) ** 2).sum(-1), axis=-1)
-    rows = []
-    for y in range(px):
-        row = ""
-        for x in range(px):
-            blk_a = alpha[y * ss : (y + 1) * ss, x * ss : (x + 1) * ss]
-            if blk_a.mean() < 0.5:
-                row += "."
-                continue
-            blk = nearest[y * ss : (y + 1) * ss, x * ss : (x + 1) * ss][blk_a > 0.5]
-            counts = np.bincount(blk, minlength=len(keys))
-            # an ink pixel wins when it covers at least 40%: thin strokes survive
-            ink = [i for i, key in enumerate(keys) if key != "f"]
-            best = max(ink, key=lambda i: counts[i])
-            row += keys[best] if counts[best] >= 0.4 * blk.size else "f"
-        rows.append(row)
-    return rows
-
-
-def grid_svg(rows: list[str]) -> str:
-    colours = {"f": C["field"], "a": C["accent_on_dark"], "p": C["paper"]}
-    rects = []
-    for y, row in enumerate(rows):
-        x = 0
-        while x < len(row):
-            ch = row[x]
-            start = x
-            while x < len(row) and row[x] == ch:
-                x += 1
-            if ch != ".":
-                rects.append(f'<rect x="{start}" y="{y}" width="{x - start}" height="1" fill="{colours[ch]}"/>')
-    n = len(rows)
-    return svg(n, n, "".join(rects)).replace("<svg ", '<svg shape-rendering="crispEdges" ', 1)
-
-
-def grid_png(rows: list[str]) -> Image.Image:
-    n = len(rows)
-    im = Image.new("RGBA", (n, n), (0, 0, 0, 0))
-    colours = {"f": C["field"], "a": C["accent_on_dark"], "p": C["paper"]}
-    for y, row in enumerate(rows):
-        for x, ch in enumerate(row):
-            if ch != ".":
-                im.putpixel((x, y), tuple(int(v) for v in hexrgb(colours[ch])) + (255,))
-    return im
-
-
-def full_bleed(size: int, ratio: float) -> str:
-    u, o, _ = VARIANTS["colour-on-dark"]
-    _sw, sh = symbol_box()
-    k = ratio * size / sh
-    return svg(size, size, f'<rect width="{size}" height="{size}" fill="{C["field"]}"/>' + symbol(u, o, size / 2, size / 2, k, "fb"))
+def full_bleed(size: int, ratio: float, uid: str) -> str:
+    k = ratio * size / symbol_box()[1]
+    return svg(size, size, f'<rect width="{size}" height="{size}" fill="{C["field"]}"/>' + symbol(CURRENT, size / 2, size / 2, k, uid))
 
 
 # ── Build ───────────────────────────────────────────────────────────────────
@@ -261,37 +252,32 @@ def main() -> None:
         width = 1600 if ("lockup" in rel or "wordmark" in rel) else 1024
         save_png(f"png/{Path(rel).stem}.png", png(text, width))
 
-    tile = ms["svg/sylphx-tile.svg"]
-    grids = {px: snap(tile, px) for px in (16, 32)}
-    write("construction/pixel-grids.txt", "".join(f"{px} px\n" + "\n".join(g) + "\n\n" for px, g in grids.items()))
-    write("favicon/favicon.svg", grid_svg(grids[32]))
-    for px, g in grids.items():
-        save_png(f"favicon/favicon-{px}.png", grid_png(g))
-    for px in (48, 192, 512):
-        save_png(f"favicon/favicon-{px}.png", png(tile, px))
+    write("favicon/favicon.svg", tile_svg("favicon"))
+    for px in (16, 32, 48, 192, 512):
+        save_png(f"favicon/favicon-{px}.png", favicon_png(px))
     buf = io.BytesIO()
-    png(tile, 48).save(buf, "ICO", sizes=[(16, 16), (32, 32), (48, 48)], append_images=[grid_png(grids[16]), grid_png(grids[32])])
+    favicon_png(48).save(buf, "ICO", sizes=[(16, 16), (32, 32), (48, 48)], append_images=[favicon_png(16), favicon_png(32)])
     write("favicon/favicon.ico", buf.getvalue())
     ai = SPEC["app_icon"]
-    save_png("favicon/apple-touch-icon-180.png", png(full_bleed(180, ai["symbol_ratio"]), 180).convert("RGB"))
+    save_png("favicon/apple-touch-icon-180.png", png(full_bleed(180, ai["symbol_ratio"], "touch-icon"), 180).convert("RGB"))
 
-    icon = full_bleed(ai["size"], ai["symbol_ratio"])
+    icon = full_bleed(ai["size"], ai["symbol_ratio"], "app-icon")
     write("app-icon/sylphx-app-icon-1024.svg", icon)
     save_png("app-icon/sylphx-app-icon-1024.png", png(icon, ai["size"]).convert("RGB"))
     canvas = ai["android_adaptive_canvas"]
     ratio = ai["symbol_ratio"] * (72 / 108)
-    assert ratio <= ai["android_safe_diameter_ratio"], "symbol leaves the Android safe zone"
-    u, o, _ = VARIANTS["colour-on-dark"]
-    _sw, sh = symbol_box()
-    fg = svg(canvas, canvas, symbol(u, o, canvas / 2, canvas / 2, ratio * canvas / sh, "fg"))
+    sw, sh = symbol_box()
+    # the mask is a circle: the corners of the mark's box must stay inside it
+    assert ratio * (sw * sw + sh * sh) ** 0.5 / sh <= ai["android_safe_diameter_ratio"], "symbol leaves the Android safe zone"
+    fg = svg(canvas, canvas, symbol(CURRENT, canvas / 2, canvas / 2, ratio * canvas / sh, "android-foreground"))
     write("app-icon/sylphx-android-foreground.svg", fg)
     save_png("app-icon/sylphx-android-foreground-432.png", png(fg, canvas))
 
-    sheet(ms, grids)
+    sheet(ms)
 
 
-def sheet(ms: dict[str, str], grids: dict[int, list[str]]) -> None:
-    """Usage sheet: lockups on paper and ink, clear space, minimum sizes, favicons, app icon."""
+def sheet(ms: dict[str, str]) -> None:
+    """Usage sheet: lockups on paper and ink, clear space, minimum sizes, favicons, tile."""
     W, H = 1600, 1000
     im = Image.new("RGBA", (W, H), C["paper"])
     im.alpha_composite(Image.new("RGBA", (W // 2, H // 2), C["ink"]), (W // 2, 0))
@@ -301,8 +287,11 @@ def sheet(ms: dict[str, str], grids: dict[int, list[str]]) -> None:
     im.alpha_composite(lkd, (W // 2 + 120, (H // 2 - lkd.height) // 2))
 
     lk2 = png(ms["svg/sylphx-lockup-colour.svg"], 480)
-    pad = int(SPEC["clear_space"]["per_symbol_height"] * lk2.height)
-    ox, oy = 120, H // 2 + 130
+    sw, sh = symbol_box()
+    lk_w, lk_h = (float(v) for v in re.search(r'width="([\d.]+)" height="([\d.]+)"', ms["svg/sylphx-lockup-colour.svg"]).groups())
+    sym_h_px = SPEC["lockup"]["symbol_height_per_cap_height"] * wordmark()[1] * lk2.width / lk_w
+    pad = round(SPEC["clear_space"]["per_symbol_height"] * sym_h_px)
+    ox, oy = 120, H // 2 + (H // 2 - lk2.height) // 2
     im.alpha_composite(lk2, (ox, oy))
     d = ImageDraw.Draw(im)
     x0, y0, x1, y1 = ox - pad, oy - pad, ox + lk2.width + pad, oy + lk2.height + pad
@@ -314,11 +303,19 @@ def sheet(ms: dict[str, str], grids: dict[int, list[str]]) -> None:
         d.line([(x1, y), (x1, y + 6)], fill=C["accent"])
 
     mins = SPEC["minimum_size_px"]
-    im.alpha_composite(png(ms["svg/sylphx-symbol-colour.svg"], 13), (960, H // 2 + 190))
-    im.alpha_composite(png(ms["svg/sylphx-lockup-colour.svg"], mins["lockup_width"]), (1000, H // 2 + 190))
-    im.alpha_composite(grid_png(grids[16]), (1120, H // 2 + 188))
-    im.alpha_composite(grid_png(grids[32]), (1150, H // 2 + 180))
-    im.alpha_composite(png(ms["svg/sylphx-tile.svg"], 160), (1220, H // 2 + 120))
+    mid = H // 2 + H // 4  # everything in the right half centres on this line
+    row = [
+        png(ms["svg/sylphx-symbol-colour.svg"], round(mins["symbol"] * sw / sh)),
+        png(ms["svg/sylphx-lockup-colour.svg"], mins["lockup_width"]),
+        favicon_png(16),
+        favicon_png(32),
+        favicon_png(48),
+        png(ms["svg/sylphx-tile.svg"], 160),
+    ]
+    x = W // 2 + 120
+    for item in row:
+        im.alpha_composite(item, (x, mid - item.height // 2))
+        x += item.width + 40
     buf = io.BytesIO()
     im.convert("RGB").save(buf, "PNG", optimize=True)
     write("sheet/usage.png", buf.getvalue())

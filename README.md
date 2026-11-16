@@ -8,11 +8,12 @@ docs, the console, the CLI, READMEs, the GitHub organization) takes its
 identity from here and keeps no redrawn copy or hand-picked colour
 (owner standard, `standards/experience.md`, "Brand home").
 
-The interface identity is the Sylphx DESIGN.md in `SylphxAI/cloud`, direction
-*Clear air, one live current*: cool bright surfaces, one cobalt current,
-Inter and JetBrains Mono. The tokens here carry its values. The mark of two
-currents that weave into the x of Sylphx is unchanged from direction
-Engineered, chosen 2026-09-28 ([directions/README.md](directions/README.md)).
+The direction is *Altitude*, an owner-authorised full redesign of 2026-11-16
+([directions/2026-11-altitude.md](directions/2026-11-altitude.md)): high,
+clear air. Near-neutral cool surfaces, ink for primary actions, one azure
+accent, Geist and Geist Mono, and one gradient, the current, kept for the
+mark and rare brand moments. The mark is two blades, one turned 180° from the
+other, that read as an S, a pair of wings and a stream of air.
 
 | Need | Where |
 | --- | --- |
@@ -21,7 +22,7 @@ Engineered, chosen 2026-09-28 ([directions/README.md](directions/README.md)).
 | How to use the logo, colour, type, icons and motion | [guidelines/guidelines.md](guidelines/guidelines.md) and the usage sheet [logo/sheet/usage.png](logo/sheet/usage.png) |
 | Logo files, construction, small sizes, provenance | [logo/README.md](logo/README.md) |
 | Design tokens | [tokens/brand.tokens.json](tokens/brand.tokens.json) (source) and [tokens/brand.css](tokens/brand.css) (generated) |
-| Fonts to self-host | [fonts/](fonts/) (Inter and JetBrains Mono, OFL) and the loader [fonts/fonts.css](fonts/fonts.css) |
+| Fonts to self-host | [fonts/](fonts/) (Geist, Geist Mono and Instrument Serif, OFL) and the loader [fonts/fonts.css](fonts/fonts.css) |
 | Voice | [docs/voice.md](docs/voice.md) |
 | Trademark status | [docs/trademarks.md](docs/trademarks.md) |
 | Where the brand appears | [docs/surfaces.md](docs/surfaces.md) |
@@ -41,12 +42,12 @@ Engineered, chosen 2026-09-28 ([directions/README.md](directions/README.md)).
 Edit a source, regenerate, and commit the outputs in the same pull request:
 
 ```bash
-pip install pillow numpy fonttools brotli uharfbuzz resvg-py
+pip install -r logo/construction/requirements.txt
 python3 logo/construction/mark.py     # every file under logo/ from mark.spec.json
 python3 scripts/build_tokens.py       # tokens/brand.css from tokens/brand.tokens.json
 python3 scripts/manifest.py           # logo/MANIFEST.sha256
 ```
 
 CI checks that `tokens/brand.css` and `logo/MANIFEST.sha256` match their
-sources. A new direction for the identity lands here first, with a
+sources and that `mark.py` redraws every file under `logo/` byte for byte. A new direction for the identity lands here first, with a
 similarity check recorded, and the surfaces follow.

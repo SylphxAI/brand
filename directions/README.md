@@ -1,10 +1,9 @@
 # Visual directions, 2026-09-28
 
-> **Superseded for the interface.** The palette, type and spacing now follow
-> the Sylphx DESIGN.md in `SylphxAI/cloud` (direction *Clear air, one live
-> current*: cool surfaces, Inter and JetBrains Mono), and `tokens/` carries
-> its values. Engineered's mark is kept. The record below is the 2026-09-28
-> decision as it was made.
+> **Superseded.** On 2026-11-16 the owner authorised a full redesign, and
+> direction *Altitude* replaced Engineered's mark, palette and type
+> ([2026-11-altitude.md](2026-11-altitude.md)). The record below is the
+> 2026-09-28 decision as it was made.
 
 The owner ordered a complete redesign of sylphx.com: site, docs, sign-in and
 console. Three complete identity systems were built and rendered onto real
