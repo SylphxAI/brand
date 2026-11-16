@@ -43,7 +43,35 @@ every surface in both themes (WCAG 2.2 AA). One value moved to pass: light
 
 ## Similarity check
 
-Not yet recorded. The repository rule asks for a visual comparison against
-the marks of comparable developer platforms and of our other companies before
-surfaces adopt a new mark; that comparison is still to be made for the
-two-blade mark and added here.
+Sized to a small company, as the previous direction's was (owner decision
+2026-09-27, owner#781): a visual comparison, no search or filing. Recorded
+2026-11-16. The comparison was made against the marks as generally known, not
+against a freshly rendered side-by-side sheet; a sheet like
+`out/similarity-competitors.png` should be regenerated before any trademark
+step.
+
+The two-blade mark does not resemble the marks of Vercel, Supabase, Neon,
+Railway, Render, Fly, Clerk, OpenRouter, Netlify, Cloudflare, Firebase,
+PostHog, Resend, Linear, Stripe, Convex, Upstash, Turso, Appwrite, Sentry,
+Temporal, WorkOS, Inngest, Modal or E2B, nor the marks of our other companies.
+
+Nearest neighbours, and what separates the mark from each:
+
+- **Tailwind CSS**: two wave shapes in cyan. Theirs are two copies of one
+  rounded wave, stacked and offset sideways, in one flat colour; ours are two
+  pointed blades related by a half turn about the centre, which is what draws
+  the S, and they carry the three-stop current from indigo to pale sky.
+- **Shazam**: an S from two hooks in blue. Theirs is two open stroked hooks
+  inside a disc; ours is two closed, filled blades with no enclosing shape.
+- **Surfshark**: a single teal S-like fin. One shape with a cut-out, against
+  our two separate shapes.
+- **Windsurf**: wind as a motif. Their mark is a set of parallel strokes; no
+  rotational pair and no S.
+
+Azure `#1463FF` sits apart from Stripe's violet `#635BFF`, Tailwind's cyan
+`#38BDF8` and Supabase's green. The primary action colour is ink, so the
+accent appears far less than a brand colour usually does.
+
+Risk judged acceptable for launch. Tailwind CSS is the closest and is a
+developer brand our audience knows, so the mark is always used with the
+gradient or in single-colour ink or white, never in flat cyan.
